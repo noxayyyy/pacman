@@ -21,15 +21,17 @@ public:
 		PACMAN,
 		GHOSTS,
 		PELLETS,
-		COLLIDERS
+		COLLIDERS,
 	};
 
+	static float deltaTime;
 	static SDL_Event event;
 	static SDL_Renderer* renderer;
 
 	// declare game functions in class
 	void init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
 	void handleEvents();
+	void collisionResponse();
 	void update();
 	void render();
 	void clean();

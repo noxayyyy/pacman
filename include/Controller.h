@@ -1,37 +1,44 @@
 #pragma once
 
-#include <Game.h>
 #include <ECS.h>
-#include <Components.h>
+#include <Tile.h>
+#include <Collision.h>
+#include <Collider.h>
 
-class Controller : public Component {
+class Controller {
 public:
 	Transform* transform;
+	Collider* collider;
+	Entity* entity;
 
-	void init() override { transform = &entity->getComponent<Transform>(); }
+	Controller(Entity* e) {
+		entity = e;
+		transform = &entity->getComponent<Transform>();
+		collider = &entity->getComponent<Collider>();
+	}
 
-	void update() override {
-		if (Game::event.type != SDL_KEYDOWN) return;
+	~Controller();
 
-		switch (Game::event.key.keysym.sym) {
+	void updateVel(SDL_Keycode key) {
+		switch (key) {
 		case SDLK_w:
 			transform->vel.x = 0;
 			transform->vel.y = -1;
+			break;
+		case SDLK_a:
+			transform->vel.x = -1;
+			transform->vel.y = 0;
 			break;
 		case SDLK_s:
 			transform->vel.x = 0;
 			transform->vel.y = 1;
 			break;
-		case SDLK_a:
-			transform->vel.y = 0;
-			transform->vel.x = -1;
-			break;
 		case SDLK_d:
-			transform->vel.y = 0;
 			transform->vel.x = 1;
+			transform->vel.y = 0;
+			break;
 		default:
 			break;
 		}
 	}
 };
-

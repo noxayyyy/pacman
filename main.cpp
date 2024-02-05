@@ -7,10 +7,9 @@ int main(int argc, char** argv) {
 	// frame rate
 	const int FPS = 60;
 	// max time a frame is supposed to last for
-	const int frameDelay = 1000 / FPS;
+	const float frameDelay = 1.0f / (float)FPS;
 
 	Uint32 frameStart;
-	int frameTime;
 	game = new Game();
 	
 	game->init("NoxEngine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, false);
@@ -24,9 +23,13 @@ int main(int argc, char** argv) {
 		game->render();
 
 		// get time taken to handle events, update frame, and render frame
-		frameTime = SDL_GetTicks() - frameStart;
+		Game::deltaTime = (float)(SDL_GetTicks() - frameStart) / 1000.0f;
+		// std::cout << "deltaTime: " << Game::deltaTime << '\n';
 		// if fps is greater than 60, increase delay to limit frames
-		if (frameTime < frameDelay) SDL_Delay(frameDelay - frameTime);
+		if (Game::deltaTime < frameDelay) {
+			SDL_Delay((frameDelay - Game::deltaTime) * 1000);
+			Game::deltaTime = frameDelay;
+		}
 	}
 	game->clean();
 	

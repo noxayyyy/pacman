@@ -50,7 +50,8 @@ void Builder::assignDirection() {
 
 	prevDir = currDir;
 	currDir = (Direction)(rand() % 4);
-	while (std::find(invalidDir.begin(), invalidDir.end(), currDir) != invalidDir.end()) currDir = (Direction)(rand() % 4);
+	while (std::find(invalidDir.begin(), invalidDir.end(), currDir) != invalidDir.end()) 
+		currDir = (Direction)(rand() % 4);
 	currCount = 0;
 	forceChange = false;
 }

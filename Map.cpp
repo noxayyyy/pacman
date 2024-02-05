@@ -4,6 +4,7 @@
 
 extern Manager manager;
 
+std::vector<std::vector<std::string>> Map::img = std::vector(22, std::vector<std::string>(20, ""));
 BuilderSpawner* firstSpawner;
 BuilderSpawner* secondSpawner;
 std::vector<BuilderSpawner*> spawners;
@@ -32,13 +33,17 @@ void Map::init() {
 }
 
 bool checkRepeat(int xpos, int ypos) {
-	for (auto& spawn : spawners) if (abs(spawn->x - xpos) <= 1 && abs(spawn->y - ypos) <= 1) return true;
+	for (auto& spawn : spawners) 
+		if (abs(spawn->x - xpos) <= 1 && abs(spawn->y - ypos) <= 1) 
+			return true;
 	return false;
 }
 
 void Map::addWalls(int x, int y) {
-	for (int i = -1; i < 2; i++) for (int j = -1; j < 2; j++) 
-		if (img[y + i][x + j] != pathStr) img[y + i][x + j] = wallStr;
+	for (int i = -1; i < 2; i++) for (int j = -1; j < 2; j++) { 
+		if (img[y + i][x + j] == pathStr) continue;
+		img[y + i][x + j] = wallStr;
+	}
 }
 
 void Map::updateImg(Builder* builder, bool killPrevBlock) {

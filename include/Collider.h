@@ -15,14 +15,13 @@ public:
 
 	void init() override {
 		if (!entity->hasComponent<Transform>()) entity->addComponent<Transform>();
-		transform = &entity->getComponent<Transform>();
+		transform = &entity->getComponent<Transform>(); 
+		collider.w = (int)((float)transform->width * transform->scale);
+		collider.h = (int)((float)transform->height * transform->scale);
 	}
 
 	void update() override {
 		collider.x = (int)(transform->pos.x);
 		collider.y = (int)(transform->pos.y);
-
-		collider.w = (int)((float)transform->width * transform->scale);
-		collider.h = (int)((float)transform->height * transform->scale);
 	}
 };

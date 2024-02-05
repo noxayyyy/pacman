@@ -3,6 +3,7 @@
 #include <Components.h>
 #include <SDL.h>
 #include <string>
+#include <vector>
 
 class Tile : public Component {
 public:

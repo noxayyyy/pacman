@@ -2,6 +2,7 @@
 
 #include <Game.h>
 #include <BuilderSpawner.h>
+#include <Tile.h>
 #include <cstdlib>
 #include <ctime>
 #include <random>
@@ -22,9 +23,10 @@ public:
 	void updateImg(Builder* builder, bool killPrevBlock);
 	void addWalls(int x, int y);
 	void addTile(int id, int x, int y);
+	bool checkTurn(Tile* tile);
 
 private:
 	static const int spawnerCount = 2;
-	std::vector<std::vector<std::string>> img = std::vector(22, std::vector<std::string>(20, ""));
+	static std::vector<std::vector<std::string>> img;
 	std::unordered_map<std::string, int> colourMap;
 };

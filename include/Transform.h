@@ -2,13 +2,14 @@
 
 #include <Components.h>
 #include <Vector2D.h>
+#include <Game.h>
 
 struct Transform : public Component {
 	Vector2D pos, vel;
 	int height = 50;
 	int width = 50;
 	float scale = 0.6f;
-	int speed = 3;
+	float speed = 192.0f;
 
 	Transform() { pos.zero(); }
 
@@ -35,7 +36,7 @@ struct Transform : public Component {
 	void init() override { vel.zero(); }
 
 	void update() override {
-		pos.x += vel.x * speed;
-		pos.y += vel.y * speed;
+		pos.x += vel.x * speed * Game::deltaTime;
+		pos.y += vel.y * speed * Game::deltaTime;
 	}
 };
