@@ -9,7 +9,7 @@ struct Transform : public Component {
 	int height = 50;
 	int width = 50;
 	float scale = 0.6f;
-	float speed = 192.0f;
+	float speed = 240.0f; // 480.0f;
 
 	Transform() { pos.zero(); }
 

@@ -6,6 +6,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <unordered_map>
+#include <Vector2D.h>
 
 class Collider;
 
@@ -24,6 +26,7 @@ public:
 		COLLIDERS,
 	};
 
+	static std::unordered_map<SDL_Keycode, bool> Keys;
 	static float deltaTime;
 	static SDL_Event event;
 	static SDL_Renderer* renderer;
@@ -31,6 +34,7 @@ public:
 	// declare game functions in class
 	void init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
 	void handleEvents();
+	static void collisionResponse(Vector2D oldVel);
 	void collisionResponse();
 	void update();
 	void render();
@@ -41,6 +45,7 @@ private:
 	int count = 0;
 	bool isRunning;
 	SDL_Window* window;
+	Vector2D lastVel;
 };
 
 #endif // !Game_hpp

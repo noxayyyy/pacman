@@ -19,26 +19,36 @@ public:
 
 	~Controller();
 
-	void updateVel(SDL_Keycode key) {
-		switch (key) {
-		case SDLK_w:
+	void updateKeyDown(SDL_Keycode key) {
+		if (Game::Keys.find(key) == Game::Keys.end())
+			return;
+		Game::Keys[key] = true;
+	}
+
+	void updateKeyUp(SDL_Keycode key) {
+		if (Game::Keys.find(key) == Game::Keys.end())
+			return;
+		Game::Keys[key] = false;
+	}
+
+	void updateVel() {
+		Vector2D lastVel = transform->vel;
+		if (Game::Keys[SDLK_w]) {
 			transform->vel.x = 0;
 			transform->vel.y = -1;
-			break;
-		case SDLK_a:
+		}
+		if (Game::Keys[SDLK_a]) {
 			transform->vel.x = -1;
 			transform->vel.y = 0;
-			break;
-		case SDLK_s:
+		}
+		if (Game::Keys[SDLK_s]) {
 			transform->vel.x = 0;
 			transform->vel.y = 1;
-			break;
-		case SDLK_d:
+		}
+		if (Game::Keys[SDLK_d]) {
 			transform->vel.x = 1;
 			transform->vel.y = 0;
-			break;
-		default:
-			break;
 		}
+		Game::collisionResponse(lastVel);
 	}
 };

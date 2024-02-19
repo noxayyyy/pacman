@@ -10,11 +10,16 @@ Game::Game() {}
 Game::~Game() {}
 
 float Game::deltaTime;
+Vector2D lastVel;
 SDL_Event Game::event;
 SDL_Renderer* Game::renderer = nullptr;
 Map* map;
 Manager manager;
 Controller* controller;
+std::unordered_map<SDL_Keycode, bool> Game::Keys {
+	{ SDLK_w, false }, { SDLK_s, false },
+	{ SDLK_a, false }, { SDLK_d, false },
+};
 
 auto& pacman(manager.addEntity());
 Transform* pacmanPos;
@@ -59,9 +64,11 @@ void Game::handleEvents() {
 		isRunning = false;
 		break;
 	case SDL_KEYDOWN:
-		controller->updateVel(event.key.keysym.sym);
-		collisionResponse();
+		controller->updateKeyDown(event.key.keysym.sym);
 		break;	
+	case SDL_KEYUP:
+		controller->updateKeyUp(event.key.keysym.sym);
+		break;
 	default:
 		break;
 	}
@@ -73,22 +80,36 @@ auto& players(manager.getGroupMembers(Game::PACMAN));
 // auto& ghosts(manager.getGroupMembers(Game::GHOSTS));
 // auto& pellets(manager.getGroupMembers(Game::PELLETS));
 
-void Game::collisionResponse() {
-	Vector2D posPacman = pacmanPos->pos;
+void Game::collisionResponse(Vector2D oldVel) {
 	for (auto& memColl : colliders) {
 		if (memColl->getComponent<Collider>().tag != "wall") continue;
 		Collider coll = memColl->getComponent<Collider>();
 		if (Collision::AABBvel(*pacmanColl, coll)) {
-			pacmanPos->vel.x = pacmanPos->vel.y = 0;
-			coll.entity->getComponent<Sprites>().setTex("C:/GameDev/sprites/ghost_bar.png");
+			pacmanPos->vel.x = oldVel.x;
+			pacmanPos->vel.y = oldVel.y;
+			// coll.entity->getComponent<Sprites>().setTex("C:/GameDev/sprites/ghost_bar.png");
 			break;
 		}
 	}
 }
+
+void Game::collisionResponse() {
+	for (auto& memColl : colliders) {
+		if (memColl->getComponent<Collider>().tag != "wall") continue;
+		Collider coll = memColl->getComponent<Collider>();
+		if (Collision::AABBvel(*pacmanColl, coll)) {
+			pacmanPos->vel.x = pacmanPos->vel.y = 0.0f;
+			// coll.entity->getComponent<Sprites>().setTex("C:/GameDev/sprites/ghost_bar.png");
+			break;
+		}
+	}
+}
+
 // update is called every frame. includes game logic
 void Game::update() {
 	manager.refresh();
 	manager.update();
+	controller->updateVel();
 	collisionResponse();
 }
 

@@ -24,7 +24,6 @@ int main(int argc, char** argv) {
 
 		// get time taken to handle events, update frame, and render frame
 		Game::deltaTime = (float)(SDL_GetTicks() - frameStart) / 1000.0f;
-		// std::cout << "deltaTime: " << Game::deltaTime << '\n';
 		// if fps is greater than 60, increase delay to limit frames
 		if (Game::deltaTime < frameDelay) {
 			SDL_Delay((frameDelay - Game::deltaTime) * 1000);
