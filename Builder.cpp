@@ -25,33 +25,55 @@ void Builder::updateForceChange() {
 
 	switch (currDir) {
 	case UP:
-		if (y - 2 < 1) forceChange = true;
+		if (y - 2 < 1) {
+			forceChange = true;
+		}
 		break;
 	case DOWN:
-		if (y + 2 > 20) forceChange = true;
+		if (y + 2 > 20) {
+			forceChange = true;
+		}
 		break;
 	case LEFT:
-		if (x - 2 < 1) forceChange = true;
+		if (x - 2 < 1) {
+			forceChange = true;
+		}
 		break;
 	case RIGHT:
-		if (x + 2 > 18) forceChange = true;
+		if (x + 2 > 18) {
+			forceChange = true;
+		}
+		break;
+	case NONE:
 		break;
 	}
 }
 
 void Builder::assignDirection() {
-	if (!active || !forceChange) return;
+	if (!active || !forceChange) {
+		return;
+	}
 	std::vector<Direction> invalidDir = { NONE, NONE, NONE, NONE };
 
-	if (x <= 2 || currDir == RIGHT) invalidDir[0] = LEFT;
-	if (x >= 17 || currDir == LEFT) invalidDir[1] = RIGHT;
-	if (y <= 2 || currDir == DOWN) invalidDir[2] = UP;
-	if (y >= 19 || currDir == UP) invalidDir[3] = DOWN;
+	if (y >= 19 || currDir == UP) {
+		invalidDir[3] = DOWN;
+	}
+	if (x >= 17 || currDir == LEFT) {
+		invalidDir[1] = RIGHT;
+	}
+	if (y <= 2 || currDir == DOWN) {
+		invalidDir[2] = UP;
+	}
+	if (x <= 2 || currDir == RIGHT) {
+		invalidDir[0] = LEFT;
+	}
 
 	prevDir = currDir;
 	currDir = (Direction)(rand() % 4);
-	while (std::find(invalidDir.begin(), invalidDir.end(), currDir) != invalidDir.end()) 
+
+	while (std::find(invalidDir.begin(), invalidDir.end(), currDir) != invalidDir.end()) {
 		currDir = (Direction)(rand() % 4);
+	}
 	currCount = 0;
 	forceChange = false;
 }

@@ -15,6 +15,7 @@ public:
 	const char* path;
 
 	Tile() = default;
+
 	Tile(int x, int y, int w, int h, int id) {
 		tileRect.x = x;
 		tileRect.y = y;
@@ -31,6 +32,9 @@ public:
 			break;
 		case 2:
 			path = "C:/GameDev/sprites/ghost_bar.png";
+			break;
+		case 3:
+			path = "C:/GameDev/sprites/pellet.png";
 			break;
 		default:
 			path = "C:/GameDev/sprites/path.png";

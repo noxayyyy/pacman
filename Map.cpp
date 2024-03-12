@@ -29,19 +29,23 @@ void Map::init() {
 	colourMap[pathStr] = 0;
 	colourMap[wallStr] = 1;
 	colourMap[ghostBarStr] = 2;
-	colourMap[blankStr] = 3;
+	colourMap[blankStr] = 4;
 }
 
 bool checkRepeat(int xpos, int ypos) {
-	for (auto& spawn : spawners) 
-		if (abs(spawn->x - xpos) <= 1 && abs(spawn->y - ypos) <= 1) 
+	for (auto& spawn : spawners) {
+		if (abs(spawn->x - xpos) <= 1 && abs(spawn->y - ypos) <= 1) {
 			return true;
+		}
+	}
 	return false;
 }
 
 void Map::addWalls(int x, int y) {
 	for (int i = -1; i < 2; i++) for (int j = -1; j < 2; j++) { 
-		if (img[y + i][x + j] == pathStr) continue;
+		if (img[y + i][x + j] == pathStr) {
+			continue;
+		}
 		img[y + i][x + j] = wallStr;
 	}
 }
@@ -65,13 +69,42 @@ void Map::updateImg(Builder* builder, bool killPrevBlock) {
 	default:
 		break;
 	}
-	if (killPrevBlock) img[builder->y][builder->x] = blankStr;
+
+	if (killPrevBlock) {
+		img[builder->y][builder->x] = blankStr;
+	}
 }
 
 bool checkSpawnerActivities(std::vector<BuilderSpawner*> spawners) {
-	for (auto& spawn : spawners) if (spawn->firstBuilder->isActive() || spawn->secondBuilder->isActive() 
-		|| spawn->thirdBuilder->isActive()) return true;
+	for (auto& spawn : spawners) { 
+		if (spawn->firstBuilder->isActive() || 
+			spawn->secondBuilder->isActive() || 
+			spawn->thirdBuilder->isActive()) {
+			return true;
+		}
+	}
 	return false;
+}
+
+void updateBuilders() {
+	for (auto& spawn : spawners) for (auto& build : spawn->builders) {
+		build->updateChance();
+		build->updateForceChange();
+	}
+	for (auto& spawn : spawners) {
+		for (auto& build : spawn->builders) {
+			build->assignDirection();
+		}
+	}
+}
+
+void Map::addPassthrough() {
+	int x = rand() % 18 + 1;
+	while (img[x][18] != pathStr || img[x - 1][19] == pathStr || 
+		img[x + 1][19] == pathStr) {
+			x = rand() % 18 + 1;
+		}
+	img[x][19] = pathStr;
 }
 
 void Map::DrawMap() {
@@ -96,7 +129,11 @@ void Map::DrawMap() {
 		spawners[1]->builders[i]->currDir = Builder::UP;
 	}
 
-	for (int y = 0; y < 22; y++) for (int x = 0; x < 20; x++) img[y][x] = blankStr;
+	for (int y = 0; y < 22; y++) {
+		for (int x = 0; x < 20; x++) {
+			img[y][x] = blankStr;
+		}
+	}
 
 	for (int i = spawners[0]->x - 8; i < spawners[0]->x + 9; i++) {
 		img[spawners[0]->y][i] = pathStr;
@@ -117,29 +154,27 @@ void Map::DrawMap() {
 			updateImg(spawners[i]->secondBuilder, killPrevBlock[i][1]);
 			updateImg(spawners[i]->thirdBuilder, killPrevBlock[i][2]);
 		}
-		
-		for (auto& spawn : spawners) for (auto& build : spawn->builders) {
-			build->updateChance();
-			build->updateForceChange();
-		}
-		for (auto& spawn : spawners) for (auto& build : spawn->builders) build->assignDirection();
+		updateBuilders();
 	}
 
-	for (int y = 0; y < 22; y++) for (int x = 0; x < 20; x++) {
-		if (img[y][x] != pathStr) continue;
-		addWalls(x, y);
+	for (int y = 0; y < 22; y++) {
+		for (int x = 0; x < 20; x++) {
+			if (img[y][x] != pathStr) {
+				continue;
+			}
+			addWalls(x, y);
+		}
 	}
 
 	for (int i = 0; i < 4; i++) {
-		int x = rand() % 18 + 1;
-		while (img[x][18] != pathStr || img[x - 1][19] == pathStr || 
-			img[x + 1][19] == pathStr) x = rand() % 18 + 1;
-		img[x][19] = pathStr;
+		addPassthrough();
 	}
 }
 
 int Map::colourReference(std::string colour) {
-	if (colourMap.find(colour) != colourMap.end()) return colourMap[colour];
+	if (colourMap.find(colour) != colourMap.end()) {
+		return colourMap[colour];
+	}
 	return -1;
 }
 
@@ -152,27 +187,44 @@ void Map::addTile(int id, int x, int y) {
 		break;
 	case 1:
 		tile.addComponent<Collider>("wall");
+		tile.addGroup(Game::COLLIDERS);
 		break;
 	case 2:
 		tile.addComponent<Collider>("ghostBar");
+		tile.addGroup(Game::GHOST_BAR);
 		break;
+	case 3:
+		tile.addComponent<Collider>("pellet");
+		tile.addGroup(Game::PELLETS);
+		tile.addGroup(Game::COLLIDERS);
+		return;
 	default:
-		tile.addComponent<Collider>("path");
+		tile.addComponent<Collider>("null");
 		break;
 	}
 	tile.addGroup(Game::MAP);
-	tile.addGroup(Game::COLLIDERS);
 }
 
 void Map::LoadMap() {
 	int pixelVal;
+	int pelletVal = 3;
 	int xpos = 0, ypos = 0;
-	for (int x = 0; x < img[0].size(); x++) for (int y = 0; y < img.size(); y++) {
-		pixelVal = colourReference(img[y][x]);
-		xpos = x * 32;
-		ypos = y * 32;
-		addTile(pixelVal, xpos, ypos);
-		xpos += (img[0].size() - x) * 64 - 32;
-		addTile(pixelVal, xpos, ypos);
+	for (int x = 0; x < img[0].size(); x++) {
+		for (int y = 0; y < img.size(); y++) {
+			pixelVal = colourReference(img[y][x]);
+			xpos = x * 32 + PADDING_X;
+			ypos = y * 32 + PADDING_Y;
+
+			addTile(pixelVal, xpos, ypos);
+			if (!pixelVal) {
+				addTile(pelletVal, xpos, ypos);
+			}
+
+			xpos += (img[0].size() - x) * 64 - 32;
+			addTile(pixelVal, xpos, ypos);
+			if (!pixelVal) {
+				addTile(pelletVal, xpos, ypos);
+			}
+		}
 	}
 }

@@ -48,7 +48,10 @@ Vector2D& Vector2D::operator * (const int& i) {
 	return *this;
 }
 
-Vector2D& Vector2D::zero() { x = y = 0; return *this; }
+Vector2D& Vector2D::zero() { 
+	x = y = 0; 
+	return *this; 
+}
 
 std::ostream& operator << (std::ostream& stream, const Vector2D& vec) {
 	stream << "(" << vec.x << ", " << vec.y << ")";

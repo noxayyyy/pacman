@@ -4,7 +4,8 @@ BuilderSpawner::BuilderSpawner() {}
 BuilderSpawner::~BuilderSpawner() {}
 
 void BuilderSpawner::init() {
-	x = 0; y = 0;
+	x = 0; 
+	y = 0;
 	firstBuilder = new Builder();
 	secondBuilder = new Builder();
 	thirdBuilder = new Builder();
@@ -26,22 +27,30 @@ std::vector<bool> BuilderSpawner::updateActivity(std::vector<std::vector<std::st
 
 		switch (builders[i]->currDir) {
 		case Builder::UP:
-			if (imgArr[builders[i]->y + 1][builders[i]->x] != pathStr) break;
+			if (imgArr[builders[i]->y + 1][builders[i]->x] != pathStr) {
+				break;
+			}
 			builders[i]->setActive(false);
 			killPrevBlock[i] = true;
 			break;
 		case Builder::DOWN:
-			if (imgArr[builders[i]->y - 1][builders[i]->x] != pathStr) break;
+			if (imgArr[builders[i]->y - 1][builders[i]->x] != pathStr) {
+				break;
+			}
 			builders[i]->setActive(false);
 			killPrevBlock[i] = true;
 			break;
 		case Builder::LEFT:
-			if (imgArr[builders[i]->y][builders[i]->x + 1] != pathStr) break;
+			if (imgArr[builders[i]->y][builders[i]->x + 1] != pathStr) {
+				break;
+			}
 			builders[i]->setActive(false);
 			killPrevBlock[i] = true;
 			break;
 		case Builder::RIGHT:
-			if (imgArr[builders[i]->y][builders[i]->x - 1] != pathStr) break;
+			if (imgArr[builders[i]->y][builders[i]->x - 1] != pathStr) {
+				break;
+			}
 			builders[i]->setActive(false);
 			killPrevBlock[i] = true;
 			break;
@@ -54,7 +63,9 @@ std::vector<bool> BuilderSpawner::updateActivity(std::vector<std::vector<std::st
 
 void BuilderSpawner::moveBuilders() {
 	for (auto& build : builders) {
-		if (!build->isActive()) continue;
+		if (!build->isActive()) {
+			continue;
+		}
 
 		switch (build->currDir) {
 		case Builder::UP:

@@ -11,7 +11,9 @@ struct Transform : public Component {
 	float scale = 0.6f;
 	float speed = 240.0f; // 480.0f;
 
-	Transform() { pos.zero(); }
+	Transform() { 
+		pos.zero(); 
+	}
 
 	Transform(float x, float y) {
 		pos.x = x;
@@ -31,9 +33,13 @@ struct Transform : public Component {
 		this->scale = scale;
 	}
 
-	Transform(Vector2D vec) { pos = vec; }
+	Transform(Vector2D vec) { 
+		pos = vec; 
+	}
 
-	void init() override { vel.zero(); }
+	void init() override { 
+		vel.zero(); 
+	}
 
 	void update() override {
 		pos.x += vel.x * speed * Game::deltaTime;

@@ -9,7 +9,7 @@ LIBPATH=-LC:/mingw_dep/lib/
 
 DEPFLAGS=-MP -MD
 CFLAGS=-Wall -g $(foreach D,$(INCDIRS),-I$(D)) $(DEPFLAGS)
-LINKERFLAGS=-lmingw32 -lSDL2main -lSDL2 -lSDL2_image
+LINKERFLAGS=-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf
 
 CFILES=$(foreach D,$(CODEDIRS),$(wildcard $(D)/*.cpp))
 OBJECTS=$(patsubst %.cpp,%.o,$(CFILES))

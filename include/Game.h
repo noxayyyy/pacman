@@ -3,6 +3,7 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
+#include <SDL_ttf.h>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -22,11 +23,12 @@ public:
 		MAP,
 		PACMAN,
 		GHOSTS,
+		GHOST_BAR,
 		PELLETS,
 		COLLIDERS,
 	};
 
-	static std::unordered_map<SDL_Keycode, bool> Keys;
+	static std::unordered_map<SDL_Keycode, bool> KeyStates;
 	static float deltaTime;
 	static SDL_Event event;
 	static SDL_Renderer* renderer;
@@ -36,6 +38,8 @@ public:
 	void handleEvents();
 	static void collisionResponse(Vector2D oldVel);
 	void collisionResponse();
+	void checkCollisions();
+	void ghostSpawn();
 	void update();
 	void render();
 	void clean();

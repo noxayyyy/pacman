@@ -12,7 +12,7 @@ int main(int argc, char** argv) {
 	Uint32 frameStart;
 	game = new Game();
 	
-	game->init("NoxEngine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, false);
+	game->init("NoxEngine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1366, 768, false);
 	
 	while (game->running()) {
 		// get time since SDL initialisation

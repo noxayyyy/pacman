@@ -48,17 +48,34 @@ public:
 	Entity(Manager& memManager) : manager(memManager) {}
 
 	void update() {
-		for (auto& x : components) x->update();
+		for (auto& x : components) {
+			 x->update();
+		}
 	}
 	
 	void draw() {
-		for (auto& x : components) x->draw();
+		for (auto& x : components) {
+			x->draw();
+		}
 	}
-	bool isActive() const { return active; }
-	void destroy() { active = false; }
-	bool hasGroup(GroupID memGroup) { return groupBitSet[memGroup]; }
+
+	bool isActive() const { 
+		return active; 
+	}
+
+	void destroy() { 
+		active = false; 
+	}
+
+	bool hasGroup(GroupID memGroup) { 
+		return groupBitSet[memGroup]; 
+	}
+
+	void delGroup(GroupID memGroup) { 
+		groupBitSet[memGroup] = false; 
+	}
+
 	void addGroup(GroupID memGroup);
-	void delGroup(GroupID memGroup) { groupBitSet[memGroup] = false; }
 
 	template <typename T> bool hasComponent() const {
 		return componentBitSet[getComponentTypeID<T>()];
@@ -96,7 +113,9 @@ private:
 class Manager {
 public:
 	void update() {
-		for (auto& x : entities) x->update();
+		for (auto& x : entities) {
+			x->update();
+		}
 	}
 
 	/*void draw() {
@@ -108,19 +127,23 @@ public:
 			auto& vec(groupedEntities[i]);
 			vec.erase(std::remove_if(vec.begin(), vec.end(),
 				[i](Entity* memEntity) {
-					return !memEntity->isActive() || !memEntity->hasGroup(i);
-				}), vec.end());
+				return !memEntity->isActive() || !memEntity->hasGroup(i);
+			}), vec.end());
 		}
 
 		entities.erase(std::remove_if(entities.begin(), entities.end(),
 			[](const std::unique_ptr<Entity>& mEntity) {
-				return !mEntity->isActive();
-			}), entities.end());
+			return !mEntity->isActive();
+		}), entities.end());
 	}
 
-	void addToGroup(Entity* memEntity, GroupID memGroup) { groupedEntities[memGroup].emplace_back(memEntity); }
+	void addToGroup(Entity* memEntity, GroupID memGroup) { 
+		groupedEntities[memGroup].emplace_back(memEntity); 
+	}
 
-	std::vector<Entity*>& getGroupMembers(GroupID memGroup) { return groupedEntities[memGroup]; }
+	std::vector<Entity*>& getGroupMembers(GroupID memGroup) { 
+		return groupedEntities[memGroup]; 
+	}
 
 	Entity& addEntity() {
 		Entity* e = new Entity(*this);
