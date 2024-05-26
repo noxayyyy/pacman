@@ -19,7 +19,8 @@ inline ComponentID getNewComponentTypeID() {
 	return lastID++;
 }
 
-template <typename T> inline ComponentID getComponentTypeID() noexcept {
+template<typename T> 
+inline ComponentID getComponentTypeID() noexcept {
 	static ComponentID typeID = getNewComponentTypeID();
 	return typeID;
 }
@@ -49,7 +50,7 @@ public:
 
 	void update() {
 		for (auto& x : components) {
-			 x->update();
+			x->update();
 		}
 	}
 	
@@ -67,6 +68,9 @@ public:
 		active = false; 
 	}
 
+	void refresh() {
+	}
+
 	bool hasGroup(GroupID memGroup) { 
 		return groupBitSet[memGroup]; 
 	}
@@ -77,11 +81,24 @@ public:
 
 	void addGroup(GroupID memGroup);
 
-	template <typename T> bool hasComponent() const {
+	template<typename T>
+	bool hasComponent() const {
 		return componentBitSet[getComponentTypeID<T>()];
 	}
 
-	template <typename T, typename... TArgs> T& addComponent(TArgs&&... mArgs) {
+	template<typename T>
+	void delComponent() {
+		componentBitSet[getComponentTypeID<T>()] = false;
+		components.erase(std::remove_if(components.begin(), components.end(),
+			[this](const std::unique_ptr<Component>& mComponent) {
+			return hasComponent<T>();
+		}), components.end());
+	}
+
+	void deleteAllComponents();
+
+	template<typename T, typename... TArgs> 
+	T& addComponent(TArgs&&... mArgs) {
 		T* x(new T(std::forward<TArgs>(mArgs)...));
 		x->entity = this;
 		std::unique_ptr<Component> uPtr{ x };
@@ -94,7 +111,8 @@ public:
 		return *x;
 	}
 
-	template<typename T> T& getComponent() const {
+	template<typename T> 
+	T& getComponent() const {
 		auto ptr(componentArray[getComponentTypeID<T>()]);
 		return *static_cast<T*>(ptr);
 	}
@@ -135,6 +153,10 @@ public:
 			[](const std::unique_ptr<Entity>& mEntity) {
 			return !mEntity->isActive();
 		}), entities.end());
+
+		for (auto& x : entities) {
+			x->refresh();
+		}
 	}
 
 	void addToGroup(Entity* memEntity, GroupID memGroup) { 
@@ -151,6 +173,8 @@ public:
 		entities.emplace_back(std::move(uPtr));
 		return *e;
 	}
+
+	void destroyAll();
 
 private:
 	std::vector<std::unique_ptr<Entity>> entities;

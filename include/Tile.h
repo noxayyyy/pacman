@@ -25,19 +25,19 @@ public:
 
 		switch (tileID) {
 		case 0:
-			path = "C:/GameDev/sprites/path.png";
+			path = "./sprites/path.png";
 			break;
 		case 1:
-			path = "C:/GameDev/sprites/wall.png";
+			path = "./sprites/wall.png";
 			break;
 		case 2:
-			path = "C:/GameDev/sprites/ghost_bar.png";
+			path = "./sprites/ghost_bar.png";
 			break;
 		case 3:
-			path = "C:/GameDev/sprites/pellet.png";
+			path = "./sprites/pellet.png";
 			break;
 		default:
-			path = "C:/GameDev/sprites/path.png";
+			path = "./sprites/path.png";
 			break;
 		}
 	}

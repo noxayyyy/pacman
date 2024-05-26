@@ -1,5 +1,4 @@
-#ifndef Game_h
-#define Game_h
+#pragma once
 
 #include <SDL.h>
 #include <SDL_image.h>
@@ -28,6 +27,7 @@ public:
 		COLLIDERS,
 	};
 
+	static const int PACMAN_SPAWN[2];
 	static std::unordered_map<SDL_Keycode, bool> KeyStates;
 	static float deltaTime;
 	static SDL_Event event;
@@ -43,13 +43,12 @@ public:
 	void update();
 	void render();
 	void clean();
-	bool running() { return isRunning; }
+	bool running() { 
+		return isRunning; 
+	}
 
 private:
-	int count = 0;
 	bool isRunning;
 	SDL_Window* window;
 	Vector2D lastVel;
 };
-
-#endif // !Game_hpp

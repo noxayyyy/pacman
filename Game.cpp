@@ -5,26 +5,26 @@
 #include <Controller.h>
 #include <Vector2D.h>
 #include <Collision.h>
-#include <Points.h>
+#include <Counters.h>
 
 Game::Game() {}
 Game::~Game() {}
 
 float Game::deltaTime;
-int frameCount = 0;
+const int Game::PACMAN_SPAWN[2] = { 19, 1 };
 SDL_Event Game::event;
 SDL_Renderer* Game::renderer = nullptr;
 
-Vector2D lastVel;
-Map* map;
 Manager manager;
+Entity& pacman(manager.addEntity());
+std::unique_ptr<FPS> fps;
+
+std::unique_ptr<Map> map;
 Controller* controller;
 float ghostSpawnInterval = 15.0f;
-Points* points;
-
-Entity& pacman(manager.addEntity());
 Transform* pacmanPos;
 Collider* pacmanColl;
+std::unique_ptr<Points> points;
 
 auto& colliders(manager.getGroupMembers(Game::COLLIDERS));
 auto& tiles(manager.getGroupMembers(Game::MAP));
@@ -37,6 +37,26 @@ std::unordered_map<SDL_Keycode, bool> Game::KeyStates {
 	{ SDLK_w, false }, { SDLK_s, false },
 	{ SDLK_a, false}, { SDLK_d, false },
 };
+
+void pacmanInit() {
+	pacman.addComponent<Transform>(
+		Game::PACMAN_SPAWN[0] * 32 + Map::PADDING_X + 1, 
+		Game::PACMAN_SPAWN[1] * 32 + Map::PADDING_Y + 1
+	);
+	pacman.addComponent<Sprites>("./sprites/pacman-ghosts-red_00.png");
+	pacman.addComponent<Collider>("pacman");
+	controller = new Controller(&pacman);
+	pacman.addGroup(Game::PACMAN);
+	pacmanPos = &pacman.getComponent<Transform>();
+	pacmanColl = &pacman.getComponent<Collider>();
+}
+
+void mapInit() {
+	map = std::make_unique<Map>();
+	map->init();
+	map->DrawMap();
+	map->LoadMap();
+}
 
 // game initialisation function
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
@@ -68,25 +88,12 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		return;
 	}
 	std::cout << "TTF system loaded succesfully\n";
-
 	isRunning = true;
-	
-	map = new Map();
-	map->init();
-	map->DrawMap();
-	map->LoadMap();
+	fps = std::make_unique<FPS>("FPS", 10, 0);
+	points = std::make_unique<Points>("POINTS");
 
-	points = new Points();
-
-	// ECS implementation
-
-	pacman.addComponent<Transform>(65.0f + Map::PADDING_X, 33.0f + Map::PADDING_Y);
-	pacman.addComponent<Sprites>("C:/GameDev/sprites/pacman-ghosts-red_00.png");
-	pacman.addComponent<Collider>("pacman");
-	controller = new Controller(&pacman);
-	pacman.addGroup(PACMAN);
-	pacmanPos = &pacman.getComponent<Transform>();
-	pacmanColl = &pacman.getComponent<Collider>();
+	pacmanInit();
+	mapInit();
 }
 
 // function to handle game events
@@ -110,14 +117,18 @@ void Game::handleEvents() {
 // update is called every frame. includes game logic
 void Game::update() {
 	manager.refresh();
+	if (!pellets.size()) {
+		manager.destroyAll();
+		pacman.deleteAllComponents();
+		mapInit();
+		pacmanInit();
+	}
 	manager.update();
 	controller->updateVel();
 	checkCollisions();
-	// frameCount++;
 	// ghostSpawn();
-	if (points->score != points->prevScore) {
-		points->update();
-	}
+	points->update();
+	fps->update();
 }
 
 // render sprites to screen
@@ -137,16 +148,19 @@ void Game::render() {
 		p->draw();
 	}
 	points->draw();
+	fps->draw();
 	SDL_RenderPresent(renderer);
 }
 
 void Game::ghostSpawn() {
-	if (frameCount * deltaTime < ghostSpawnInterval) {
-		return;
-	}
-	frameCount = 0;
-	int i = rand() % ghostSpawns.size();
+	// if (frameCount * deltaTime < ghostSpawnInterval) {
+	// 	return;
+	// }
+	// frameCount = 0;
+	// int i = rand() % ghostSpawns.size();
 	// spawn at the ghostSpawns[i]
+
+	return;
 }
 
 void Game::collisionResponse(Vector2D oldVel) {
@@ -184,7 +198,7 @@ void Game::checkCollisions() {
 		if (!Collision::AABB(*pacmanColl, p->getComponent<Collider>())) {
 			continue;
 		}
-		points->score += 10;
+		points->value += 10;
 		p->destroy();
 	}
 }

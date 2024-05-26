@@ -5,4 +5,3 @@
 #include <Sprites.h>
 #include <Collider.h>
 #include <Tile.h>
-#include <Points.h>

@@ -1,10 +1,12 @@
-#include <Builder.h> 
+#include <Build.h>
 
-Builder::Builder() {}
-Builder::~Builder() {}
+//
+// Builder Definitions
+//
 
 void Builder::init() {
-	x = 0; y = 0;
+	x = 0;
+	y = 0;
 	currCount = 0;
 	currDir = NONE;
 	prevDir = NONE;
@@ -76,4 +78,64 @@ void Builder::assignDirection() {
 	}
 	currCount = 0;
 	forceChange = false;
+}
+
+bool Builder::updateActivity(char currBlock, char prevBlock) {
+	if (currBlock == path || prevBlock == path) {
+		setActive(false);
+	}
+	return currBlock != path && prevBlock == path;
+}
+
+//
+// BuilderSpawner Definitions
+//
+
+void BuilderSpawner::init() {
+	x = 0; 
+	y = 0;
+	firstBuilder = std::make_shared<Builder>();
+	secondBuilder = std::make_shared<Builder>();
+	thirdBuilder = std::make_shared<Builder>();
+	firstBuilder->init();
+	secondBuilder->init();
+	thirdBuilder->init();
+	builders.push_back(firstBuilder);
+	builders.push_back(secondBuilder);
+	builders.push_back(thirdBuilder);
+}
+
+
+void BuilderSpawner::moveBuilders() {
+	for (auto& build : builders) {
+		if (!build->isActive()) {
+			continue;
+		}
+
+		switch (build->currDir) {
+		case Builder::UP:
+			build->y -= 2;
+			break;
+		case Builder::DOWN:
+			build->y += 2;
+			break;
+		case Builder::LEFT:
+			build->x -= 2;
+			break;
+		case Builder::RIGHT:
+			build->x += 2;
+			break;
+		default:
+			break;
+		}
+		build->currCount++;
+	}
+}
+
+void BuilderSpawner::updateBuilders() {
+	for (auto& build : builders) {
+		build->updateChance();
+		build->updateForceChange();
+		build->assignDirection();
+	}
 }
