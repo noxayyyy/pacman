@@ -9,6 +9,7 @@
 #include <Game.h>
 #include <Tile.h>
 #include <Build.h>
+#include <csignal>
 
 class Map {
 public:

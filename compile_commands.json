@@ -1,0 +1,138 @@
+[
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I.",
+   "-I./include/",
+   "-MP",
+   "-MD",
+   "-c",
+   "-o",
+   "Build.o",
+   "Build.cpp"
+  ],
+  "file": "Build.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I.",
+   "-I./include/",
+   "-MP",
+   "-MD",
+   "-c",
+   "-o",
+   "Collision.o",
+   "Collision.cpp"
+  ],
+  "file": "Collision.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I.",
+   "-I./include/",
+   "-MP",
+   "-MD",
+   "-c",
+   "-o",
+   "ECS.o",
+   "ECS.cpp"
+  ],
+  "file": "ECS.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I.",
+   "-I./include/",
+   "-MP",
+   "-MD",
+   "-c",
+   "-o",
+   "Game.o",
+   "Game.cpp"
+  ],
+  "file": "Game.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I.",
+   "-I./include/",
+   "-MP",
+   "-MD",
+   "-c",
+   "-o",
+   "main.o",
+   "main.cpp"
+  ],
+  "file": "main.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I.",
+   "-I./include/",
+   "-MP",
+   "-MD",
+   "-c",
+   "-o",
+   "Map.o",
+   "Map.cpp"
+  ],
+  "file": "Map.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I.",
+   "-I./include/",
+   "-MP",
+   "-MD",
+   "-c",
+   "-o",
+   "TextureManager.o",
+   "TextureManager.cpp"
+  ],
+  "file": "TextureManager.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I.",
+   "-I./include/",
+   "-MP",
+   "-MD",
+   "-c",
+   "-o",
+   "Vector2D.o",
+   "Vector2D.cpp"
+  ],
+  "file": "Vector2D.cpp"
+ }
+]

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>
-#include <SDL_ttf.h>
+#include <SDL2/SDL_ttf.h>
 #include <TextureManager.h>
 
 class Text {
