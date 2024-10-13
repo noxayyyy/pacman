@@ -2,7 +2,8 @@
 
 #include <string>
 #include <SDL2/SDL.h>
-#include <Components.h>
+#include <ECS.h>
+#include <Transform.h>
 
 class Collider : public Component {
 public:

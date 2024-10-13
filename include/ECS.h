@@ -1,6 +1,6 @@
 #pragma once
 
-#include <iostream>
+#include <string>
 #include <vector>
 #include <memory>
 #include <algorithm>
@@ -37,46 +37,68 @@ class Component {
 public:
 	Entity* entity;
 
-	virtual void init() {}
-	virtual void update() {}
-	virtual void draw() {}
+	virtual void init() { }
+	virtual void update() { }
+	virtual void reload() { }
+	virtual void draw() { }
 	
-	virtual ~Component() {}
+	virtual ~Component() { };
 };
 
 class Entity {
 public:
-	Entity(Manager& memManager) : manager(memManager) {}
+	Entity(Manager& memManager, std::string _id) : manager(memManager) {
+		id = _id;
+	}
 
 	void update() {
+		if (!active) {
+			return;
+		}
 		for (auto& x : components) {
 			x->update();
 		}
 	}
 	
 	void draw() {
+		if (!active) {
+			return;
+		}
 		for (auto& x : components) {
 			x->draw();
 		}
 	}
 
-	bool isActive() const { 
-		return active; 
+	bool isActive() const {
+		return active;
 	}
 
-	void destroy() { 
+	std::string getID() const {
+		return id;
+	}
+
+	void enable() {
+		active = true;
+	}
+
+	void disable() { 
 		active = false; 
 	}
 
-	void refresh() {
+	void refresh() { }
+
+	void reload() {
+		for (auto& x : components) {
+			x->reload();
+		}
 	}
 
-	bool hasGroup(GroupID memGroup) { 
-		return groupBitSet[memGroup]; 
+	bool hasGroup(GroupID memGroup) {
+		return groupBitSet[memGroup];
 	}
 
-	void delGroup(GroupID memGroup) { 
-		groupBitSet[memGroup] = false; 
+	void delGroup(GroupID memGroup) {
+		groupBitSet[memGroup] = false;
 	}
 
 	void addGroup(GroupID memGroup);
@@ -120,7 +142,8 @@ public:
 
 private:
 	Manager& manager;
-	bool active = true;
+	bool active = false;
+	std::string id;
 	std::vector<std::unique_ptr<Component>> components;
 
 	ComponentArray componentArray;
@@ -130,21 +153,36 @@ private:
 
 class Manager {
 public:
+	Manager() {
+		entities = std::vector<std::unique_ptr<Entity>>();
+	}
+
 	void update() {
 		for (auto& x : entities) {
 			x->update();
 		}
 	}
 
-	/*void draw() {
-		for (auto& x : entities) x->draw();
-	}*/
+	void draw() {
+		for (auto& x : entities){
+			x->draw();
+		}
+	}
 
-	void refresh() {
+	void refreshGroups() {
 		for (auto i(0u); i < maxGroups; i++) {
 			auto& vec(groupedEntities[i]);
 			vec.erase(std::remove_if(vec.begin(), vec.end(),
 				[i](Entity* memEntity) {
+				return !memEntity->isActive() || !memEntity->hasGroup(i);
+			}), vec.end());
+		}
+	}
+
+	void refresh() {
+		for (auto i(0u); i < maxGroups; i++) {
+			auto& vec(groupedEntities[i]);
+			vec.erase(std::remove_if(vec.begin(), vec.end(), [i](Entity* memEntity) {
 				return !memEntity->isActive() || !memEntity->hasGroup(i);
 			}), vec.end());
 		}
@@ -159,16 +197,16 @@ public:
 		}
 	}
 
-	void addToGroup(Entity* memEntity, GroupID memGroup) { 
-		groupedEntities[memGroup].emplace_back(memEntity); 
+	void addToGroup(Entity* memEntity, GroupID memGroup) {
+		groupedEntities[memGroup].emplace_back(memEntity);
 	}
 
-	std::vector<Entity*>& getGroupMembers(GroupID memGroup) { 
-		return groupedEntities[memGroup]; 
+	std::vector<Entity*>& getGroupMembers(GroupID memGroup) {
+		return groupedEntities[memGroup];
 	}
 
-	Entity& addEntity() {
-		Entity* e = new Entity(*this);
+	Entity& addEntity(std::string id) {
+		Entity* e = new Entity(*this, id);
 		std::unique_ptr<Entity> uPtr{ e };
 		entities.emplace_back(std::move(uPtr));
 		return *e;

@@ -1,7 +1,8 @@
 #pragma once
 
 #include <SDL2/SDL.h>
-#include <Components.h>
+#include <ECS.h>
+#include <Transform.h>
 #include <TextureManager.h>
 
 class Sprites : public Component {

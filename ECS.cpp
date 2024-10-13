@@ -8,11 +8,10 @@ void Entity::addGroup(GroupID memGroup) {
 
 void Manager::destroyAll() {
 	for (auto& x : entities) {
-		if (x->hasGroup(Game::PACMAN)) {
-			continue;
-		}
-		x->destroy();
+		x->deleteAllComponents();
+		x->disable();
 	}
+	refresh();
 }
 
 void Entity::deleteAllComponents() {

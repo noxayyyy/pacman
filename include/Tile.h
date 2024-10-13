@@ -1,9 +1,9 @@
 #pragma once
 
-#include <Components.h>
+#include <ECS.h>
 #include <SDL2/SDL.h>
-#include <string>
-#include <vector>
+#include <Transform.h>
+#include <Sprites.h>
 
 class Tile : public Component {
 public:

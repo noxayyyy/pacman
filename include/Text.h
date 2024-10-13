@@ -1,11 +1,19 @@
 #pragma once
 
-#include <iostream>
 #include <SDL2/SDL_ttf.h>
 #include <TextureManager.h>
 
 class Text {
 public:
+	Text(std::string inStr, int x, int y, float scale, SDL_Color color) {
+		textColour = color;
+		data = inStr;
+		this->scale = scale;
+		destRect.x = x;
+		destRect.y = y;
+		setTex(textTex, data.c_str());
+	}
+
 	Text(std::string inStr, int x, int y, float scale) {
 		textColour = { 255, 255, 255 };
 		data = inStr;
@@ -24,7 +32,7 @@ public:
 		setTex(textTex, data.c_str());
 	}
 
-	~Text() {
+	virtual ~Text() {
 		SDL_DestroyTexture(textTex);
 	}
 

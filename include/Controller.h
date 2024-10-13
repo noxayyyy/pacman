@@ -28,7 +28,7 @@ public:
 		Game::KeyStates[key] = false;
 	}
 
-	void updateVel() {
+	Vector2D updateVel() {
 		Vector2D lastVel = transform->vel;
 		if (Game::KeyStates[SDLK_w]) {
 			transform->vel.x = 0;
@@ -46,7 +46,7 @@ public:
 			transform->vel.x = 1;
 			transform->vel.y = 0;
 		}
-		Game::collisionResponse(lastVel);
+		return lastVel;
 	}
 
 private:

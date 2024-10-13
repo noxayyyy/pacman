@@ -9,8 +9,6 @@
 #include <unordered_map>
 #include <Vector2D.h>
 
-class Collider;
-
 class Game {
 public:
 	// Game constructor
@@ -36,9 +34,6 @@ public:
 	// declare game functions in class
 	void init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
 	void handleEvents();
-	static void collisionResponse(Vector2D oldVel);
-	void collisionResponse();
-	void checkCollisions();
 	void ghostSpawn();
 	void update();
 	void render();
