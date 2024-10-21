@@ -9,16 +9,16 @@ class Sprites : public Component {
 public:
 	Sprites() = default;
 
-	Sprites(const char* tex) { 
-		setTex(tex); 
+	Sprites(const char* tex) {
+		setTex(tex);
 	}
 
-	~Sprites() { 
+	~Sprites() {
 		SDL_DestroyTexture(texture); 
 	}
 	
 	void init() override {
-		transform = &entity->getComponent<Transform>();
+		transform = &entity->addComponent<Transform>();
 		srcRect.x = srcRect.y = 0;
 		srcRect.w = transform->width;
 		srcRect.h = transform->height;
@@ -31,8 +31,8 @@ public:
 		destRect.h = srcRect.h * transform->scale;
 	}
 
-	void draw() override { 
-		TextureManager::DrawTexture(texture, srcRect, destRect); 
+	void draw() override {
+		TextureManager::DrawTexture(texture, srcRect, destRect);
 	}
 
 private:
@@ -40,7 +40,7 @@ private:
 	SDL_Texture* texture;
 	SDL_Rect srcRect, destRect;
 
-	void setTex(const char* tex) { 
+	void setTex(const char* tex) {
 		texture = TextureManager::LoadTexture(tex); 
 	}
 };

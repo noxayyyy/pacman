@@ -43,9 +43,7 @@ public:
 	}
 
 	void init() override {
-		entity->addComponent<Transform>((float)tileRect.x, (float)tileRect.y, tileRect.w, tileRect.h, 0.64f);
-		transform = &entity->getComponent<Transform>();
-		entity->addComponent<Sprites>(path);
-		sprite = &entity->getComponent<Sprites>();
+		transform = &entity->addComponent<Transform>((float)tileRect.x, (float)tileRect.y, tileRect.w, tileRect.h, 0.64f);
+		sprite = &entity->addComponent<Sprites>(path);
 	}
 };

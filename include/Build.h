@@ -13,10 +13,7 @@ public:
 		NONE
 	};
 	
-	Builder() = default;
-	~Builder() = default;
-
-	void init() {
+	Builder() {
 		x = 0;
 		y = 0;
 		currCount = 0;
@@ -25,7 +22,10 @@ public:
 		forceChange = false;
 		chanceChange = false;
 		active = true;
+
 	}
+
+	~Builder() = default;
 
 	void updateChance() {
 		chanceChange = rand() % 5 == 0;
@@ -64,9 +64,7 @@ public:
 	}
 
 	void assignDirection() {
-		if (!active || !forceChange) {
-			return;
-		}
+		if (!active || !forceChange) return;
 		std::vector<Direction> invalidDir = { NONE, NONE, NONE, NONE };
 
 		if (y >= 19 || currDir == UP) {
@@ -123,28 +121,21 @@ private:
 
 class BuilderSpawner {
 public:
-	BuilderSpawner() = default;
-
-	~BuilderSpawner() {
-		clear();
-	}
-
-	void init() {
+	BuilderSpawner() {
 		x = 0;
 		y = 0;
 		builders.push_back(Builder());
 		builders.push_back(Builder());
 		builders.push_back(Builder());
-		builders[0].init();
-		builders[1].init();
-		builders[2].init();
+	}
+
+	~BuilderSpawner() {
+		clear();
 	}
 
 	void moveBuilders() {
 		for (auto& build : builders) {
-			if (!build.isActive()) {
-				continue;
-			}
+			if (!build.isActive()) continue;
 
 			switch (build.currDir) {
 			case Builder::UP:
@@ -188,6 +179,7 @@ public:
 
 	int x, y;
 	std::vector<Builder> builders;
+
 private:
 	static const int MAP_WIDTH = 20; // 20
 	static const int MAP_HEIGHT = 24; // 22

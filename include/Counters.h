@@ -1,5 +1,6 @@
 #pragma once
 
+#include <SDL2/SDL_render.h>
 #include <Text.h>
 
 class FPS : public Text {
@@ -10,7 +11,7 @@ public:
 	FPS(std::string inStr) : Text(inStr, 10, 0) {
 		value = 0;
 		frameIndex = 0;
-		setTex(textTex, (data + ": " + std::to_string(value)).c_str());
+		setTex((data + ": " + std::to_string(value)).c_str());
 	}
 
 	float calcAvg() {
@@ -24,12 +25,16 @@ public:
 
 	void update() override {
 		frameCounts[frameIndex % SAMPLE_COUNT] = Game::deltaTime > 0 ? 1.0f / Game::deltaTime : 0.0f;
-		if (frameIndex++ % SAMPLE_COUNT) {
-			return;
-		}
+		if (frameIndex++ % SAMPLE_COUNT) return;
+
 		value = calcAvg();
 		SDL_DestroyTexture(textTex);
-		setTex(textTex, (data + ": " + std::to_string(value)).c_str());
+		setTex((data + ": " + std::to_string(value)).c_str());
+	}
+
+	void reload() override {
+		value = 0;
+		frameIndex = 0;
 	}
 
 private:
@@ -43,19 +48,24 @@ public:
 	using Text::Text;
 
 	int value;
+
 	Points(std::string inStr) : Text(inStr, 1100, 0) {
 		value = 0;
 		prevValue = -1;
-		setTex(textTex, (data + ": " + std::to_string(value)).c_str());
+		setTex((data + ": " + std::to_string(value)).c_str());
 	}
 
 	void update() override {
-		if (value == prevValue) {
-			return;
-		}
+		if (value == prevValue) return;
+
 		prevValue = value;
 		SDL_DestroyTexture(textTex);
-		setTex(textTex, (data + ": " + std::to_string(value)).c_str());
+		setTex((data + ": " + std::to_string(value)).c_str());
+	}
+
+	void reload() override {
+		value = 0;
+		prevValue = -1;
 	}
 
 private:

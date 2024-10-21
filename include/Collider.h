@@ -15,10 +15,7 @@ public:
 	Collider(std::string t) { tag = t; }
 
 	void init() override {
-		if (!entity->hasComponent<Transform>()) {
-			entity->addComponent<Transform>();
-		}
-		transform = &entity->getComponent<Transform>(); 
+		transform = &entity->addComponent<Transform>();
 		collider.w = (int)((float)transform->width * transform->scale);
 		collider.h = (int)((float)transform->height * transform->scale);
 	}

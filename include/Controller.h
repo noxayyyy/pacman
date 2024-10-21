@@ -15,20 +15,19 @@ public:
 	~Controller() {}
 
 	void updateKeyDown(SDL_Keycode key) {
-		if (Game::KeyStates.find(key) == Game::KeyStates.end()) {
-			return;
-		}
+		if (Game::KeyStates.find(key) == Game::KeyStates.end()) return;
 		Game::KeyStates[key] = true;
 	}
 
 	void updateKeyUp(SDL_Keycode key) {
-		if (Game::KeyStates.find(key) == Game::KeyStates.end()) {
-			return;
-		}
+		if (Game::KeyStates.find(key) == Game::KeyStates.end()) return;
 		Game::KeyStates[key] = false;
 	}
 
 	Vector2D updateVel() {
+		if (Game::getPaused()) {
+			return Vector2D();
+		}
 		Vector2D lastVel = transform->vel;
 		if (Game::KeyStates[SDLK_w]) {
 			transform->vel.x = 0;

@@ -9,7 +9,7 @@ LIBPATH=
 
 DEPFLAGS=-MP -MD
 CFLAGS=-Wall -g $(foreach D,$(INCDIRS),-I$(D)) $(DEPFLAGS)
-LINKERFLAGS=-lSDL2 -lSDL2_image -lSDL2_ttf
+LINKERFLAGS=-lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
 
 CFILES=$(foreach D,$(CODEDIRS),$(wildcard $(D)/*.cpp))
 OBJECTS=$(patsubst %.cpp,%.o,$(CFILES))

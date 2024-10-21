@@ -13,6 +13,7 @@ const char Map::wall;
 const char Map::ghostBar;
 const char Map::ghostSpawn;
 const int Map::spawnerCount;
+int Map::pelletCount = 0;
 
 Map::Map() = default;
 
@@ -23,8 +24,6 @@ void Map::init() {
 
 	spawners.push_back(BuilderSpawner());
 	spawners.push_back(BuilderSpawner());
-	spawners[0].init();
-	spawners[1].init();
 
 	colourMap[blank] = 0;
 	colourMap[wall] = 1;
@@ -35,14 +34,10 @@ void Map::init() {
 
 void Map::addWalls(int x, int y) {
 	for (int i = -1; i < 2; i++) {
-		if (y + i >= img.height() || y + i < 0) {
-			continue;
-		}
-		for (int j = -1; j < 2; j++) { 
-			if (x + j >= img.width() || x + j < 0) {
-				continue;
-			}
-			if (img(y + i, x + j) != path && 
+		if (y + i >= img.height() || y + i < 0) continue;
+		for (int j = -1; j < 2; j++) {
+			if (x + j >= img.width() || x + j < 0) continue;
+			if (img(y + i, x + j) != path &&
 				img(y + i, x + j) != ghostBar &&
 				img(y + i, x + j) != ghostSpawn) {
 				img(y + i, x + j) = wall;
@@ -108,7 +103,7 @@ std::vector<bool> updateSpawnerActivities(Map::MapArray imgArr, BuilderSpawner& 
 }
 
 bool checkSpawnerActivities(std::vector<BuilderSpawner>& spawners) {
-	for (auto& spawn : spawners) { 
+	for (auto& spawn : spawners) {
 		if (spawn.isActive()) {
 			return true;
 		}
@@ -130,7 +125,7 @@ void Map::addSpawnBox() {
 	img(2, 19) = ghostBar;
 }
 
-void Map::DrawMap() {
+void Map::drawMap() {
 	srand(time(0));
 
 	spawners[0].x = spawners[1].x = 10;
@@ -178,9 +173,7 @@ void Map::DrawMap() {
 
 	for (int y = 0; y < img.height() - 2; y++) {
 		for (int x = 0; x < img.width(); x++) {
-			if (img(y, x) != path && img(y, x) != ghostSpawn) {
-				continue;
-			}
+			if (img(y, x) != path && img(y, x) != ghostSpawn) continue;
 			addWalls(x, y);
 		}
 	}
@@ -216,6 +209,7 @@ void Map::addTile(int id, int x, int y) {
 		tile.addComponent<Collider>("pellet");
 		tile.addGroup(Game::PELLETS);
 		tile.addGroup(Game::COLLIDERS);
+		pelletCount++;
 		break;
 	case 4:
 		tile.addComponent<Collider>("path");
@@ -228,7 +222,7 @@ void Map::addTile(int id, int x, int y) {
 	sceneManager.getCurrentScene()->addEntityToScene(tile);
 }
 
-void Map::LoadMap() {
+void Map::loadMap() {
 	int pixelVal;
 	int xpos, ypos;
 
@@ -239,9 +233,8 @@ void Map::LoadMap() {
 			ypos = y * 32 + PADDING_Y;
 
 			addTile(pixelVal, xpos, ypos);
-			if (x == img.width() - 1) {
-				continue;
-			}
+			if (x == img.width() - 1) continue;
+
 			xpos += (img.width() - x) * 64 - 64;
 			addTile(pixelVal, xpos, ypos);
 		}
@@ -250,8 +243,9 @@ void Map::LoadMap() {
 
 void Map::reloadMap() {
 	spawners.clear();
+	pelletCount = 0;
 
 	init();
-	DrawMap();
-	LoadMap();
+	drawMap();
+	loadMap();
 }

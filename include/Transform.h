@@ -11,8 +11,8 @@ struct Transform : public Component {
 	float scale = 0.6f;
 	float speed = 240.0f; // 480.0f;
 
-	Transform() { 
-		pos.zero(); 
+	Transform() {
+		pos.zero();
 		initPos.zero();
 	}
 
@@ -34,12 +34,12 @@ struct Transform : public Component {
 		this->scale = scale;
 	}
 
-	Transform(Vector2D vec) { 
-		initPos = pos = vec; 
+	Transform(Vector2D vec) {
+		initPos = pos = vec;
 	}
 
-	void init() override { 
-		vel.zero(); 
+	void init() override {
+		vel.zero();
 	}
 
 	void update() override {

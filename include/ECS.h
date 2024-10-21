@@ -52,18 +52,14 @@ public:
 	}
 
 	void update() {
-		if (!active) {
-			return;
-		}
+		if (!active) return;
 		for (auto& x : components) {
 			x->update();
 		}
 	}
 	
 	void draw() {
-		if (!active) {
-			return;
-		}
+		if (!active) return;
 		for (auto& x : components) {
 			x->draw();
 		}
@@ -82,7 +78,7 @@ public:
 	}
 
 	void disable() { 
-		active = false; 
+		active = false;
 	}
 
 	void refresh() { }
@@ -117,10 +113,18 @@ public:
 		}), components.end());
 	}
 
-	void deleteAllComponents();
+	void deleteAllComponents() {
+		for (auto& x : this->components) {
+			this->delComponent<decltype(x)>();
+		}
+	}
 
 	template<typename T, typename... TArgs> 
 	T& addComponent(TArgs&&... mArgs) {
+		if (hasComponent<T>()) {
+			return *static_cast<T*>(componentArray[getComponentTypeID<T>()]);
+		}
+
 		T* x(new T(std::forward<TArgs>(mArgs)...));
 		x->entity = this;
 		std::unique_ptr<Component> uPtr{ x };
@@ -212,7 +216,13 @@ public:
 		return *e;
 	}
 
-	void destroyAll();
+	void destroyAll() {
+		for (auto& x : entities) {
+			x->deleteAllComponents();
+			x->disable();
+		}
+		refresh();
+	}
 
 private:
 	std::vector<std::unique_ptr<Entity>> entities;

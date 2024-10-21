@@ -9,6 +9,8 @@ public:
 	std::string name;
 	int buildIndex;
 	int layer;
+	SDL_Rect mouseRect;
+	bool mouseButtonPressed;
 
 	Scene(std::string name, int buildIndex, bool isPanel, bool isLocking, int layer) {
 		this->name = name;
@@ -24,6 +26,7 @@ public:
 	virtual void init() = 0; // remember to add the scene to the scene manager
 	virtual void update() = 0;
 	virtual void reload() = 0;
+	virtual void handleEvents(SDL_Event& event) = 0;
 	virtual void draw() = 0;
 
 	void addEntityToScene(Entity& entity) {
@@ -53,6 +56,10 @@ public:
 
 	const bool& getIsPanel() const {
 		return isPanel;
+	}
+
+	const bool& getIsLocking() const {
+		return isLocking;
 	}
 
 private:

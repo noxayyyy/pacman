@@ -5,10 +5,10 @@ Game* game = nullptr;
 
 int main(int argc, char** argv) {
 	// frame rate
-	const int fpsCap = 60;
+	const int FPS_CAP = 60;
 	bool frameLock = false;
 	// max time a frame is supposed to last for
-	const float frameDelay = 1.0f / (float)fpsCap;
+	const float FRAME_DELAY = 1.0f / (float)FPS_CAP;
 
 	Uint32 frameStart;
 	Uint32 frameTime;
@@ -29,10 +29,11 @@ int main(int argc, char** argv) {
 		Game::deltaTime = (float)frameTime / 1000.0f;
 
 		// if fps is greater than 60, increase delay to limit frames
-		if (frameLock && Game::deltaTime < frameDelay) {
-			SDL_Delay((frameDelay - Game::deltaTime) * 1000);
-			Game::deltaTime = frameDelay;
+		if (frameLock && Game::deltaTime < FRAME_DELAY) {
+			SDL_Delay((FRAME_DELAY - Game::deltaTime) * 1000);
+			Game::deltaTime = FRAME_DELAY;
 		}
+		Game::deltaTime *= Game::timeScale;
 	}
 	game->clean();
 	

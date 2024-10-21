@@ -81,15 +81,18 @@ public:
 	void init();
 
 	int colourReference(char colour);
-	void DrawMap();
-	void LoadMap();
+	void drawMap();
+	void loadMap();
+	void reloadMap();
 	void updateImg(BuilderSpawner& spawner, std::vector<bool> killPrevBlock);
 	void addWalls(int x, int y);
 	void addTile(int id, int x, int y);
 	void addPassthrough();
 	void addSpawnBox();
 
-	void reloadMap();
+	const int getPelletCount() const {
+		return pelletCount;
+	}
 
 private:
 	static const char path = 'p';
@@ -98,6 +101,7 @@ private:
 	static const char ghostBar = 'g';
 	static const char ghostSpawn = 's';
 	static const int spawnerCount = 2;
+	static int pelletCount;
 	std::unordered_map<char, int> colourMap;
 	MapArray img;
 };
