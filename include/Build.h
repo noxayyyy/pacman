@@ -1,28 +1,18 @@
 #pragma once
 
-#include <vector>
+#include "UserConstants.h"
 #include <algorithm>
+#include <vector>
 
-class Builder {
+struct Builder {
 public:
-	enum Direction {
-		UP,
-		DOWN,
-		LEFT,
-		RIGHT,
-		NONE
-	};
-	
-	Builder() {
-		x = 0;
-		y = 0;
-		currCount = 0;
-		currDir = NONE;
-		prevDir = NONE;
-		forceChange = false;
-		chanceChange = false;
-		active = true;
+	enum Direction { UP, DOWN, LEFT, RIGHT, NONE };
 
+	Builder() {
+		x = y = currCount = 0;
+		currDir = prevDir = NONE;
+		forceChange = chanceChange = false;
+		active = true;
 	}
 
 	~Builder() = default;
@@ -91,21 +81,21 @@ public:
 	}
 
 	bool updateActivity(char currBlock, char prevBlock) {
-		if (currBlock == path || prevBlock == path) {
+		if (currBlock == PATH || prevBlock == PATH) {
 			setActive(false);
 		}
-		return currBlock != path && prevBlock == path;
+		return currBlock != PATH && prevBlock == PATH;
 	}
 
 	void setActive(bool val) {
 		active = val;
 	}
+
 	bool isActive() {
 		return active;
 	}
 
 	int x, y;
-	const int MAX_STEP = 3;
 	int currCount;
 	Direction currDir;
 	Direction prevDir;
@@ -115,18 +105,17 @@ public:
 	bool chanceChange;
 
 private:
-	const char path = 'p';
 	bool active;
 };
 
-class BuilderSpawner {
+struct BuilderSpawner {
 public:
 	BuilderSpawner() {
 		x = 0;
 		y = 0;
-		builders.push_back(Builder());
-		builders.push_back(Builder());
-		builders.push_back(Builder());
+		builders.emplace_back(Builder());
+		builders.emplace_back(Builder());
+		builders.emplace_back(Builder());
 	}
 
 	~BuilderSpawner() {
@@ -179,9 +168,4 @@ public:
 
 	int x, y;
 	std::vector<Builder> builders;
-
-private:
-	static const int MAP_WIDTH = 20; // 20
-	static const int MAP_HEIGHT = 24; // 22
 };
-	

@@ -1,79 +1,112 @@
 #pragma once
 
+#include "Build.h"
+#include "Collider.h"
+#include "ECS.h"
+#include "Game.h"
+#include "Tile.h"
+#include "UserConstants.h"
+#include <csignal>
 #include <cstdlib>
 #include <ctime>
-#include <vector>
 #include <unordered_map>
-#include <csignal>
-#include <Game.h>
-#include <Tile.h>
-#include <Build.h>
-#include <Collider.h>
+#include <vector>
 
-class Map {
+struct Map {
 public:
+	template<typename T>
 	struct MapArray {
-		std::vector<char> arr;
-		MapArray(char c) {
-			arr = std::vector<char>(MAP_WIDTH * MAP_HEIGHT, c);
+	private:
+		std::vector<T> arr;
+		int w;
+		int h;
+
+	public:
+		MapArray(int w, int h) {
+			arr = std::vector<T>(w * h);
+			this->w = w;
+			this->h = h;
 		}
+
+		MapArray(int w, int h, T entry) {
+			arr = std::vector<T>(w * h, entry);
+			this->w = w;
+			this->h = h;
+		}
+
+		MapArray(T entry) {
+			arr = std::vector<T>(MAP_SIZE.x * MAP_SIZE.y, entry);
+			w = MAP_SIZE.x;
+			h = MAP_SIZE.y;
+		}
+
 		MapArray() {
-			arr = std::vector<char>(MAP_WIDTH * MAP_HEIGHT);
+			arr = std::vector<T>(MAP_SIZE.x * MAP_SIZE.y);
+			w = MAP_SIZE.x;
+			h = MAP_SIZE.y;
 		}
+
 		~MapArray() = default;
 
-		void clear(char c) {
+		void clear(T entry) {
 			arr.clear();
-			arr = std::vector<char>(MAP_WIDTH * MAP_HEIGHT, c);
+			arr = std::vector<T>(w * h, entry);
 		}
 
-		inline
-		char& operator() (int y, int x) {
-			if (y >= MAP_HEIGHT || y < 0) {
+		inline T& operator()(int y, int x) {
+			if (y >= h || y < 0) {
 				throw SIGSEGV;
 			}
-			if (x >= MAP_WIDTH || x < 0) {
+			if (x >= w || x < 0) {
 				throw SIGSEGV;
 			}
-			return arr[y * MAP_WIDTH + x];
+			return arr[y * w + x];
 		}
-		inline
-		const char& operator() (int y, int x) const {
-			if (y >= MAP_HEIGHT || y < 0) {
+
+		inline const T& operator()(int y, int x) const {
+			if (y >= h || y < 0) {
 				throw SIGSEGV;
 			}
-			if (x >= MAP_WIDTH || x < 0) {
+			if (x >= w || x < 0) {
 				throw SIGSEGV;
 			}
-			return arr[y * MAP_WIDTH + x];
+			return arr[y * w + x];
 		}
-		inline
-		const char& operator[] (int i) const {
-			if (i >= MAP_HEIGHT * MAP_WIDTH) {
+
+		inline const T& operator[](int i) const {
+			if (i >= h * w) {
 				throw SIGSEGV;
 			}
 			return arr[i];
 		}
-		inline
-		char& operator[] (int i) {
-			if (i >= MAP_HEIGHT * MAP_WIDTH) {
+
+		inline T& operator[](int i) {
+			if (i >= h * w) {
 				throw SIGSEGV;
 			}
 			return arr[i];
+		}
+
+		inline void operator=(MapArray<T> other) {
+			arr.clear();
+			w = other.w;
+			h = other.h;
+			arr = std::vector<T>(w * h);
+			for (int y = 0; y < h; y++) {
+				for (int x = 0; x < w; x++) {
+					(*this)(y, x) = other(y, x);
+				}
+			}
 		}
 
 		int width() {
-			return MAP_WIDTH;
+			return w;
 		}
+
 		int height() {
-			return MAP_HEIGHT;
+			return h;
 		}
 	};
-
-	static const int PADDING_X = 32; // 32
-	static const int PADDING_Y = 0; // 64
-	static const int MAP_WIDTH = 20; // 20
-	static const int MAP_HEIGHT = 24; // 22
 
 	Map();
 	~Map();
@@ -87,21 +120,20 @@ public:
 	void updateImg(BuilderSpawner& spawner, std::vector<bool> killPrevBlock);
 	void addWalls(int x, int y);
 	void addTile(int id, int x, int y);
-	void addPassthrough();
+	void addCollPass();
+	void addRowPass(int y);
 	void addSpawnBox();
+	void optimiseMap();
+	int optimiseHelper(int x, int y, GroupID antiGroup, bool optimiseDirection = false);
+	void optimiseDeleter(int x, int y, int count, bool horizontal = true);
 
 	const int getPelletCount() const {
 		return pelletCount;
 	}
 
 private:
-	static const char path = 'p';
-	static const char blank = 'n';
-	static const char wall = 'w';
-	static const char ghostBar = 'g';
-	static const char ghostSpawn = 's';
-	static const int spawnerCount = 2;
 	static int pelletCount;
 	std::unordered_map<char, int> colourMap;
-	MapArray img;
+	MapArray<char> img;
+	MapArray<Entity*> tileSet;
 };

@@ -7,63 +7,13 @@
    "-g",
    "-I.",
    "-I./include",
+   "-I./engine/include",
    "-MP",
    "-MD",
    "-c",
+   "Game.cpp",
    "-o",
-   "Build.o",
-   "Build.cpp"
-  ],
-  "file": "Build.cpp"
- },
- {
-  "directory": "/home/mfareed/repos/pacman",
-  "arguments": [
-   "clang++",
-   "-Wall",
-   "-g",
-   "-I.",
-   "-I./include",
-   "-MP",
-   "-MD",
-   "-c",
-   "-o",
-   "Collision.o",
-   "Collision.cpp"
-  ],
-  "file": "Collision.cpp"
- },
- {
-  "directory": "/home/mfareed/repos/pacman",
-  "arguments": [
-   "clang++",
-   "-Wall",
-   "-g",
-   "-I.",
-   "-I./include",
-   "-MP",
-   "-MD",
-   "-c",
-   "-o",
-   "ECS.o",
-   "ECS.cpp"
-  ],
-  "file": "ECS.cpp"
- },
- {
-  "directory": "/home/mfareed/repos/pacman",
-  "arguments": [
-   "clang++",
-   "-Wall",
-   "-g",
-   "-I.",
-   "-I./include",
-   "-MP",
-   "-MD",
-   "-c",
-   "-o",
-   "Game.o",
-   "Game.cpp"
+   "Game.o"
   ],
   "file": "Game.cpp"
  },
@@ -75,12 +25,13 @@
    "-g",
    "-I.",
    "-I./include",
+   "-I./engine/include",
    "-MP",
    "-MD",
    "-c",
+   "main.cpp",
    "-o",
-   "main.o",
-   "main.cpp"
+   "main.o"
   ],
   "file": "main.cpp"
  },
@@ -92,12 +43,13 @@
    "-g",
    "-I.",
    "-I./include",
+   "-I./engine/include",
    "-MP",
    "-MD",
    "-c",
+   "Map.cpp",
    "-o",
-   "Map.o",
-   "Map.cpp"
+   "Map.o"
   ],
   "file": "Map.cpp"
  },
@@ -107,16 +59,13 @@
    "clang++",
    "-Wall",
    "-g",
-   "-I.",
-   "-I./include",
-   "-MP",
-   "-MD",
+   "-I./engine/include",
    "-c",
+   "engine/Button.cpp",
    "-o",
-   "TextureManager.o",
-   "TextureManager.cpp"
+   "engine/Button.o"
   ],
-  "file": "TextureManager.cpp"
+  "file": "engine/Button.cpp"
  },
  {
   "directory": "/home/mfareed/repos/pacman",
@@ -124,15 +73,166 @@
    "clang++",
    "-Wall",
    "-g",
-   "-I.",
-   "-I./include",
-   "-MP",
-   "-MD",
+   "-I./engine/include",
    "-c",
+   "engine/Collider.cpp",
    "-o",
-   "Vector2D.o",
-   "Vector2D.cpp"
+   "engine/Collider.o"
   ],
-  "file": "Vector2D.cpp"
+  "file": "engine/Collider.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I./engine/include",
+   "-c",
+   "engine/Controller.cpp",
+   "-o",
+   "engine/Controller.o"
+  ],
+  "file": "engine/Controller.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I./engine/include",
+   "-c",
+   "engine/Counters.cpp",
+   "-o",
+   "engine/Counters.o"
+  ],
+  "file": "engine/Counters.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I./engine/include",
+   "-c",
+   "engine/ECS.cpp",
+   "-o",
+   "engine/ECS.o"
+  ],
+  "file": "engine/ECS.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I./engine/include",
+   "-c",
+   "engine/MouseTracker.cpp",
+   "-o",
+   "engine/MouseTracker.o"
+  ],
+  "file": "engine/MouseTracker.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I./engine/include",
+   "-c",
+   "engine/Scene.cpp",
+   "-o",
+   "engine/Scene.o"
+  ],
+  "file": "engine/Scene.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I./engine/include",
+   "-c",
+   "engine/SceneManager.cpp",
+   "-o",
+   "engine/SceneManager.o"
+  ],
+  "file": "engine/SceneManager.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I./engine/include",
+   "-c",
+   "engine/Sprites.cpp",
+   "-o",
+   "engine/Sprites.o"
+  ],
+  "file": "engine/Sprites.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I./engine/include",
+   "-c",
+   "engine/Text.cpp",
+   "-o",
+   "engine/Text.o"
+  ],
+  "file": "engine/Text.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I./engine/include",
+   "-c",
+   "engine/TextureManager.cpp",
+   "-o",
+   "engine/TextureManager.o"
+  ],
+  "file": "engine/TextureManager.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I./engine/include",
+   "-c",
+   "engine/Tile.cpp",
+   "-o",
+   "engine/Tile.o"
+  ],
+  "file": "engine/Tile.cpp"
+ },
+ {
+  "directory": "/home/mfareed/repos/pacman",
+  "arguments": [
+   "clang++",
+   "-Wall",
+   "-g",
+   "-I./engine/include",
+   "-c",
+   "engine/Transform.cpp",
+   "-o",
+   "engine/Transform.o"
+  ],
+  "file": "engine/Transform.cpp"
  }
 ]
