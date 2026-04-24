@@ -2,6 +2,11 @@
 \hypertarget{structBuilder}{}\label{structBuilder}\index{Builder@{Builder}}
 
 
+Represents a single "{}digger"{} agent in the procedural map generation algorithm.  
+
+
+
+
 {\ttfamily \#include $<$Build.\+h$>$}
 
 
@@ -17,122 +22,100 @@ Collaboration diagram for Builder\+:
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
+\Hypertarget{structBuilder_a3a8f33c440a85fc0511fb524834022a4}\label{structBuilder_a3a8f33c440a85fc0511fb524834022a4} 
 enum \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}} \{ \newline
-\mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4a68ca7f04ffc28109cb3c7d6f7938e524}{UP}}
-, \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4aaf475fec944d983f45bd0c0820644301}{DOWN}}
-, \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4ab1c131a9d11c0466abcdefb38878bc26}{LEFT}}
-, \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4a14df7877fb0a6a7b278edbdf3decee3e}{RIGHT}}
+{\bfseries UP}
+, {\bfseries DOWN}
+, {\bfseries LEFT}
+, {\bfseries RIGHT}
 , \newline
-\mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4aa889a31ef5d6a80526f65f41b6824a2f}{NONE}}
+{\bfseries NONE}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The four cardinal directions of movement. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structBuilder_af8e018e77879c6136e6dabbd5eab0634}{Builder}} ()
-\item 
-\mbox{\hyperlink{structBuilder_a95eb728c831324087c1d93312a44f556}{\texorpdfstring{$\sim$}{\string~}\+Builder}} ()=default
-\item 
-void \mbox{\hyperlink{structBuilder_ab765778eda85a0235d2823bce5b6079f}{update\+Chance}} ()
-\item 
-void \mbox{\hyperlink{structBuilder_a5a9111341791ef48b9faa786584b120c}{update\+Force\+Change}} ()
-\item 
-void \mbox{\hyperlink{structBuilder_a118255e92337b64c87c5a68d9b8fb3cf}{assign\+Direction}} ()
-\item 
+\Hypertarget{structBuilder_ab765778eda85a0235d2823bce5b6079f}\label{structBuilder_ab765778eda85a0235d2823bce5b6079f} 
+void {\bfseries update\+Chance} ()
+\begin{DoxyCompactList}\small\item\em Randomly determines if the builder should consider changing direction. \end{DoxyCompactList}\item 
+\Hypertarget{structBuilder_a5a9111341791ef48b9faa786584b120c}\label{structBuilder_a5a9111341791ef48b9faa786584b120c} 
+void {\bfseries update\+Force\+Change} ()
+\begin{DoxyCompactList}\small\item\em Determines if the builder {\itshape must} change direction due to map boundaries or step limits. \end{DoxyCompactList}\item 
+\Hypertarget{structBuilder_a118255e92337b64c87c5a68d9b8fb3cf}\label{structBuilder_a118255e92337b64c87c5a68d9b8fb3cf} 
+void {\bfseries assign\+Direction} ()
+\begin{DoxyCompactList}\small\item\em Assigns a new, valid direction to the builder if a change is forced. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{structBuilder_a1120fedf8f2dde051d66e93201297bf1}{update\+Activity}} (char \mbox{\hyperlink{structBuilder_a6dea396d4b5398a554130b6f59da40dc}{curr\+Block}}, char \mbox{\hyperlink{structBuilder_a18c574396b54999ea12fe697ec1e1be6}{prev\+Block}})
-\item 
+\begin{DoxyCompactList}\small\item\em Updates the builder\textquotesingle{}s active status based on the tiles it encounters. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structBuilder_a9238ee51151896aa8dcd848f1f0b23f4}{set\+Active}} (bool val)
-\item 
+\begin{DoxyCompactList}\small\item\em Manually sets the active state of the builder. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{structBuilder_aefa6ef3c297647e6978951ccfb14833d}{is\+Active}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks if the builder is currently active. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{structBuilder_a943ff493999ba5af5b145ae9ad94fcf3}{x}}
+\Hypertarget{structBuilder_a943ff493999ba5af5b145ae9ad94fcf3}\label{structBuilder_a943ff493999ba5af5b145ae9ad94fcf3} 
+int {\bfseries x}
 \item 
-int \mbox{\hyperlink{structBuilder_ad9bdf0b9b4f03550346e9c4e134fb478}{y}}
-\item 
-int \mbox{\hyperlink{structBuilder_a50b8b83d52bf006d4b1890ef8ea6600a}{curr\+Count}}
-\item 
-\mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}} \mbox{\hyperlink{structBuilder_a0b638c2091a3cade940726d710475a22}{curr\+Dir}}
-\item 
-\mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}} \mbox{\hyperlink{structBuilder_a91aaf4ea8161bf927724d0565c3cb240}{prev\+Dir}}
-\item 
-char \mbox{\hyperlink{structBuilder_a6dea396d4b5398a554130b6f59da40dc}{curr\+Block}}
-\item 
-char \mbox{\hyperlink{structBuilder_a18c574396b54999ea12fe697ec1e1be6}{prev\+Block}}
-\item 
-bool \mbox{\hyperlink{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739}{force\+Change}}
-\item 
-bool \mbox{\hyperlink{structBuilder_aa66fc8c4ca83fe37da0360123f86330e}{chance\+Change}}
-\end{DoxyCompactItemize}
+\Hypertarget{structBuilder_ad9bdf0b9b4f03550346e9c4e134fb478}\label{structBuilder_ad9bdf0b9b4f03550346e9c4e134fb478} 
+int {\bfseries y}
+\begin{DoxyCompactList}\small\item\em Current grid coordinates. \end{DoxyCompactList}\item 
+\Hypertarget{structBuilder_a50b8b83d52bf006d4b1890ef8ea6600a}\label{structBuilder_a50b8b83d52bf006d4b1890ef8ea6600a} 
+int {\bfseries curr\+Count}
+\begin{DoxyCompactList}\small\item\em Number of steps taken in the current direction. \end{DoxyCompactList}\item 
+\Hypertarget{structBuilder_a0b638c2091a3cade940726d710475a22}\label{structBuilder_a0b638c2091a3cade940726d710475a22} 
+\mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}} {\bfseries curr\+Dir}
+\begin{DoxyCompactList}\small\item\em Current direction of movement. \end{DoxyCompactList}\item 
+\Hypertarget{structBuilder_a91aaf4ea8161bf927724d0565c3cb240}\label{structBuilder_a91aaf4ea8161bf927724d0565c3cb240} 
+\mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}} {\bfseries prev\+Dir}
+\begin{DoxyCompactList}\small\item\em Previous direction of movement. \end{DoxyCompactList}\item 
+\Hypertarget{structBuilder_a6dea396d4b5398a554130b6f59da40dc}\label{structBuilder_a6dea396d4b5398a554130b6f59da40dc} 
+char {\bfseries curr\+Block}
+\begin{DoxyCompactList}\small\item\em The character of the tile the builder is currently on. \end{DoxyCompactList}\item 
+\Hypertarget{structBuilder_a18c574396b54999ea12fe697ec1e1be6}\label{structBuilder_a18c574396b54999ea12fe697ec1e1be6} 
+char {\bfseries prev\+Block}
+\begin{DoxyCompactList}\small\item\em The character of the tile the builder was previously on. \end{DoxyCompactList}\item 
+\Hypertarget{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739}\label{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739} 
+bool {\bfseries force\+Change}
+\begin{DoxyCompactList}\small\item\em True if the builder must change direction. \end{DoxyCompactList}\item 
+\Hypertarget{structBuilder_aa66fc8c4ca83fe37da0360123f86330e}\label{structBuilder_aa66fc8c4ca83fe37da0360123f86330e} 
+bool {\bfseries chance\+Change}
+\begin{DoxyCompactList}\small\item\em True if the builder might randomly change direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Member Enumeration Documentation}
-\Hypertarget{structBuilder_a3a8f33c440a85fc0511fb524834022a4}\index{Builder@{Builder}!Direction@{Direction}}
-\index{Direction@{Direction}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
-{\footnotesize\ttfamily \label{structBuilder_a3a8f33c440a85fc0511fb524834022a4} 
-enum \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Builder\+::\+Direction}}}
+\doxysubsection{Detailed Description}
+Represents a single "{}digger"{} agent in the procedural map generation algorithm. 
 
-\begin{DoxyEnumFields}[2]{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!Builder@{Builder}}\index{Builder@{Builder}!UP@{UP}}}\Hypertarget{structBuilder_a3a8f33c440a85fc0511fb524834022a4a68ca7f04ffc28109cb3c7d6f7938e524}\label{structBuilder_a3a8f33c440a85fc0511fb524834022a4a68ca7f04ffc28109cb3c7d6f7938e524} 
-UP&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DOWN@{DOWN}!Builder@{Builder}}\index{Builder@{Builder}!DOWN@{DOWN}}}\Hypertarget{structBuilder_a3a8f33c440a85fc0511fb524834022a4aaf475fec944d983f45bd0c0820644301}\label{structBuilder_a3a8f33c440a85fc0511fb524834022a4aaf475fec944d983f45bd0c0820644301} 
-DOWN&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!Builder@{Builder}}\index{Builder@{Builder}!LEFT@{LEFT}}}\Hypertarget{structBuilder_a3a8f33c440a85fc0511fb524834022a4ab1c131a9d11c0466abcdefb38878bc26}\label{structBuilder_a3a8f33c440a85fc0511fb524834022a4ab1c131a9d11c0466abcdefb38878bc26} 
-LEFT&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!Builder@{Builder}}\index{Builder@{Builder}!RIGHT@{RIGHT}}}\Hypertarget{structBuilder_a3a8f33c440a85fc0511fb524834022a4a14df7877fb0a6a7b278edbdf3decee3e}\label{structBuilder_a3a8f33c440a85fc0511fb524834022a4a14df7877fb0a6a7b278edbdf3decee3e} 
-RIGHT&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!Builder@{Builder}}\index{Builder@{Builder}!NONE@{NONE}}}\Hypertarget{structBuilder_a3a8f33c440a85fc0511fb524834022a4aa889a31ef5d6a80526f65f41b6824a2f}\label{structBuilder_a3a8f33c440a85fc0511fb524834022a4aa889a31ef5d6a80526f65f41b6824a2f} 
-NONE&\\
-\hline
-
-\end{DoxyEnumFields}
-
-
-\doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{structBuilder_af8e018e77879c6136e6dabbd5eab0634}\index{Builder@{Builder}!Builder@{Builder}}
-\index{Builder@{Builder}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{Builder()}{Builder()}}
-{\footnotesize\ttfamily \label{structBuilder_af8e018e77879c6136e6dabbd5eab0634} 
-Builder\+::\+Builder (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-\Hypertarget{structBuilder_a95eb728c831324087c1d93312a44f556}\index{Builder@{Builder}!````~Builder@{\texorpdfstring{$\sim$}{\string~}Builder}}
-\index{````~Builder@{\texorpdfstring{$\sim$}{\string~}Builder}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Builder()}{\string~Builder()}}
-{\footnotesize\ttfamily \label{structBuilder_a95eb728c831324087c1d93312a44f556} 
-Builder\+::\texorpdfstring{$\sim$}{\string~}\+Builder (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
-
-
+A \doxylink{structBuilder}{Builder} moves around a grid, carving out paths according to a set of rules. 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{structBuilder_a118255e92337b64c87c5a68d9b8fb3cf}\index{Builder@{Builder}!assignDirection@{assignDirection}}
-\index{assignDirection@{assignDirection}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{assignDirection()}{assignDirection()}}
-{\footnotesize\ttfamily \label{structBuilder_a118255e92337b64c87c5a68d9b8fb3cf} 
-void Builder\+::assign\+Direction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
 \Hypertarget{structBuilder_aefa6ef3c297647e6978951ccfb14833d}\index{Builder@{Builder}!isActive@{isActive}}
 \index{isActive@{isActive}!Builder@{Builder}}
 \doxysubsubsection{\texorpdfstring{isActive()}{isActive()}}
 {\footnotesize\ttfamily \label{structBuilder_aefa6ef3c297647e6978951ccfb14833d} 
-bool Builder\+::is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+bool Builder\+::is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Checks if the builder is currently active. 
+
+\begin{DoxyReturn}{Returns}
+True if the builder is active. 
+\end{DoxyReturn}
 \Hypertarget{structBuilder_a9238ee51151896aa8dcd848f1f0b23f4}\index{Builder@{Builder}!setActive@{setActive}}
 \index{setActive@{setActive}!Builder@{Builder}}
 \doxysubsubsection{\texorpdfstring{setActive()}{setActive()}}
 {\footnotesize\ttfamily \label{structBuilder_a9238ee51151896aa8dcd848f1f0b23f4} 
-void Builder\+::set\+Active (\begin{DoxyParamCaption}\item[{bool}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+void Builder\+::set\+Active (\begin{DoxyParamCaption}\item[{bool}]{val}{}\end{DoxyParamCaption})}
 
+
+
+Manually sets the active state of the builder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The new active state. \\
+\hline
+\end{DoxyParams}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -145,8 +128,22 @@ Here is the caller graph for this function\+:
 \index{updateActivity@{updateActivity}!Builder@{Builder}}
 \doxysubsubsection{\texorpdfstring{updateActivity()}{updateActivity()}}
 {\footnotesize\ttfamily \label{structBuilder_a1120fedf8f2dde051d66e93201297bf1} 
-bool Builder\+::update\+Activity (\begin{DoxyParamCaption}\item[{char}]{curr\+Block}{, }\item[{char}]{prev\+Block}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+bool Builder\+::update\+Activity (\begin{DoxyParamCaption}\item[{char}]{curr\+Block}{, }\item[{char}]{prev\+Block}{}\end{DoxyParamCaption})}
 
+
+
+Updates the builder\textquotesingle{}s active status based on the tiles it encounters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr\+Block} & The character representing the current tile type. \\
+\hline
+{\em prev\+Block} & The character representing the previous tile type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the builder just moved from a non-\/path to a path tile. 
+\end{DoxyReturn}
 Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -155,77 +152,9 @@ Here is the call graph for this function\+:
 \includegraphics[width=346pt]{structBuilder_a1120fedf8f2dde051d66e93201297bf1_cgraph}
 \end{center}
 \end{figure}
-\Hypertarget{structBuilder_ab765778eda85a0235d2823bce5b6079f}\index{Builder@{Builder}!updateChance@{updateChance}}
-\index{updateChance@{updateChance}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{updateChance()}{updateChance()}}
-{\footnotesize\ttfamily \label{structBuilder_ab765778eda85a0235d2823bce5b6079f} 
-void Builder\+::update\+Chance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-\Hypertarget{structBuilder_a5a9111341791ef48b9faa786584b120c}\index{Builder@{Builder}!updateForceChange@{updateForceChange}}
-\index{updateForceChange@{updateForceChange}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{updateForceChange()}{updateForceChange()}}
-{\footnotesize\ttfamily \label{structBuilder_a5a9111341791ef48b9faa786584b120c} 
-void Builder\+::update\+Force\+Change (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
-
-\doxysubsection{Member Data Documentation}
-\Hypertarget{structBuilder_aa66fc8c4ca83fe37da0360123f86330e}\index{Builder@{Builder}!chanceChange@{chanceChange}}
-\index{chanceChange@{chanceChange}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{chanceChange}{chanceChange}}
-{\footnotesize\ttfamily \label{structBuilder_aa66fc8c4ca83fe37da0360123f86330e} 
-bool Builder\+::chance\+Change}
-
-\Hypertarget{structBuilder_a6dea396d4b5398a554130b6f59da40dc}\index{Builder@{Builder}!currBlock@{currBlock}}
-\index{currBlock@{currBlock}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{currBlock}{currBlock}}
-{\footnotesize\ttfamily \label{structBuilder_a6dea396d4b5398a554130b6f59da40dc} 
-char Builder\+::curr\+Block}
-
-\Hypertarget{structBuilder_a50b8b83d52bf006d4b1890ef8ea6600a}\index{Builder@{Builder}!currCount@{currCount}}
-\index{currCount@{currCount}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{currCount}{currCount}}
-{\footnotesize\ttfamily \label{structBuilder_a50b8b83d52bf006d4b1890ef8ea6600a} 
-int Builder\+::curr\+Count}
-
-\Hypertarget{structBuilder_a0b638c2091a3cade940726d710475a22}\index{Builder@{Builder}!currDir@{currDir}}
-\index{currDir@{currDir}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{currDir}{currDir}}
-{\footnotesize\ttfamily \label{structBuilder_a0b638c2091a3cade940726d710475a22} 
-\mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}} Builder\+::curr\+Dir}
-
-\Hypertarget{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739}\index{Builder@{Builder}!forceChange@{forceChange}}
-\index{forceChange@{forceChange}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{forceChange}{forceChange}}
-{\footnotesize\ttfamily \label{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739} 
-bool Builder\+::force\+Change}
-
-\Hypertarget{structBuilder_a18c574396b54999ea12fe697ec1e1be6}\index{Builder@{Builder}!prevBlock@{prevBlock}}
-\index{prevBlock@{prevBlock}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{prevBlock}{prevBlock}}
-{\footnotesize\ttfamily \label{structBuilder_a18c574396b54999ea12fe697ec1e1be6} 
-char Builder\+::prev\+Block}
-
-\Hypertarget{structBuilder_a91aaf4ea8161bf927724d0565c3cb240}\index{Builder@{Builder}!prevDir@{prevDir}}
-\index{prevDir@{prevDir}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{prevDir}{prevDir}}
-{\footnotesize\ttfamily \label{structBuilder_a91aaf4ea8161bf927724d0565c3cb240} 
-\mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}} Builder\+::prev\+Dir}
-
-\Hypertarget{structBuilder_a943ff493999ba5af5b145ae9ad94fcf3}\index{Builder@{Builder}!x@{x}}
-\index{x@{x}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{x}{x}}
-{\footnotesize\ttfamily \label{structBuilder_a943ff493999ba5af5b145ae9ad94fcf3} 
-int Builder\+::x}
-
-\Hypertarget{structBuilder_ad9bdf0b9b4f03550346e9c4e134fb478}\index{Builder@{Builder}!y@{y}}
-\index{y@{y}!Builder@{Builder}}
-\doxysubsubsection{\texorpdfstring{y}{y}}
-{\footnotesize\ttfamily \label{structBuilder_ad9bdf0b9b4f03550346e9c4e134fb478} 
-int Builder\+::y}
-
-
-
-The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{Build_8h}{Build.\+h}}\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{Build_8h}{Build.\+h}}\item 
+src/Build.\+cpp\end{DoxyCompactItemize}

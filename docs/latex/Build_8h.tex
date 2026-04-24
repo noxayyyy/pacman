@@ -1,5 +1,10 @@
 \doxysection{include/\+Build.h File Reference}
 \hypertarget{Build_8h}{}\label{Build_8h}\index{include/Build.h@{include/Build.h}}
+
+
+Defines structures for procedurally generating the game map layout.  
+
+
 {\ttfamily \#include "{}User\+Constants.\+h"{}}\newline
 {\ttfamily \#include $<$algorithm$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
@@ -16,13 +21,18 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{Build_8h__dep__incl}
+\includegraphics[width=223pt]{Build_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structBuilder}{Builder}}
-\item 
+\begin{DoxyCompactList}\small\item\em Represents a single "{}digger"{} agent in the procedural map generation algorithm. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structBuilderSpawner}{Builder\+Spawner}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Manages a collection of \doxylink{structBuilder}{Builder} agents to generate a map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines structures for procedurally generating the game map layout. 
+

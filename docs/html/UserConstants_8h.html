@@ -107,7 +107,10 @@ $(function(){initNavTree('UserConstants_8h.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">UserConstants.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;Constants.h&quot;</code><br />
+
+<p>Defines game-specific constants, separate from the core engine constants.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="elRef" href="https://noxayyyy.github.io/nox-engine/Constants_8h.html">Constants.h</a>&quot;</code><br />
 <code>#include &lt;SDL2/SDL_rect.h&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -115,8 +118,8 @@ Include dependency graph for UserConstants.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="UserConstants_8h__incl.png" border="0" usemap="#ainclude_2UserConstants_8h" alt=""/></div>
 <map name="ainclude_2UserConstants_8h" id="ainclude_2UserConstants_8h">
-<area shape="rect" title=" " alt="" coords="102,5,282,33"/>
-<area shape="rect" title=" " alt="" coords="5,81,104,109"/>
+<area shape="rect" title="Defines game&#45;specific constants, separate from the core engine constants." alt="" coords="102,5,282,33"/>
+<area shape="rect" target="_parent" href="https://noxayyyy.github.io/nox-engine/Constants_8h.html" title=" " alt="" coords="5,81,104,109"/>
 <area shape="poly" title=" " alt="" coords="169,36,93,76,91,71,166,31"/>
 <area shape="rect" title=" " alt="" coords="128,81,256,109"/>
 <area shape="poly" title=" " alt="" coords="194,34,194,65,189,65,189,34"/>
@@ -129,20 +132,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="UserConstants_8h__dep__incl.png" border="0" usemap="#ainclude_2UserConstants_8hdep" alt=""/></div>
 <map name="ainclude_2UserConstants_8hdep" id="ainclude_2UserConstants_8hdep">
-<area shape="rect" title=" " alt="" coords="183,5,362,33"/>
-<area shape="rect" href="Build_8h.html" title=" " alt="" coords="118,81,235,109"/>
-<area shape="poly" title=" " alt="" coords="245,45,195,83,192,78,242,41"/>
-<area shape="rect" href="Map_8h.html" title=" " alt="" coords="174,157,286,184"/>
-<area shape="poly" title=" " alt="" coords="267,49,236,157,231,155,262,47"/>
-<area shape="rect" href="Map_8cpp.html" title=" " alt="" coords="272,232,372,260"/>
-<area shape="poly" title=" " alt="" coords="281,48,322,231,316,232,276,49"/>
-<area shape="poly" title=" " alt="" coords="197,120,223,155,218,158,193,123"/>
-<area shape="rect" href="GameplayScene_8h.html" title=" " alt="" coords="5,232,196,260"/>
-<area shape="poly" title=" " alt="" coords="195,195,125,234,122,230,192,190"/>
-<area shape="rect" href="Game_8cpp.html" title=" " alt="" coords="111,308,221,336"/>
-<area shape="poly" title=" " alt="" coords="228,201,221,230,210,261,195,287,179,309,175,306,190,284,205,259,216,229,223,199"/>
-<area shape="poly" title=" " alt="" coords="260,192,307,230,304,234,256,196"/>
-<area shape="poly" title=" " alt="" coords="124,270,156,306,152,309,120,273"/>
+<area shape="rect" title="Defines game&#45;specific constants, separate from the core engine constants." alt="" coords="22,5,202,33"/>
+<area shape="rect" href="Build_8h.html" title="Defines structures for procedurally generating the game map layout." alt="" coords="5,81,123,109"/>
+<area shape="poly" title=" " alt="" coords="97,48,75,82,70,79,93,45"/>
+<area shape="rect" href="Map_8h_source.html" title=" " alt="" coords="56,157,168,184"/>
+<area shape="poly" title=" " alt="" coords="127,47,137,81,137,109,121,157,116,155,132,108,132,81,122,48"/>
+<area shape="poly" title=" " alt="" coords="83,120,106,155,101,158,79,123"/>
+<area shape="rect" href="GameplayScene_8h.html" title="Defines the main scene for the Pac&#45;Man game." alt="" coords="17,232,207,260"/>
+<area shape="poly" title=" " alt="" coords="115,200,115,232,109,232,109,200"/>
 </map>
 </div>
 </div>
@@ -150,217 +147,62 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a8c11aa42a8be3cd552e0496436261cbd" id="r_a8c11aa42a8be3cd552e0496436261cbd"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c11aa42a8be3cd552e0496436261cbd">PACMAN_TAG</a> = &quot;pacman&quot;</td></tr>
+<tr class="memitem:a8c11aa42a8be3cd552e0496436261cbd" id="r_a8c11aa42a8be3cd552e0496436261cbd"><td class="memItemLeft" align="right" valign="top"><a id="a8c11aa42a8be3cd552e0496436261cbd" name="a8c11aa42a8be3cd552e0496436261cbd"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>PACMAN_TAG</b> = &quot;pacman&quot;</td></tr>
+<tr class="memdesc:a8c11aa42a8be3cd552e0496436261cbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The entity ID tag for the player. <br /></td></tr>
 <tr class="separator:a8c11aa42a8be3cd552e0496436261cbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b1a05d8f891c7d8f69480d1bf1e39eb" id="r_a7b1a05d8f891c7d8f69480d1bf1e39eb"><td class="memItemLeft" align="right" valign="top">const SDL_Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b1a05d8f891c7d8f69480d1bf1e39eb">PACMAN_SPAWN</a> { 19, 1 }</td></tr>
+<tr class="memitem:a7b1a05d8f891c7d8f69480d1bf1e39eb" id="r_a7b1a05d8f891c7d8f69480d1bf1e39eb"><td class="memItemLeft" align="right" valign="top"><a id="a7b1a05d8f891c7d8f69480d1bf1e39eb" name="a7b1a05d8f891c7d8f69480d1bf1e39eb"></a>
+const SDL_Point&#160;</td><td class="memItemRight" valign="bottom"><b>PACMAN_SPAWN</b> { 19, 1 }</td></tr>
+<tr class="memdesc:a7b1a05d8f891c7d8f69480d1bf1e39eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The initial grid coordinates for Pac-Man. <br /></td></tr>
 <tr class="separator:a7b1a05d8f891c7d8f69480d1bf1e39eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9e02f9dd65e88aa9cf2395d12637689" id="r_ac9e02f9dd65e88aa9cf2395d12637689"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9e02f9dd65e88aa9cf2395d12637689">MAX_STEP</a> = 3</td></tr>
+<tr class="memitem:ac9e02f9dd65e88aa9cf2395d12637689" id="r_ac9e02f9dd65e88aa9cf2395d12637689"><td class="memItemLeft" align="right" valign="top"><a id="ac9e02f9dd65e88aa9cf2395d12637689" name="ac9e02f9dd65e88aa9cf2395d12637689"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_STEP</b> = 3</td></tr>
+<tr class="memdesc:ac9e02f9dd65e88aa9cf2395d12637689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max steps a map <a class="el" href="structBuilder.html" title="Represents a single &quot;digger&quot; agent in the procedural map generation algorithm.">Builder</a> can take in one direction. <br /></td></tr>
 <tr class="separator:ac9e02f9dd65e88aa9cf2395d12637689"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a682d2920a7a5f8cb0b47ca9f839ffe37" id="r_a682d2920a7a5f8cb0b47ca9f839ffe37"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a682d2920a7a5f8cb0b47ca9f839ffe37">PELLET_TAG</a> = &quot;pellet&quot;</td></tr>
+<tr class="memitem:a682d2920a7a5f8cb0b47ca9f839ffe37" id="r_a682d2920a7a5f8cb0b47ca9f839ffe37"><td class="memItemLeft" align="right" valign="top"><a id="a682d2920a7a5f8cb0b47ca9f839ffe37" name="a682d2920a7a5f8cb0b47ca9f839ffe37"></a>
+const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>PELLET_TAG</b> = &quot;pellet&quot;</td></tr>
+<tr class="memdesc:a682d2920a7a5f8cb0b47ca9f839ffe37"><td class="mdescLeft">&#160;</td><td class="mdescRight">The collider tag for pellets. <br /></td></tr>
 <tr class="separator:a682d2920a7a5f8cb0b47ca9f839ffe37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab69733e34eee05b3faa010c34a90dd0" id="r_aab69733e34eee05b3faa010c34a90dd0"><td class="memItemLeft" align="right" valign="top">const SDL_Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab69733e34eee05b3faa010c34a90dd0">MAP_PADDING</a> { 32, 0 }</td></tr>
+<tr class="memitem:aab69733e34eee05b3faa010c34a90dd0" id="r_aab69733e34eee05b3faa010c34a90dd0"><td class="memItemLeft" align="right" valign="top"><a id="aab69733e34eee05b3faa010c34a90dd0" name="aab69733e34eee05b3faa010c34a90dd0"></a>
+const SDL_Point&#160;</td><td class="memItemRight" valign="bottom"><b>MAP_PADDING</b> { 32, 0 }</td></tr>
+<tr class="memdesc:aab69733e34eee05b3faa010c34a90dd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pixel padding for rendering the map on screen. <br /></td></tr>
 <tr class="separator:aab69733e34eee05b3faa010c34a90dd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdb1ca1b7cab04d5d7f436d893af040a" id="r_abdb1ca1b7cab04d5d7f436d893af040a"><td class="memItemLeft" align="right" valign="top">const SDL_Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdb1ca1b7cab04d5d7f436d893af040a">MAP_SIZE</a> { 20, 24 }</td></tr>
+<tr class="memitem:abdb1ca1b7cab04d5d7f436d893af040a" id="r_abdb1ca1b7cab04d5d7f436d893af040a"><td class="memItemLeft" align="right" valign="top"><a id="abdb1ca1b7cab04d5d7f436d893af040a" name="abdb1ca1b7cab04d5d7f436d893af040a"></a>
+const SDL_Point&#160;</td><td class="memItemRight" valign="bottom"><b>MAP_SIZE</b> { 20, 24 }</td></tr>
+<tr class="memdesc:abdb1ca1b7cab04d5d7f436d893af040a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dimensions of the map grid. <br /></td></tr>
 <tr class="separator:abdb1ca1b7cab04d5d7f436d893af040a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b7cb09acec89dc654c73f6880e676fa" id="r_a8b7cb09acec89dc654c73f6880e676fa"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b7cb09acec89dc654c73f6880e676fa">PATH</a> = 'p'</td></tr>
+<tr class="memitem:a8b7cb09acec89dc654c73f6880e676fa" id="r_a8b7cb09acec89dc654c73f6880e676fa"><td class="memItemLeft" align="right" valign="top"><a id="a8b7cb09acec89dc654c73f6880e676fa" name="a8b7cb09acec89dc654c73f6880e676fa"></a>
+const char&#160;</td><td class="memItemRight" valign="bottom"><b>PATH</b> = 'p'</td></tr>
+<tr class="memdesc:a8b7cb09acec89dc654c73f6880e676fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character representation for a path tile. <br /></td></tr>
 <tr class="separator:a8b7cb09acec89dc654c73f6880e676fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ab9f3e1e55786386b3b3e2e36f7defe" id="r_a3ab9f3e1e55786386b3b3e2e36f7defe"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ab9f3e1e55786386b3b3e2e36f7defe">BLANK</a> = 'n'</td></tr>
+<tr class="memitem:a3ab9f3e1e55786386b3b3e2e36f7defe" id="r_a3ab9f3e1e55786386b3b3e2e36f7defe"><td class="memItemLeft" align="right" valign="top"><a id="a3ab9f3e1e55786386b3b3e2e36f7defe" name="a3ab9f3e1e55786386b3b3e2e36f7defe"></a>
+const char&#160;</td><td class="memItemRight" valign="bottom"><b>BLANK</b> = 'n'</td></tr>
+<tr class="memdesc:a3ab9f3e1e55786386b3b3e2e36f7defe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character representation for an empty tile. <br /></td></tr>
 <tr class="separator:a3ab9f3e1e55786386b3b3e2e36f7defe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab505eeadab90642a1fb363028bdd34bc" id="r_ab505eeadab90642a1fb363028bdd34bc"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab505eeadab90642a1fb363028bdd34bc">WALL</a> = 'w'</td></tr>
+<tr class="memitem:ab505eeadab90642a1fb363028bdd34bc" id="r_ab505eeadab90642a1fb363028bdd34bc"><td class="memItemLeft" align="right" valign="top"><a id="ab505eeadab90642a1fb363028bdd34bc" name="ab505eeadab90642a1fb363028bdd34bc"></a>
+const char&#160;</td><td class="memItemRight" valign="bottom"><b>WALL</b> = 'w'</td></tr>
+<tr class="memdesc:ab505eeadab90642a1fb363028bdd34bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character representation for a wall tile. <br /></td></tr>
 <tr class="separator:ab505eeadab90642a1fb363028bdd34bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1747dfe8a33ab0368bf16826f895281" id="r_ae1747dfe8a33ab0368bf16826f895281"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1747dfe8a33ab0368bf16826f895281">GHOST_BAR_CHAR</a> = 'g'</td></tr>
+<tr class="memitem:ae1747dfe8a33ab0368bf16826f895281" id="r_ae1747dfe8a33ab0368bf16826f895281"><td class="memItemLeft" align="right" valign="top"><a id="ae1747dfe8a33ab0368bf16826f895281" name="ae1747dfe8a33ab0368bf16826f895281"></a>
+const char&#160;</td><td class="memItemRight" valign="bottom"><b>GHOST_BAR_CHAR</b> = 'g'</td></tr>
+<tr class="memdesc:ae1747dfe8a33ab0368bf16826f895281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character representation for the ghost bar tile. <br /></td></tr>
 <tr class="separator:ae1747dfe8a33ab0368bf16826f895281"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad26adc5f61a2aad5152d3ca2e7df1e4d" id="r_ad26adc5f61a2aad5152d3ca2e7df1e4d"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad26adc5f61a2aad5152d3ca2e7df1e4d">GHOST_SPAWN</a> = 's'</td></tr>
+<tr class="memitem:ad26adc5f61a2aad5152d3ca2e7df1e4d" id="r_ad26adc5f61a2aad5152d3ca2e7df1e4d"><td class="memItemLeft" align="right" valign="top"><a id="ad26adc5f61a2aad5152d3ca2e7df1e4d" name="ad26adc5f61a2aad5152d3ca2e7df1e4d"></a>
+const char&#160;</td><td class="memItemRight" valign="bottom"><b>GHOST_SPAWN</b> = 's'</td></tr>
+<tr class="memdesc:ad26adc5f61a2aad5152d3ca2e7df1e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character representation for a ghost spawn point. <br /></td></tr>
 <tr class="separator:ad26adc5f61a2aad5152d3ca2e7df1e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0907d0bc52e7ae7c216e65d85346602b" id="r_a0907d0bc52e7ae7c216e65d85346602b"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0907d0bc52e7ae7c216e65d85346602b">SPAWNER_COUNT</a> = 2</td></tr>
+<tr class="memitem:a0907d0bc52e7ae7c216e65d85346602b" id="r_a0907d0bc52e7ae7c216e65d85346602b"><td class="memItemLeft" align="right" valign="top"><a id="a0907d0bc52e7ae7c216e65d85346602b" name="a0907d0bc52e7ae7c216e65d85346602b"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>SPAWNER_COUNT</b> = 2</td></tr>
+<tr class="memdesc:a0907d0bc52e7ae7c216e65d85346602b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of BuilderSpawners to use for map generation. <br /></td></tr>
 <tr class="separator:a0907d0bc52e7ae7c216e65d85346602b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4c01431fdd27af7149817a929fc449a" id="r_ad4c01431fdd27af7149817a929fc449a"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4c01431fdd27af7149817a929fc449a">VALUE_PER_PELLET</a> = 10</td></tr>
+<tr class="memitem:ad4c01431fdd27af7149817a929fc449a" id="r_ad4c01431fdd27af7149817a929fc449a"><td class="memItemLeft" align="right" valign="top"><a id="ad4c01431fdd27af7149817a929fc449a" name="ad4c01431fdd27af7149817a929fc449a"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>VALUE_PER_PELLET</b> = 10</td></tr>
+<tr class="memdesc:ad4c01431fdd27af7149817a929fc449a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The score awarded for collecting one pellet. <br /></td></tr>
 <tr class="separator:ad4c01431fdd27af7149817a929fc449a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a3ab9f3e1e55786386b3b3e2e36f7defe" name="a3ab9f3e1e55786386b3b3e2e36f7defe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ab9f3e1e55786386b3b3e2e36f7defe">&#9670;&#160;</a></span>BLANK</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char BLANK = 'n'</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae1747dfe8a33ab0368bf16826f895281" name="ae1747dfe8a33ab0368bf16826f895281"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1747dfe8a33ab0368bf16826f895281">&#9670;&#160;</a></span>GHOST_BAR_CHAR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char GHOST_BAR_CHAR = 'g'</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad26adc5f61a2aad5152d3ca2e7df1e4d" name="ad26adc5f61a2aad5152d3ca2e7df1e4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad26adc5f61a2aad5152d3ca2e7df1e4d">&#9670;&#160;</a></span>GHOST_SPAWN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char GHOST_SPAWN = 's'</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aab69733e34eee05b3faa010c34a90dd0" name="aab69733e34eee05b3faa010c34a90dd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab69733e34eee05b3faa010c34a90dd0">&#9670;&#160;</a></span>MAP_PADDING</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const SDL_Point MAP_PADDING { 32, 0 }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abdb1ca1b7cab04d5d7f436d893af040a" name="abdb1ca1b7cab04d5d7f436d893af040a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdb1ca1b7cab04d5d7f436d893af040a">&#9670;&#160;</a></span>MAP_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const SDL_Point MAP_SIZE { 20, 24 }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac9e02f9dd65e88aa9cf2395d12637689" name="ac9e02f9dd65e88aa9cf2395d12637689"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9e02f9dd65e88aa9cf2395d12637689">&#9670;&#160;</a></span>MAX_STEP</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int MAX_STEP = 3</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7b1a05d8f891c7d8f69480d1bf1e39eb" name="a7b1a05d8f891c7d8f69480d1bf1e39eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b1a05d8f891c7d8f69480d1bf1e39eb">&#9670;&#160;</a></span>PACMAN_SPAWN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const SDL_Point PACMAN_SPAWN { 19, 1 }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8c11aa42a8be3cd552e0496436261cbd" name="a8c11aa42a8be3cd552e0496436261cbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c11aa42a8be3cd552e0496436261cbd">&#9670;&#160;</a></span>PACMAN_TAG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string PACMAN_TAG = &quot;pacman&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8b7cb09acec89dc654c73f6880e676fa" name="a8b7cb09acec89dc654c73f6880e676fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b7cb09acec89dc654c73f6880e676fa">&#9670;&#160;</a></span>PATH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char PATH = 'p'</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a682d2920a7a5f8cb0b47ca9f839ffe37" name="a682d2920a7a5f8cb0b47ca9f839ffe37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a682d2920a7a5f8cb0b47ca9f839ffe37">&#9670;&#160;</a></span>PELLET_TAG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const std::string PELLET_TAG = &quot;pellet&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0907d0bc52e7ae7c216e65d85346602b" name="a0907d0bc52e7ae7c216e65d85346602b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0907d0bc52e7ae7c216e65d85346602b">&#9670;&#160;</a></span>SPAWNER_COUNT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int SPAWNER_COUNT = 2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad4c01431fdd27af7149817a929fc449a" name="ad4c01431fdd27af7149817a929fc449a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4c01431fdd27af7149817a929fc449a">&#9670;&#160;</a></span>VALUE_PER_PELLET</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const int VALUE_PER_PELLET = 10</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab505eeadab90642a1fb363028bdd34bc" name="ab505eeadab90642a1fb363028bdd34bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab505eeadab90642a1fb363028bdd34bc">&#9670;&#160;</a></span>WALL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char WALL = 'w'</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defines game-specific constants, separate from the core engine constants. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

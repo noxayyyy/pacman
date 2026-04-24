@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['operator_28_29_0',['operator()',['../structMap_1_1MapArray.html#a9c68c4712de04428c649d13e69653474',1,'Map::MapArray::operator()(int y, int x)'],['../structMap_1_1MapArray.html#a937f558107ca6fd96e25d80b9e1ea466',1,'Map::MapArray::operator()(int y, int x) const']]],
-  ['operator_3d_1',['operator=',['../structMap_1_1MapArray.html#a5c6f12e88f761c35906def09a8f49c9c',1,'Map::MapArray']]],
-  ['operator_5b_5d_2',['operator[]',['../structMap_1_1MapArray.html#a8d49f7d178abc78637e220595167b44e',1,'Map::MapArray::operator[](int i) const'],['../structMap_1_1MapArray.html#aa1c19350282540d554dd933eefac3a77',1,'Map::MapArray::operator[](int i)']]],
-  ['optimisedeleter_3',['optimiseDeleter',['../structMap.html#aa20b3f427f84ba953750dad66686c7c5',1,'Map']]],
-  ['optimisehelper_4',['optimiseHelper',['../structMap.html#a47a441ca004b287bcbad0c353e7c7035',1,'Map']]],
-  ['optimisemap_5',['optimiseMap',['../structMap.html#a71b8962d821916cc00b2b495db79f786',1,'Map']]]
+  ['loadmap_0',['loadMap',['../structMap.html#a365d25a9d88fa04491fccc1210c41bf9',1,'Map']]],
+  ['loadnextscene_1',['loadNextScene',['https://noxayyyy.github.io/nox-engine/structSceneManager.html#a932ab29dbfb95b976c333cba5f2cbb3c',1,'SceneManager']]],
+  ['loadprevscene_2',['loadPrevScene',['https://noxayyyy.github.io/nox-engine/structSceneManager.html#a220fb279ec5d75c5932ebb873a5c6664',1,'SceneManager']]],
+  ['loadscene_3',['loadScene',['https://noxayyyy.github.io/nox-engine/structSceneManager.html#a8c05a859c26e5b7b26e773e0f08dc0be',1,'SceneManager::loadScene(std::string id)'],['https://noxayyyy.github.io/nox-engine/structSceneManager.html#ac4dcda11c1bc1aec408a774a10178d45',1,'SceneManager::loadScene(int buildIndex)']]],
+  ['loadtexture_4',['LoadTexture',['https://noxayyyy.github.io/nox-engine/structTextureManager.html#a8cf0937165b2ce8ce8514bcaf50c3597',1,'TextureManager::LoadTexture(const char *fileName)'],['https://noxayyyy.github.io/nox-engine/structTextureManager.html#af0ef10e05ccd7d1cffd18eef53295a2d',1,'TextureManager::LoadTexture(const SDL_Colour colour, const char *text)'],['https://noxayyyy.github.io/nox-engine/structTextureManager.html#ae93507f1515dbfa355cc2b6d8980ad32',1,'TextureManager::LoadTexture(SDL_Rect &amp;rect, SDL_Colour colour)']]]
 ];

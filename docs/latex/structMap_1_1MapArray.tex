@@ -2,6 +2,11 @@
 \hypertarget{structMap_1_1MapArray}{}\label{structMap_1_1MapArray}\index{Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}}
 
 
+A 2D array container with bounds checking for map data.  
+
+
+
+
 {\ttfamily \#include $<$Map.\+h$>$}
 
 
@@ -17,78 +22,46 @@ Collaboration diagram for Map\+::Map\+Array\texorpdfstring{$<$}{<} T \texorpdfst
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structMap_1_1MapArray_a1cd864acc64aa269b33b62e9fd36ffa6}{Map\+Array}} (int w, int h)
+\Hypertarget{structMap_1_1MapArray_a1cd864acc64aa269b33b62e9fd36ffa6}\label{structMap_1_1MapArray_a1cd864acc64aa269b33b62e9fd36ffa6} 
+{\bfseries Map\+Array} (int w, int h)
 \item 
-\mbox{\hyperlink{structMap_1_1MapArray_a50e4e3e4f19005466d435c03c2af21d2}{Map\+Array}} (int w, int h, T entry)
+\Hypertarget{structMap_1_1MapArray_a50e4e3e4f19005466d435c03c2af21d2}\label{structMap_1_1MapArray_a50e4e3e4f19005466d435c03c2af21d2} 
+{\bfseries Map\+Array} (int w, int h, T entry)
 \item 
-\mbox{\hyperlink{structMap_1_1MapArray_a658b4a962dab3f4c0fbf7ff68c516941}{Map\+Array}} (T entry)
-\item 
-\mbox{\hyperlink{structMap_1_1MapArray_a045759cd9f6ac029fc06bf259abbbc99}{Map\+Array}} ()
-\item 
-\mbox{\hyperlink{structMap_1_1MapArray_ae5d0967fca9b3d9e303afd5e72c499bf}{\texorpdfstring{$\sim$}{\string~}\+Map\+Array}} ()=default
+\Hypertarget{structMap_1_1MapArray_a658b4a962dab3f4c0fbf7ff68c516941}\label{structMap_1_1MapArray_a658b4a962dab3f4c0fbf7ff68c516941} 
+{\bfseries Map\+Array} (T entry)
 \item 
 void \mbox{\hyperlink{structMap_1_1MapArray_a98d98f10e6e0ddd09862d6ed61a10ede}{clear}} (T entry)
-\item 
+\begin{DoxyCompactList}\small\item\em Clears the array and fills it with a new entry. \end{DoxyCompactList}\item 
 T \& \mbox{\hyperlink{structMap_1_1MapArray_a9c68c4712de04428c649d13e69653474}{operator()}} (int y, int x)
-\item 
+\begin{DoxyCompactList}\small\item\em Accesses an element using 2D coordinates. \end{DoxyCompactList}\item 
 const T \& \mbox{\hyperlink{structMap_1_1MapArray_a937f558107ca6fd96e25d80b9e1ea466}{operator()}} (int y, int x) const
-\item 
+\begin{DoxyCompactList}\small\item\em Accesses an element using 2D coordinates. \end{DoxyCompactList}\item 
 const T \& \mbox{\hyperlink{structMap_1_1MapArray_a8d49f7d178abc78637e220595167b44e}{operator\mbox{[}$\,$\mbox{]}}} (int i) const
-\item 
+\begin{DoxyCompactList}\small\item\em Accesses an element using a 1D index. \end{DoxyCompactList}\item 
 T \& \mbox{\hyperlink{structMap_1_1MapArray_aa1c19350282540d554dd933eefac3a77}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\begin{DoxyCompactList}\small\item\em Accesses an element using a 1D index. \end{DoxyCompactList}\item 
+\Hypertarget{structMap_1_1MapArray_a5c6f12e88f761c35906def09a8f49c9c}\label{structMap_1_1MapArray_a5c6f12e88f761c35906def09a8f49c9c} 
+void {\bfseries operator=} (\mbox{\hyperlink{structMap_1_1MapArray}{Map\+Array}}$<$ T $>$ other)
 \item 
-void \mbox{\hyperlink{structMap_1_1MapArray_a5c6f12e88f761c35906def09a8f49c9c}{operator=}} (\mbox{\hyperlink{structMap_1_1MapArray}{Map\+Array}}$<$ T $>$ other)
+\Hypertarget{structMap_1_1MapArray_a749d926b7fb5154c12397bfee90f75bd}\label{structMap_1_1MapArray_a749d926b7fb5154c12397bfee90f75bd} 
+int {\bfseries width} ()
 \item 
-int \mbox{\hyperlink{structMap_1_1MapArray_a749d926b7fb5154c12397bfee90f75bd}{width}} ()
-\item 
-int \mbox{\hyperlink{structMap_1_1MapArray_a14326d9b8636396585386f5de5d5d1b9}{height}} ()
+\Hypertarget{structMap_1_1MapArray_a14326d9b8636396585386f5de5d5d1b9}\label{structMap_1_1MapArray_a14326d9b8636396585386f5de5d5d1b9} 
+int {\bfseries height} ()
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{structMap_1_1MapArray_a1cd864acc64aa269b33b62e9fd36ffa6}\index{Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}!MapArray@{MapArray}}
-\index{MapArray@{MapArray}!Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{MapArray()}{MapArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily \label{structMap_1_1MapArray_a1cd864acc64aa269b33b62e9fd36ffa6} 
-template$<$typename T$>$ \\
-\mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::\+Map\+Array (\begin{DoxyParamCaption}\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+struct Map\+::\+Map\+Array$<$ T $>$}
+A 2D array container with bounds checking for map data. 
 
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structMap_1_1MapArray_a1cd864acc64aa269b33b62e9fd36ffa6_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{structMap_1_1MapArray_a50e4e3e4f19005466d435c03c2af21d2}\index{Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}!MapArray@{MapArray}}
-\index{MapArray@{MapArray}!Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{MapArray()}{MapArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily \label{structMap_1_1MapArray_a50e4e3e4f19005466d435c03c2af21d2} 
-template$<$typename T$>$ \\
-\mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::\+Map\+Array (\begin{DoxyParamCaption}\item[{int}]{w}{, }\item[{int}]{h}{, }\item[{T}]{entry}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{structMap_1_1MapArray_a658b4a962dab3f4c0fbf7ff68c516941}\index{Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}!MapArray@{MapArray}}
-\index{MapArray@{MapArray}!Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{MapArray()}{MapArray()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily \label{structMap_1_1MapArray_a658b4a962dab3f4c0fbf7ff68c516941} 
-template$<$typename T$>$ \\
-\mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::\+Map\+Array (\begin{DoxyParamCaption}\item[{T}]{entry}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-\Hypertarget{structMap_1_1MapArray_a045759cd9f6ac029fc06bf259abbbc99}\index{Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}!MapArray@{MapArray}}
-\index{MapArray@{MapArray}!Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{MapArray()}{MapArray()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily \label{structMap_1_1MapArray_a045759cd9f6ac029fc06bf259abbbc99} 
-template$<$typename T$>$ \\
-\mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::\+Map\+Array (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-\Hypertarget{structMap_1_1MapArray_ae5d0967fca9b3d9e303afd5e72c499bf}\index{Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}!````~MapArray@{\texorpdfstring{$\sim$}{\string~}MapArray}}
-\index{````~MapArray@{\texorpdfstring{$\sim$}{\string~}MapArray}!Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MapArray()}{\string~MapArray()}}
-{\footnotesize\ttfamily \label{structMap_1_1MapArray_ae5d0967fca9b3d9e303afd5e72c499bf} 
-template$<$typename T$>$ \\
-\mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{structMap_1_1MapArray}{Map\+Array}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
-
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The data type to be stored in the grid. \\
+\hline
+\end{DoxyTemplParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -99,13 +72,15 @@ template$<$typename T$>$ \\
 template$<$typename T$>$ \\
 void \mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::clear (\begin{DoxyParamCaption}\item[{T}]{entry}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{structMap_1_1MapArray_a14326d9b8636396585386f5de5d5d1b9}\index{Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}!height@{height}}
-\index{height@{height}!Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{height()}{height()}}
-{\footnotesize\ttfamily \label{structMap_1_1MapArray_a14326d9b8636396585386f5de5d5d1b9} 
-template$<$typename T$>$ \\
-int \mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+Clears the array and fills it with a new entry. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & The value to fill the array with. \\
+\hline
+\end{DoxyParams}
 \Hypertarget{structMap_1_1MapArray_a9c68c4712de04428c649d13e69653474}\index{Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}!operator()@{operator()}}
 \index{operator()@{operator()}!Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -113,6 +88,20 @@ int \mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::he
 template$<$typename T$>$ \\
 T \& \mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{y}{, }\item[{int}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Accesses an element using 2D coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & The row index. \\
+\hline
+{\em x} & The column index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the element. 
+\end{DoxyReturn}
 \Hypertarget{structMap_1_1MapArray_a937f558107ca6fd96e25d80b9e1ea466}\index{Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}!operator()@{operator()}}
 \index{operator()@{operator()}!Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -120,21 +109,20 @@ T \& \mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::o
 template$<$typename T$>$ \\
 const T \& \mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{y}{, }\item[{int}]{x}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{structMap_1_1MapArray_a5c6f12e88f761c35906def09a8f49c9c}\index{Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}!operator=@{operator=}}
-\index{operator=@{operator=}!Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
-{\footnotesize\ttfamily \label{structMap_1_1MapArray_a5c6f12e88f761c35906def09a8f49c9c} 
-template$<$typename T$>$ \\
-void \mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMap_1_1MapArray}{Map\+Array}}$<$ T $>$}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structMap_1_1MapArray_a5c6f12e88f761c35906def09a8f49c9c_cgraph}
-\end{center}
-\end{figure}
+
+Accesses an element using 2D coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & The row index. \\
+\hline
+{\em x} & The column index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the element. 
+\end{DoxyReturn}
 \Hypertarget{structMap_1_1MapArray_aa1c19350282540d554dd933eefac3a77}\index{Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -142,6 +130,18 @@ Here is the call graph for this function\+:
 template$<$typename T$>$ \\
 T \& \mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Accesses an element using a 1D index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The linear index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the element. 
+\end{DoxyReturn}
 \Hypertarget{structMap_1_1MapArray_a8d49f7d178abc78637e220595167b44e}\index{Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -149,15 +149,20 @@ T \& \mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::o
 template$<$typename T$>$ \\
 const T \& \mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{structMap_1_1MapArray_a749d926b7fb5154c12397bfee90f75bd}\index{Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}!width@{width}}
-\index{width@{width}!Map::MapArray$<$ T $>$@{Map::MapArray$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{width()}{width()}}
-{\footnotesize\ttfamily \label{structMap_1_1MapArray_a749d926b7fb5154c12397bfee90f75bd} 
-template$<$typename T$>$ \\
-int \mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ T $>$\+::width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+Accesses an element using a 1D index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The linear index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the element. 
+\end{DoxyReturn}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{Map_8h}{Map.\+h}}\end{DoxyCompactItemize}
+include/Map.\+h\end{DoxyCompactItemize}

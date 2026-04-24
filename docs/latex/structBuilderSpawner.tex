@@ -2,6 +2,11 @@
 \hypertarget{structBuilderSpawner}{}\label{structBuilderSpawner}\index{BuilderSpawner@{BuilderSpawner}}
 
 
+Manages a collection of \doxylink{structBuilder}{Builder} agents to generate a map.  
+
+
+
+
 {\ttfamily \#include $<$Build.\+h$>$}
 
 
@@ -17,108 +22,51 @@ Collaboration diagram for Builder\+Spawner\+:
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structBuilderSpawner_ae378ce2baadf05142c40966a4d711979}{Builder\+Spawner}} ()
-\item 
-\mbox{\hyperlink{structBuilderSpawner_a139e46c2999f5b6caaccf3adc63e8af5}{\texorpdfstring{$\sim$}{\string~}\+Builder\+Spawner}} ()
-\item 
-void \mbox{\hyperlink{structBuilderSpawner_a8f4493308b84572901a529c8fd4e270e}{move\+Builders}} ()
-\item 
-void \mbox{\hyperlink{structBuilderSpawner_a564c452a5c105d43fa238614496e2aad}{update\+Builders}} ()
-\item 
+\Hypertarget{structBuilderSpawner_a8f4493308b84572901a529c8fd4e270e}\label{structBuilderSpawner_a8f4493308b84572901a529c8fd4e270e} 
+void {\bfseries move\+Builders} ()
+\begin{DoxyCompactList}\small\item\em Updates the coordinates of all active builders based on their current direction. \end{DoxyCompactList}\item 
+\Hypertarget{structBuilderSpawner_a564c452a5c105d43fa238614496e2aad}\label{structBuilderSpawner_a564c452a5c105d43fa238614496e2aad} 
+void {\bfseries update\+Builders} ()
+\begin{DoxyCompactList}\small\item\em Updates the internal state of all builders (e.\+g., direction changes). \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{structBuilderSpawner_a82d1430250e6cb8db70091129d1b2d8f}{is\+Active}} ()
-\item 
-void \mbox{\hyperlink{structBuilderSpawner_a9addf9449b4e191367ef28e052b0c0bd}{clear}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks if any builder in the collection is still active. \end{DoxyCompactList}\item 
+\Hypertarget{structBuilderSpawner_a9addf9449b4e191367ef28e052b0c0bd}\label{structBuilderSpawner_a9addf9449b4e191367ef28e052b0c0bd} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Clears the collection of builders. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{structBuilderSpawner_a2d794f246e55e4e431ac876f0bcd3bcc}{x}}
+\Hypertarget{structBuilderSpawner_a2d794f246e55e4e431ac876f0bcd3bcc}\label{structBuilderSpawner_a2d794f246e55e4e431ac876f0bcd3bcc} 
+int {\bfseries x}
 \item 
-int \mbox{\hyperlink{structBuilderSpawner_aec52dfc7ac96868f91a3084cf3ee1a33}{y}}
+\Hypertarget{structBuilderSpawner_aec52dfc7ac96868f91a3084cf3ee1a33}\label{structBuilderSpawner_aec52dfc7ac96868f91a3084cf3ee1a33} 
+int {\bfseries y}
 \item 
-std\+::vector$<$ \mbox{\hyperlink{structBuilder}{Builder}} $>$ \mbox{\hyperlink{structBuilderSpawner_a6e0f55a014dc43a44dbaf0953d2f84e9}{builders}}
+\Hypertarget{structBuilderSpawner_a6e0f55a014dc43a44dbaf0953d2f84e9}\label{structBuilderSpawner_a6e0f55a014dc43a44dbaf0953d2f84e9} 
+std\+::vector$<$ \mbox{\hyperlink{structBuilder}{Builder}} $>$ {\bfseries builders}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{structBuilderSpawner_ae378ce2baadf05142c40966a4d711979}\index{BuilderSpawner@{BuilderSpawner}!BuilderSpawner@{BuilderSpawner}}
-\index{BuilderSpawner@{BuilderSpawner}!BuilderSpawner@{BuilderSpawner}}
-\doxysubsubsection{\texorpdfstring{BuilderSpawner()}{BuilderSpawner()}}
-{\footnotesize\ttfamily \label{structBuilderSpawner_ae378ce2baadf05142c40966a4d711979} 
-Builder\+Spawner\+::\+Builder\+Spawner (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-\Hypertarget{structBuilderSpawner_a139e46c2999f5b6caaccf3adc63e8af5}\index{BuilderSpawner@{BuilderSpawner}!````~BuilderSpawner@{\texorpdfstring{$\sim$}{\string~}BuilderSpawner}}
-\index{````~BuilderSpawner@{\texorpdfstring{$\sim$}{\string~}BuilderSpawner}!BuilderSpawner@{BuilderSpawner}}
-\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BuilderSpawner()}{\string~BuilderSpawner()}}
-{\footnotesize\ttfamily \label{structBuilderSpawner_a139e46c2999f5b6caaccf3adc63e8af5} 
-Builder\+Spawner\+::\texorpdfstring{$\sim$}{\string~}\+Builder\+Spawner (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structBuilderSpawner_a139e46c2999f5b6caaccf3adc63e8af5_cgraph}
-\end{center}
-\end{figure}
-
+\doxysubsection{Detailed Description}
+Manages a collection of \doxylink{structBuilder}{Builder} agents to generate a map. 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{structBuilderSpawner_a9addf9449b4e191367ef28e052b0c0bd}\index{BuilderSpawner@{BuilderSpawner}!clear@{clear}}
-\index{clear@{clear}!BuilderSpawner@{BuilderSpawner}}
-\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
-{\footnotesize\ttfamily \label{structBuilderSpawner_a9addf9449b4e191367ef28e052b0c0bd} 
-void Builder\+Spawner\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structBuilderSpawner_a9addf9449b4e191367ef28e052b0c0bd_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{structBuilderSpawner_a82d1430250e6cb8db70091129d1b2d8f}\index{BuilderSpawner@{BuilderSpawner}!isActive@{isActive}}
 \index{isActive@{isActive}!BuilderSpawner@{BuilderSpawner}}
 \doxysubsubsection{\texorpdfstring{isActive()}{isActive()}}
 {\footnotesize\ttfamily \label{structBuilderSpawner_a82d1430250e6cb8db70091129d1b2d8f} 
-bool Builder\+Spawner\+::is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-\Hypertarget{structBuilderSpawner_a8f4493308b84572901a529c8fd4e270e}\index{BuilderSpawner@{BuilderSpawner}!moveBuilders@{moveBuilders}}
-\index{moveBuilders@{moveBuilders}!BuilderSpawner@{BuilderSpawner}}
-\doxysubsubsection{\texorpdfstring{moveBuilders()}{moveBuilders()}}
-{\footnotesize\ttfamily \label{structBuilderSpawner_a8f4493308b84572901a529c8fd4e270e} 
-void Builder\+Spawner\+::move\+Builders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-\Hypertarget{structBuilderSpawner_a564c452a5c105d43fa238614496e2aad}\index{BuilderSpawner@{BuilderSpawner}!updateBuilders@{updateBuilders}}
-\index{updateBuilders@{updateBuilders}!BuilderSpawner@{BuilderSpawner}}
-\doxysubsubsection{\texorpdfstring{updateBuilders()}{updateBuilders()}}
-{\footnotesize\ttfamily \label{structBuilderSpawner_a564c452a5c105d43fa238614496e2aad} 
-void Builder\+Spawner\+::update\+Builders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+bool Builder\+Spawner\+::is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 
 
-\doxysubsection{Member Data Documentation}
-\Hypertarget{structBuilderSpawner_a6e0f55a014dc43a44dbaf0953d2f84e9}\index{BuilderSpawner@{BuilderSpawner}!builders@{builders}}
-\index{builders@{builders}!BuilderSpawner@{BuilderSpawner}}
-\doxysubsubsection{\texorpdfstring{builders}{builders}}
-{\footnotesize\ttfamily \label{structBuilderSpawner_a6e0f55a014dc43a44dbaf0953d2f84e9} 
-std\+::vector$<$\mbox{\hyperlink{structBuilder}{Builder}}$>$ Builder\+Spawner\+::builders}
+Checks if any builder in the collection is still active. 
 
-\Hypertarget{structBuilderSpawner_a2d794f246e55e4e431ac876f0bcd3bcc}\index{BuilderSpawner@{BuilderSpawner}!x@{x}}
-\index{x@{x}!BuilderSpawner@{BuilderSpawner}}
-\doxysubsubsection{\texorpdfstring{x}{x}}
-{\footnotesize\ttfamily \label{structBuilderSpawner_a2d794f246e55e4e431ac876f0bcd3bcc} 
-int Builder\+Spawner\+::x}
-
-\Hypertarget{structBuilderSpawner_aec52dfc7ac96868f91a3084cf3ee1a33}\index{BuilderSpawner@{BuilderSpawner}!y@{y}}
-\index{y@{y}!BuilderSpawner@{BuilderSpawner}}
-\doxysubsubsection{\texorpdfstring{y}{y}}
-{\footnotesize\ttfamily \label{structBuilderSpawner_aec52dfc7ac96868f91a3084cf3ee1a33} 
-int Builder\+Spawner\+::y}
+\begin{DoxyReturn}{Returns}
+True if at least one builder is active. 
+\end{DoxyReturn}
 
 
-
-The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{Build_8h}{Build.\+h}}\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{Build_8h}{Build.\+h}}\item 
+src/Build.\+cpp\end{DoxyCompactItemize}

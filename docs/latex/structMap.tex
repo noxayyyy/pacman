@@ -2,12 +2,7 @@
 \hypertarget{structMap}{}\label{structMap}\index{Map@{Map}}
 
 
-{\ttfamily \#include $<$Map.\+h$>$}
-
-
-
-Collaboration diagram for Map\+:
-\nopagebreak
+Collaboration diagram for Map\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -18,82 +13,67 @@ Collaboration diagram for Map\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structMap_1_1MapArray}{Map\+Array}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A 2D array container with bounds checking for map data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structMap_a0f5ad0fd4563497b4214038cbca8b582}{Map}} ()
-\item 
-\mbox{\hyperlink{structMap_aa403fbe09394ccf39747588f5168e3b2}{\texorpdfstring{$\sim$}{\string~}\+Map}} ()
-\item 
-void \mbox{\hyperlink{structMap_ae3a387c6842c05596b004e2735b8cbf5}{init}} ()
-\item 
+\Hypertarget{structMap_ae3a387c6842c05596b004e2735b8cbf5}\label{structMap_ae3a387c6842c05596b004e2735b8cbf5} 
+void {\bfseries init} ()
+\begin{DoxyCompactList}\small\item\em Initializes the map generation process. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{structMap_a162159fb9596c0fc43ec7c19320b3c3f}{colour\+Reference}} (char colour)
-\item 
-void \mbox{\hyperlink{structMap_ae206cb92ab2c008e89fbc070dfcbd63e}{draw\+Map}} ()
-\item 
-void \mbox{\hyperlink{structMap_a365d25a9d88fa04491fccc1210c41bf9}{load\+Map}} ()
-\item 
-void \mbox{\hyperlink{structMap_a47baf1af3323f35cbbe6e824f7e9237a}{reload\+Map}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Helper to get a tile ID from a character representation. \end{DoxyCompactList}\item 
+\Hypertarget{structMap_ae206cb92ab2c008e89fbc070dfcbd63e}\label{structMap_ae206cb92ab2c008e89fbc070dfcbd63e} 
+void {\bfseries draw\+Map} ()
+\begin{DoxyCompactList}\small\item\em Procedurally generates the map layout using \doxylink{structBuilder}{Builder} agents. \end{DoxyCompactList}\item 
+\Hypertarget{structMap_a365d25a9d88fa04491fccc1210c41bf9}\label{structMap_a365d25a9d88fa04491fccc1210c41bf9} 
+void {\bfseries load\+Map} ()
+\begin{DoxyCompactList}\small\item\em Creates entities (Tiles) based on the generated map layout. \end{DoxyCompactList}\item 
+\Hypertarget{structMap_a47baf1af3323f35cbbe6e824f7e9237a}\label{structMap_a47baf1af3323f35cbbe6e824f7e9237a} 
+void {\bfseries reload\+Map} ()
+\begin{DoxyCompactList}\small\item\em Clears and re-\/loads the map entities. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structMap_a4cea1b725517357d3ae84033bc9b29c1}{update\+Img}} (\mbox{\hyperlink{structBuilderSpawner}{Builder\+Spawner}} \&spawner, std\+::vector$<$ bool $>$ kill\+Prev\+Block)
-\item 
+\begin{DoxyCompactList}\small\item\em Updates the internal character map based on builder positions. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structMap_a87b32ee66f6a5e0d4bc382a8ddaad027}{add\+Walls}} (int x, int y)
-\item 
+\begin{DoxyCompactList}\small\item\em Adds wall tiles around a specified path tile. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structMap_aef3427afdac76a71796307af55600b12}{add\+Tile}} (int id, int x, int y)
-\item 
-void \mbox{\hyperlink{structMap_a545016e7e64a650993439b6e2313b84f}{add\+Coll\+Pass}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a single tile entity at a specific location. \end{DoxyCompactList}\item 
+\Hypertarget{structMap_a545016e7e64a650993439b6e2313b84f}\label{structMap_a545016e7e64a650993439b6e2313b84f} 
+void {\bfseries add\+Coll\+Pass} ()
+\begin{DoxyCompactList}\small\item\em Post-\/processing pass to add colliders to all wall tiles. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structMap_a3398e909d5095967294a6176de7717f2}{add\+Row\+Pass}} (int y)
+\begin{DoxyCompactList}\small\item\em Post-\/processing pass to fill in a row with tiles. \end{DoxyCompactList}\item 
+\Hypertarget{structMap_a766156a4fb4fba6f64fc3b796aeb34c1}\label{structMap_a766156a4fb4fba6f64fc3b796aeb34c1} 
+void {\bfseries add\+Spawn\+Box} ()
+\begin{DoxyCompactList}\small\item\em Adds the central ghost spawn box to the map. \end{DoxyCompactList}\item 
+\Hypertarget{structMap_a71b8962d821916cc00b2b495db79f786}\label{structMap_a71b8962d821916cc00b2b495db79f786} 
+void {\bfseries optimise\+Map} ()
+\begin{DoxyCompactList}\small\item\em Optimizes the map by merging adjacent wall colliders into larger ones. \end{DoxyCompactList}\item 
+\Hypertarget{structMap_a47a441ca004b287bcbad0c353e7c7035}\label{structMap_a47a441ca004b287bcbad0c353e7c7035} 
+int {\bfseries optimise\+Helper} (int x, int y, Group\+ID anti\+Group, bool optimise\+Direction=false)
 \item 
-void \mbox{\hyperlink{structMap_a766156a4fb4fba6f64fc3b796aeb34c1}{add\+Spawn\+Box}} ()
-\item 
-void \mbox{\hyperlink{structMap_a71b8962d821916cc00b2b495db79f786}{optimise\+Map}} ()
-\item 
-int \mbox{\hyperlink{structMap_a47a441ca004b287bcbad0c353e7c7035}{optimise\+Helper}} (int x, int y, Group\+ID anti\+Group, bool optimise\+Direction=false)
-\item 
-void \mbox{\hyperlink{structMap_aa20b3f427f84ba953750dad66686c7c5}{optimise\+Deleter}} (int x, int y, int count, bool horizontal=true)
+\Hypertarget{structMap_aa20b3f427f84ba953750dad66686c7c5}\label{structMap_aa20b3f427f84ba953750dad66686c7c5} 
+void {\bfseries optimise\+Deleter} (int x, int y, int count, bool horizontal=true)
 \item 
 const int \mbox{\hyperlink{structMap_a0c6bb8230dde066248ebb23a67c63596}{get\+Pellet\+Count}} () const
-\end{DoxyCompactItemize}
-
-
-\doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{structMap_a0f5ad0fd4563497b4214038cbca8b582}\index{Map@{Map}!Map@{Map}}
-\index{Map@{Map}!Map@{Map}}
-\doxysubsubsection{\texorpdfstring{Map()}{Map()}}
-{\footnotesize\ttfamily \label{structMap_a0f5ad0fd4563497b4214038cbca8b582} 
-Map\+::\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-\Hypertarget{structMap_aa403fbe09394ccf39747588f5168e3b2}\index{Map@{Map}!````~Map@{\texorpdfstring{$\sim$}{\string~}Map}}
-\index{````~Map@{\texorpdfstring{$\sim$}{\string~}Map}!Map@{Map}}
-\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Map()}{\string~Map()}}
-{\footnotesize\ttfamily \label{structMap_aa403fbe09394ccf39747588f5168e3b2} 
-Map\+::\texorpdfstring{$\sim$}{\string~}\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
-
+\begin{DoxyCompactList}\small\item\em Gets the total number of pellets on the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{structMap_a545016e7e64a650993439b6e2313b84f}\index{Map@{Map}!addCollPass@{addCollPass}}
-\index{addCollPass@{addCollPass}!Map@{Map}}
-\doxysubsubsection{\texorpdfstring{addCollPass()}{addCollPass()}}
-{\footnotesize\ttfamily \label{structMap_a545016e7e64a650993439b6e2313b84f} 
-void Map\+::add\+Coll\+Pass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structMap_a545016e7e64a650993439b6e2313b84f_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{structMap_a3398e909d5095967294a6176de7717f2}\index{Map@{Map}!addRowPass@{addRowPass}}
 \index{addRowPass@{addRowPass}!Map@{Map}}
 \doxysubsubsection{\texorpdfstring{addRowPass()}{addRowPass()}}
 {\footnotesize\ttfamily \label{structMap_a3398e909d5095967294a6176de7717f2} 
 void Map\+::add\+Row\+Pass (\begin{DoxyParamCaption}\item[{int}]{y}{}\end{DoxyParamCaption})}
 
+
+
+Post-\/processing pass to fill in a row with tiles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & The row index to process. \\
+\hline
+\end{DoxyParams}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -102,26 +82,33 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{structMap_a3398e909d5095967294a6176de7717f2_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{structMap_a766156a4fb4fba6f64fc3b796aeb34c1}\index{Map@{Map}!addSpawnBox@{addSpawnBox}}
-\index{addSpawnBox@{addSpawnBox}!Map@{Map}}
-\doxysubsubsection{\texorpdfstring{addSpawnBox()}{addSpawnBox()}}
-{\footnotesize\ttfamily \label{structMap_a766156a4fb4fba6f64fc3b796aeb34c1} 
-void Map\+::add\+Spawn\+Box (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structMap_a766156a4fb4fba6f64fc3b796aeb34c1_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{structMap_aef3427afdac76a71796307af55600b12}\index{Map@{Map}!addTile@{addTile}}
 \index{addTile@{addTile}!Map@{Map}}
 \doxysubsubsection{\texorpdfstring{addTile()}{addTile()}}
 {\footnotesize\ttfamily \label{structMap_aef3427afdac76a71796307af55600b12} 
 void Map\+::add\+Tile (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
 
+
+
+Creates a single tile entity at a specific location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The type ID of the tile. \\
+\hline
+{\em x} & The grid x-\/coordinate. \\
+\hline
+{\em y} & The grid y-\/coordinate. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{structMap_aef3427afdac76a71796307af55600b12_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -136,6 +123,17 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{structMap_a87b32ee66f6a5e0d4bc382a8ddaad027} 
 void Map\+::add\+Walls (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
 
+
+
+Adds wall tiles around a specified path tile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The grid x-\/coordinate of the path tile. \\
+\hline
+{\em y} & The grid y-\/coordinate of the path tile. \\
+\hline
+\end{DoxyParams}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -150,6 +148,18 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{structMap_a162159fb9596c0fc43ec7c19320b3c3f} 
 int Map\+::colour\+Reference (\begin{DoxyParamCaption}\item[{char}]{colour}{}\end{DoxyParamCaption})}
 
+
+
+Helper to get a tile ID from a character representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colour} & The character representing the tile type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The integer ID of the tile. 
+\end{DoxyReturn}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -158,140 +168,36 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{structMap_a162159fb9596c0fc43ec7c19320b3c3f_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{structMap_ae206cb92ab2c008e89fbc070dfcbd63e}\index{Map@{Map}!drawMap@{drawMap}}
-\index{drawMap@{drawMap}!Map@{Map}}
-\doxysubsubsection{\texorpdfstring{drawMap()}{drawMap()}}
-{\footnotesize\ttfamily \label{structMap_ae206cb92ab2c008e89fbc070dfcbd63e} 
-void Map\+::draw\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=342pt]{structMap_ae206cb92ab2c008e89fbc070dfcbd63e_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=299pt]{structMap_ae206cb92ab2c008e89fbc070dfcbd63e_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{structMap_a0c6bb8230dde066248ebb23a67c63596}\index{Map@{Map}!getPelletCount@{getPelletCount}}
 \index{getPelletCount@{getPelletCount}!Map@{Map}}
 \doxysubsubsection{\texorpdfstring{getPelletCount()}{getPelletCount()}}
 {\footnotesize\ttfamily \label{structMap_a0c6bb8230dde066248ebb23a67c63596} 
 const int Map\+::get\+Pellet\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{structMap_ae3a387c6842c05596b004e2735b8cbf5}\index{Map@{Map}!init@{init}}
-\index{init@{init}!Map@{Map}}
-\doxysubsubsection{\texorpdfstring{init()}{init()}}
-{\footnotesize\ttfamily \label{structMap_ae3a387c6842c05596b004e2735b8cbf5} 
-void Map\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=270pt]{structMap_ae3a387c6842c05596b004e2735b8cbf5_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{structMap_a365d25a9d88fa04491fccc1210c41bf9}\index{Map@{Map}!loadMap@{loadMap}}
-\index{loadMap@{loadMap}!Map@{Map}}
-\doxysubsubsection{\texorpdfstring{loadMap()}{loadMap()}}
-{\footnotesize\ttfamily \label{structMap_a365d25a9d88fa04491fccc1210c41bf9} 
-void Map\+::load\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structMap_a365d25a9d88fa04491fccc1210c41bf9_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=296pt]{structMap_a365d25a9d88fa04491fccc1210c41bf9_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{structMap_aa20b3f427f84ba953750dad66686c7c5}\index{Map@{Map}!optimiseDeleter@{optimiseDeleter}}
-\index{optimiseDeleter@{optimiseDeleter}!Map@{Map}}
-\doxysubsubsection{\texorpdfstring{optimiseDeleter()}{optimiseDeleter()}}
-{\footnotesize\ttfamily \label{structMap_aa20b3f427f84ba953750dad66686c7c5} 
-void Map\+::optimise\+Deleter (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{count}{, }\item[{bool}]{horizontal}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+Gets the total number of pellets on the map. 
 
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structMap_aa20b3f427f84ba953750dad66686c7c5_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{structMap_a47a441ca004b287bcbad0c353e7c7035}\index{Map@{Map}!optimiseHelper@{optimiseHelper}}
-\index{optimiseHelper@{optimiseHelper}!Map@{Map}}
-\doxysubsubsection{\texorpdfstring{optimiseHelper()}{optimiseHelper()}}
-{\footnotesize\ttfamily \label{structMap_a47a441ca004b287bcbad0c353e7c7035} 
-int Map\+::optimise\+Helper (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{Group\+ID}]{anti\+Group}{, }\item[{bool}]{optimise\+Direction}{ = {\ttfamily false}}\end{DoxyParamCaption})}
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structMap_a47a441ca004b287bcbad0c353e7c7035_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{structMap_a71b8962d821916cc00b2b495db79f786}\index{Map@{Map}!optimiseMap@{optimiseMap}}
-\index{optimiseMap@{optimiseMap}!Map@{Map}}
-\doxysubsubsection{\texorpdfstring{optimiseMap()}{optimiseMap()}}
-{\footnotesize\ttfamily \label{structMap_a71b8962d821916cc00b2b495db79f786} 
-void Map\+::optimise\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=345pt]{structMap_a71b8962d821916cc00b2b495db79f786_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structMap_a71b8962d821916cc00b2b495db79f786_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{structMap_a47baf1af3323f35cbbe6e824f7e9237a}\index{Map@{Map}!reloadMap@{reloadMap}}
-\index{reloadMap@{reloadMap}!Map@{Map}}
-\doxysubsubsection{\texorpdfstring{reloadMap()}{reloadMap()}}
-{\footnotesize\ttfamily \label{structMap_a47baf1af3323f35cbbe6e824f7e9237a} 
-void Map\+::reload\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structMap_a47baf1af3323f35cbbe6e824f7e9237a_cgraph}
-\end{center}
-\end{figure}
+\begin{DoxyReturn}{Returns}
+The pellet count. 
+\end{DoxyReturn}
 \Hypertarget{structMap_a4cea1b725517357d3ae84033bc9b29c1}\index{Map@{Map}!updateImg@{updateImg}}
 \index{updateImg@{updateImg}!Map@{Map}}
 \doxysubsubsection{\texorpdfstring{updateImg()}{updateImg()}}
 {\footnotesize\ttfamily \label{structMap_a4cea1b725517357d3ae84033bc9b29c1} 
 void Map\+::update\+Img (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structBuilderSpawner}{Builder\+Spawner}} \&}]{spawner}{, }\item[{std\+::vector$<$ bool $>$}]{kill\+Prev\+Block}{}\end{DoxyParamCaption})}
 
+
+
+Updates the internal character map based on builder positions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spawner} & The \doxylink{structBuilderSpawner}{Builder\+Spawner} managing the generation agents. \\
+\hline
+{\em kill\+Prev\+Block} & Flags for tile-\/overwriting logic. \\
+\hline
+\end{DoxyParams}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -304,5 +210,5 @@ Here is the caller graph for this function\+:
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{Map_8h}{Map.\+h}}\item 
-src/\mbox{\hyperlink{Map_8cpp}{Map.\+cpp}}\end{DoxyCompactItemize}
+include/Map.\+h\item 
+src/Map.\+cpp\end{DoxyCompactItemize}

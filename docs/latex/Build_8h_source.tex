@@ -2,176 +2,61 @@
 \hypertarget{Build_8h_source}{}\label{Build_8h_source}\index{include/Build.h@{include/Build.h}}
 \mbox{\hyperlink{Build_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{UserConstants_8h}{UserConstants.h}}"{}}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structBuilder_af8e018e77879c6136e6dabbd5eab0634}{Builder}}\ \{}
-\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}}\ \{\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4a68ca7f04ffc28109cb3c7d6f7938e524}{UP}},\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4aaf475fec944d983f45bd0c0820644301}{DOWN}},\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4ab1c131a9d11c0466abcdefb38878bc26}{LEFT}},\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4a14df7877fb0a6a7b278edbdf3decee3e}{RIGHT}},\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4aa889a31ef5d6a80526f65f41b6824a2f}{NONE}}\ \};}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{structBuilder_af8e018e77879c6136e6dabbd5eab0634}{Builder}}()\ \{}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_a943ff493999ba5af5b145ae9ad94fcf3}{x}}\ =\ \mbox{\hyperlink{structBuilder_ad9bdf0b9b4f03550346e9c4e134fb478}{y}}\ =\ \mbox{\hyperlink{structBuilder_a50b8b83d52bf006d4b1890ef8ea6600a}{currCount}}\ =\ 0;}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_a0b638c2091a3cade940726d710475a22}{currDir}}\ =\ \mbox{\hyperlink{structBuilder_a91aaf4ea8161bf927724d0565c3cb240}{prevDir}}\ =\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4aa889a31ef5d6a80526f65f41b6824a2f}{NONE}};}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739}{forceChange}}\ =\ \mbox{\hyperlink{structBuilder_aa66fc8c4ca83fe37da0360123f86330e}{chanceChange}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ active\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00016\ \ \ \ \ \}}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{structBuilder_a95eb728c831324087c1d93312a44f556}{\string~Builder}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBuilder_ab765778eda85a0235d2823bce5b6079f}{updateChance}}()\ \{}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_aa66fc8c4ca83fe37da0360123f86330e}{chanceChange}}\ =\ rand()\ \%\ 5\ ==\ 0;}
-\DoxyCodeLine{00022\ \ \ \ \ \}}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBuilder_a5a9111341791ef48b9faa786584b120c}{updateForceChange}}()\ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structBuilder_aa66fc8c4ca83fe37da0360123f86330e}{chanceChange}}\ ||\ \mbox{\hyperlink{structBuilder_a50b8b83d52bf006d4b1890ef8ea6600a}{currCount}}\ >=\ \mbox{\hyperlink{UserConstants_8h_ac9e02f9dd65e88aa9cf2395d12637689}{MAX\_STEP}})\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739}{forceChange}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{structBuilder_a0b638c2091a3cade940726d710475a22}{currDir}})\ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4a68ca7f04ffc28109cb3c7d6f7938e524}{UP}}:}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structBuilder_ad9bdf0b9b4f03550346e9c4e134fb478}{y}}\ -\/\ 2\ <\ 1)\ \{}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739}{forceChange}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4aaf475fec944d983f45bd0c0820644301}{DOWN}}:}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structBuilder_ad9bdf0b9b4f03550346e9c4e134fb478}{y}}\ +\ 2\ >\ 20)\ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739}{forceChange}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4ab1c131a9d11c0466abcdefb38878bc26}{LEFT}}:}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structBuilder_a943ff493999ba5af5b145ae9ad94fcf3}{x}}\ -\/\ 2\ <\ 1)\ \{}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739}{forceChange}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4a14df7877fb0a6a7b278edbdf3decee3e}{RIGHT}}:}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structBuilder_a943ff493999ba5af5b145ae9ad94fcf3}{x}}\ +\ 2\ >\ 18)\ \{}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739}{forceChange}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4aa889a31ef5d6a80526f65f41b6824a2f}{NONE}}:}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{UserConstants_8h}{UserConstants.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }Builder\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}}\ \{\ UP,\ DOWN,\ LEFT,\ RIGHT,\ NONE\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{structBuilder}{Builder}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{structBuilder}{\string~Builder}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBuilder_ab765778eda85a0235d2823bce5b6079f}{updateChance}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBuilder_a5a9111341791ef48b9faa786584b120c}{updateForceChange}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBuilder_a118255e92337b64c87c5a68d9b8fb3cf}{assignDirection}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structBuilder_a1120fedf8f2dde051d66e93201297bf1}{updateActivity}}(\textcolor{keywordtype}{char}\ \mbox{\hyperlink{structBuilder_a6dea396d4b5398a554130b6f59da40dc}{currBlock}},\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structBuilder_a18c574396b54999ea12fe697ec1e1be6}{prevBlock}});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBuilder_a9238ee51151896aa8dcd848f1f0b23f4}{setActive}}(\textcolor{keywordtype}{bool}\ val);}
 \DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBuilder_a118255e92337b64c87c5a68d9b8fb3cf}{assignDirection}}()\ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!active\ ||\ !\mbox{\hyperlink{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739}{forceChange}})\ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ std::vector<Direction>\ invalidDir\ =\ \{\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4aa889a31ef5d6a80526f65f41b6824a2f}{NONE}},\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4aa889a31ef5d6a80526f65f41b6824a2f}{NONE}},\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4aa889a31ef5d6a80526f65f41b6824a2f}{NONE}},\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4aa889a31ef5d6a80526f65f41b6824a2f}{NONE}}\ \};}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structBuilder_ad9bdf0b9b4f03550346e9c4e134fb478}{y}}\ >=\ 19\ ||\ \mbox{\hyperlink{structBuilder_a0b638c2091a3cade940726d710475a22}{currDir}}\ ==\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4a68ca7f04ffc28109cb3c7d6f7938e524}{UP}})\ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ invalidDir[3]\ =\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4aaf475fec944d983f45bd0c0820644301}{DOWN}};}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structBuilder_a943ff493999ba5af5b145ae9ad94fcf3}{x}}\ >=\ 17\ ||\ \mbox{\hyperlink{structBuilder_a0b638c2091a3cade940726d710475a22}{currDir}}\ ==\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4ab1c131a9d11c0466abcdefb38878bc26}{LEFT}})\ \{}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ invalidDir[1]\ =\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4a14df7877fb0a6a7b278edbdf3decee3e}{RIGHT}};}
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structBuilder_ad9bdf0b9b4f03550346e9c4e134fb478}{y}}\ <=\ 2\ ||\ \mbox{\hyperlink{structBuilder_a0b638c2091a3cade940726d710475a22}{currDir}}\ ==\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4aaf475fec944d983f45bd0c0820644301}{DOWN}})\ \{}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ invalidDir[2]\ =\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4a68ca7f04ffc28109cb3c7d6f7938e524}{UP}};}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structBuilder_a943ff493999ba5af5b145ae9ad94fcf3}{x}}\ <=\ 2\ ||\ \mbox{\hyperlink{structBuilder_a0b638c2091a3cade940726d710475a22}{currDir}}\ ==\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4a14df7877fb0a6a7b278edbdf3decee3e}{RIGHT}})\ \{}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ invalidDir[0]\ =\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4ab1c131a9d11c0466abcdefb38878bc26}{LEFT}};}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_a91aaf4ea8161bf927724d0565c3cb240}{prevDir}}\ =\ \mbox{\hyperlink{structBuilder_a0b638c2091a3cade940726d710475a22}{currDir}};}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_a0b638c2091a3cade940726d710475a22}{currDir}}\ =\ (\mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}})(rand()\ \%\ 4);}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::find(invalidDir.begin(),\ invalidDir.end(),\ \mbox{\hyperlink{structBuilder_a0b638c2091a3cade940726d710475a22}{currDir}})\ !=\ invalidDir.end())\ \{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_a0b638c2091a3cade940726d710475a22}{currDir}}\ =\ (\mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}})(rand()\ \%\ 4);}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_a50b8b83d52bf006d4b1890ef8ea6600a}{currCount}}\ =\ 0;}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739}{forceChange}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00081\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structBuilder_aefa6ef3c297647e6978951ccfb14833d}{isActive}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ x,\ \mbox{\hyperlink{structBuilder_ad9bdf0b9b4f03550346e9c4e134fb478}{y}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structBuilder_a50b8b83d52bf006d4b1890ef8ea6600a}{currCount}};\ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}}\ \mbox{\hyperlink{structBuilder_a0b638c2091a3cade940726d710475a22}{currDir}};\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}}\ \mbox{\hyperlink{structBuilder_a91aaf4ea8161bf927724d0565c3cb240}{prevDir}};\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structBuilder_a6dea396d4b5398a554130b6f59da40dc}{currBlock}};\ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structBuilder_a18c574396b54999ea12fe697ec1e1be6}{prevBlock}};\ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739}{forceChange}};\ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structBuilder_aa66fc8c4ca83fe37da0360123f86330e}{chanceChange}};\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ active;}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{struct\ }BuilderSpawner\ \{}
+\DoxyCodeLine{00079\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00080\ \ \ \ \ BuilderSpawner();}
+\DoxyCodeLine{00081\ \ \ \ \ \string~BuilderSpawner();}
 \DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structBuilder_a1120fedf8f2dde051d66e93201297bf1}{updateActivity}}(\textcolor{keywordtype}{char}\ \mbox{\hyperlink{structBuilder_a6dea396d4b5398a554130b6f59da40dc}{currBlock}},\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structBuilder_a18c574396b54999ea12fe697ec1e1be6}{prevBlock}})\ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structBuilder_a6dea396d4b5398a554130b6f59da40dc}{currBlock}}\ ==\ \mbox{\hyperlink{UserConstants_8h_a8b7cb09acec89dc654c73f6880e676fa}{PATH}}\ ||\ \mbox{\hyperlink{structBuilder_a18c574396b54999ea12fe697ec1e1be6}{prevBlock}}\ ==\ \mbox{\hyperlink{UserConstants_8h_a8b7cb09acec89dc654c73f6880e676fa}{PATH}})\ \{}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilder_a9238ee51151896aa8dcd848f1f0b23f4}{setActive}}(\textcolor{keyword}{false});}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structBuilder_a6dea396d4b5398a554130b6f59da40dc}{currBlock}}\ !=\ \mbox{\hyperlink{UserConstants_8h_a8b7cb09acec89dc654c73f6880e676fa}{PATH}}\ \&\&\ \mbox{\hyperlink{structBuilder_a18c574396b54999ea12fe697ec1e1be6}{prevBlock}}\ ==\ \mbox{\hyperlink{UserConstants_8h_a8b7cb09acec89dc654c73f6880e676fa}{PATH}};}
-\DoxyCodeLine{00088\ \ \ \ \ \}}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBuilder_a9238ee51151896aa8dcd848f1f0b23f4}{setActive}}(\textcolor{keywordtype}{bool}\ val)\ \{}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ active\ =\ val;}
-\DoxyCodeLine{00092\ \ \ \ \ \}}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structBuilder_aefa6ef3c297647e6978951ccfb14833d}{isActive}}()\ \{}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ active;}
-\DoxyCodeLine{00096\ \ \ \ \ \}}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structBuilder_a943ff493999ba5af5b145ae9ad94fcf3}{x}},\ \mbox{\hyperlink{structBuilder_ad9bdf0b9b4f03550346e9c4e134fb478}{y}};}
-\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structBuilder_a50b8b83d52bf006d4b1890ef8ea6600a}{currCount}};}
-\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}}\ \mbox{\hyperlink{structBuilder_a0b638c2091a3cade940726d710475a22}{currDir}};}
-\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4}{Direction}}\ \mbox{\hyperlink{structBuilder_a91aaf4ea8161bf927724d0565c3cb240}{prevDir}};}
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structBuilder_a6dea396d4b5398a554130b6f59da40dc}{currBlock}};}
-\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structBuilder_a18c574396b54999ea12fe697ec1e1be6}{prevBlock}};}
-\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structBuilder_a781cb1e9d290a6d83b0f5e48b112e739}{forceChange}};}
-\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structBuilder_aa66fc8c4ca83fe37da0360123f86330e}{chanceChange}};}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ active;}
-\DoxyCodeLine{00109\ \};}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00111\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structBuilderSpawner_ae378ce2baadf05142c40966a4d711979}{BuilderSpawner}}\ \{}
-\DoxyCodeLine{00112\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{structBuilderSpawner_ae378ce2baadf05142c40966a4d711979}{BuilderSpawner}}()\ \{}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilderSpawner_a2d794f246e55e4e431ac876f0bcd3bcc}{x}}\ =\ 0;}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilderSpawner_aec52dfc7ac96868f91a3084cf3ee1a33}{y}}\ =\ 0;}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilderSpawner_a6e0f55a014dc43a44dbaf0953d2f84e9}{builders}}.emplace\_back(\mbox{\hyperlink{structBuilder}{Builder}}());}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilderSpawner_a6e0f55a014dc43a44dbaf0953d2f84e9}{builders}}.emplace\_back(\mbox{\hyperlink{structBuilder}{Builder}}());}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilderSpawner_a6e0f55a014dc43a44dbaf0953d2f84e9}{builders}}.emplace\_back(\mbox{\hyperlink{structBuilder}{Builder}}());}
-\DoxyCodeLine{00119\ \ \ \ \ \}}
-\DoxyCodeLine{00120\ }
-\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{structBuilderSpawner_a139e46c2999f5b6caaccf3adc63e8af5}{\string~BuilderSpawner}}()\ \{}
-\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilderSpawner_a9addf9449b4e191367ef28e052b0c0bd}{clear}}();}
-\DoxyCodeLine{00123\ \ \ \ \ \}}
-\DoxyCodeLine{00124\ }
-\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBuilderSpawner_a8f4493308b84572901a529c8fd4e270e}{moveBuilders}}()\ \{}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ build\ :\ \mbox{\hyperlink{structBuilderSpawner_a6e0f55a014dc43a44dbaf0953d2f84e9}{builders}})\ \{}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!build.isActive())\ \textcolor{keywordflow}{continue};}
-\DoxyCodeLine{00128\ }
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (build.currDir)\ \{}
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4a68ca7f04ffc28109cb3c7d6f7938e524}{Builder::UP}}:}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ build.y\ -\/=\ 2;}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4aaf475fec944d983f45bd0c0820644301}{Builder::DOWN}}:}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ build.y\ +=\ 2;}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4ab1c131a9d11c0466abcdefb38878bc26}{Builder::LEFT}}:}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ build.x\ -\/=\ 2;}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{structBuilder_a3a8f33c440a85fc0511fb524834022a4a14df7877fb0a6a7b278edbdf3decee3e}{Builder::RIGHT}}:}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ build.x\ +=\ 2;}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ build.currCount++;}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00147\ \ \ \ \ \}}
-\DoxyCodeLine{00148\ }
-\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBuilderSpawner_a564c452a5c105d43fa238614496e2aad}{updateBuilders}}()\ \{}
-\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ build\ :\ \mbox{\hyperlink{structBuilderSpawner_a6e0f55a014dc43a44dbaf0953d2f84e9}{builders}})\ \{}
-\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ build.updateChance();}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ build.updateForceChange();}
-\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ build.assignDirection();}
-\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00155\ \ \ \ \ \}}
-\DoxyCodeLine{00156\ }
-\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structBuilderSpawner_a82d1430250e6cb8db70091129d1b2d8f}{isActive}}()\ \{}
-\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ active\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{structBuilderSpawner_a6e0f55a014dc43a44dbaf0953d2f84e9}{builders}}.size();\ i++)\ \{}
-\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ active\ |=\ \mbox{\hyperlink{structBuilderSpawner_a6e0f55a014dc43a44dbaf0953d2f84e9}{builders}}[i].isActive();}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ active;}
-\DoxyCodeLine{00163\ \ \ \ \ \}}
-\DoxyCodeLine{00164\ }
-\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBuilderSpawner_a9addf9449b4e191367ef28e052b0c0bd}{clear}}()\ \{}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structBuilderSpawner_a6e0f55a014dc43a44dbaf0953d2f84e9}{builders}}.clear();}
-\DoxyCodeLine{00167\ \ \ \ \ \}}
-\DoxyCodeLine{00168\ }
-\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structBuilderSpawner_a2d794f246e55e4e431ac876f0bcd3bcc}{x}},\ \mbox{\hyperlink{structBuilderSpawner_aec52dfc7ac96868f91a3084cf3ee1a33}{y}};}
-\DoxyCodeLine{00170\ \ \ \ \ std::vector<Builder>\ \mbox{\hyperlink{structBuilderSpawner_a6e0f55a014dc43a44dbaf0953d2f84e9}{builders}};}
-\DoxyCodeLine{00171\ \};}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBuilderSpawner_a8f4493308b84572901a529c8fd4e270e}{moveBuilders}}();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBuilderSpawner_a564c452a5c105d43fa238614496e2aad}{updateBuilders}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structBuilderSpawner_a82d1430250e6cb8db70091129d1b2d8f}{isActive}}();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structBuilderSpawner_a9addf9449b4e191367ef28e052b0c0bd}{clear}}();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{int}\ x,\ y;}
+\DoxyCodeLine{00105\ \ \ \ \ std::vector<Builder>\ builders;}
+\DoxyCodeLine{00106\ \};}
 
 \end{DoxyCode}

@@ -1,0 +1,7 @@
+<map id="Map::addTile" name="Map::addTile">
+<area shape="rect" id="Node000001" title="Creates a single tile entity at a specific location." alt="" coords="5,32,111,60"/>
+<area shape="rect" id="Node000002" href="/home/mfareed/repos/pacman/engine/engine.tag$structEntity.html#aafe23d7d7ea7f427ca40454edcae460e" title=" " alt="" coords="159,5,324,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,36,143,31,144,36,111,41"/>
+<area shape="rect" id="Node000003" href="/home/mfareed/repos/pacman/engine/engine.tag$structEntity.html#aaee4506fc67f002244c8ad2adc92417c" title=" " alt="" coords="177,57,306,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="111,50,162,57,161,63,111,56"/>
+</map>

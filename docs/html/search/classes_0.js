@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['builder_0',['Builder',['../structBuilder.html',1,'']]],
-  ['builderspawner_1',['BuilderSpawner',['../structBuilderSpawner.html',1,'']]]
+  ['animation_0',['Animation',['https://noxayyyy.github.io/nox-engine/structAnimator_1_1Animation.html',1,'Animator']]],
+  ['animator_1',['Animator',['https://noxayyyy.github.io/nox-engine/structAnimator.html',1,'']]]
 ];

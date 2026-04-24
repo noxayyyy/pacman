@@ -1,7 +1,16 @@
 var searchData=
 [
-  ['direction_0',['Direction',['../structBuilder.html#a3a8f33c440a85fc0511fb524834022a4',1,'Builder']]],
-  ['down_1',['DOWN',['../structBuilder.html#a3a8f33c440a85fc0511fb524834022a4aaf475fec944d983f45bd0c0820644301',1,'Builder']]],
-  ['draw_2',['draw',['../structGameplayScene.html#ab39a3f23e2c0f7b41a4223c6b335f3aa',1,'GameplayScene::draw()'],['../structTestScene.html#a69d38eaa79627dd860d3924e0d1061c2',1,'TestScene::draw()']]],
-  ['drawmap_3',['drawMap',['../structMap.html#ae206cb92ab2c008e89fbc070dfcbd63e',1,'Map']]]
+  ['delcomponent_0',['delComponent',['https://noxayyyy.github.io/nox-engine/structEntity.html#a0c59911f0b4747b26e004796d5a9f85d',1,'Entity']]],
+  ['deleteallcomponents_1',['deleteAllComponents',['https://noxayyyy.github.io/nox-engine/structEntity.html#a43953614bae5e98da168015ec31f994a',1,'Entity']]],
+  ['delgroup_2',['delGroup',['https://noxayyyy.github.io/nox-engine/structEntity.html#a6c56a84be807fa655c42141d982bef54',1,'Entity']]],
+  ['deltatime_3',['deltaTime',['https://noxayyyy.github.io/nox-engine/classGame.html#ad918e31c1644966465f822d912585f16',1,'Game']]],
+  ['destroyall_4',['destroyAll',['https://noxayyyy.github.io/nox-engine/structManager.html#aa6fcc1945934b4c4cf7c5f0e308d3709',1,'Manager']]],
+  ['direction_5',['Direction',['../structBuilder.html#a3a8f33c440a85fc0511fb524834022a4',1,'Builder']]],
+  ['disable_6',['disable',['https://noxayyyy.github.io/nox-engine/structEntity.html#a1a4a3c76da92e326a7a9b701ccdd570e',1,'Entity']]],
+  ['disablescene_7',['disableScene',['https://noxayyyy.github.io/nox-engine/structScene.html#a3f612fa63b769ff431831701f1a36eb6',1,'Scene']]],
+  ['divide_8',['divide',['https://noxayyyy.github.io/nox-engine/structVector2D.html#adcb60dafb901de5bd96c0e078f5adfee',1,'Vector2D']]],
+  ['draw_9',['draw',['https://noxayyyy.github.io/nox-engine/structAnimator.html#a23e378fb2dc1cb48c685015ddc885c29',1,'Animator::draw()'],['https://noxayyyy.github.io/nox-engine/structButton.html#af4d14cf544d8e0620f4ffcd7984103f7',1,'Button::draw()'],['https://noxayyyy.github.io/nox-engine/structComponent.html#a2fc563e2f7e0c20902fc4f9d5e69e02a',1,'Component::draw()'],['https://noxayyyy.github.io/nox-engine/structEntity.html#a7666f416dd0d1fce0f1133f78df44476',1,'Entity::draw()'],['https://noxayyyy.github.io/nox-engine/structManager.html#ad688d8d92b4d0c1049913500ca9ba9f3',1,'Manager::draw()'],['https://noxayyyy.github.io/nox-engine/structScene.html#a789c16961aa1e316b2a4a05b95187546',1,'Scene::draw()'],['https://noxayyyy.github.io/nox-engine/structSprites.html#acf0999cbe0c8a23f168b357cab07b3d4',1,'Sprites::draw()'],['https://noxayyyy.github.io/nox-engine/structText.html#a8f486a54a21fafc7a5dfb75975f1621f',1,'Text::draw()'],['../structGameplayScene.html#ab39a3f23e2c0f7b41a4223c6b335f3aa',1,'GameplayScene::draw()'],['../structTestScene.html#a69d38eaa79627dd860d3924e0d1061c2',1,'TestScene::draw()']]],
+  ['drawmap_10',['drawMap',['../structMap.html#ae206cb92ab2c008e89fbc070dfcbd63e',1,'Map']]],
+  ['drawscene_11',['drawScene',['https://noxayyyy.github.io/nox-engine/structSceneManager.html#ab3b6a9d787bc950ad83ec50c0688f752',1,'SceneManager']]],
+  ['drawtexture_12',['DrawTexture',['https://noxayyyy.github.io/nox-engine/structTextureManager.html#aec4ea2167d0b919edeb74a5db3cf7ff8',1,'TextureManager::DrawTexture(SDL_Texture *tex, SDL_Rect &amp;src, SDL_Rect &amp;dest)'],['https://noxayyyy.github.io/nox-engine/structTextureManager.html#a7023e6a32143039536b93f4d2f4c20a9',1,'TextureManager::DrawTexture(SDL_Texture *tex, SDL_Rect &amp;dest)'],['https://noxayyyy.github.io/nox-engine/structTextureManager.html#aef20b2103e28306a714abf1161d41174',1,'TextureManager::DrawTexture(SDL_Texture *tex, SDL_Rect &amp;src, SDL_Rect &amp;dest, const double angle)'],['https://noxayyyy.github.io/nox-engine/structTextureManager.html#a0a7be48af9b877305284415aea6ec09f',1,'TextureManager::DrawTexture(SDL_Texture *tex, SDL_Rect &amp;dest, const double angle)']]]
 ];

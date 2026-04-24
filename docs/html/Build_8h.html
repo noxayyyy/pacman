@@ -107,6 +107,9 @@ $(function(){initNavTree('Build_8h.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Build.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defines structures for procedurally generating the game map layout.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="UserConstants_8h_source.html">UserConstants.h</a>&quot;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -115,14 +118,14 @@ Include dependency graph for Build.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Build_8h__incl.png" border="0" usemap="#ainclude_2Build_8h" alt=""/></div>
 <map name="ainclude_2Build_8h" id="ainclude_2Build_8h">
-<area shape="rect" title=" " alt="" coords="264,5,381,33"/>
-<area shape="rect" href="UserConstants_8h.html" title=" " alt="" coords="128,81,256,109"/>
+<area shape="rect" title="Defines structures for procedurally generating the game map layout." alt="" coords="264,5,381,33"/>
+<area shape="rect" href="UserConstants_8h.html" title="Defines game&#45;specific constants, separate from the core engine constants." alt="" coords="128,81,256,109"/>
 <area shape="poly" title=" " alt="" coords="300,36,230,75,227,71,298,31"/>
 <area shape="rect" title=" " alt="" coords="280,81,365,109"/>
 <area shape="poly" title=" " alt="" coords="325,34,325,65,320,65,320,34"/>
 <area shape="rect" title=" " alt="" coords="389,81,451,109"/>
 <area shape="poly" title=" " alt="" coords="342,31,392,70,389,74,338,36"/>
-<area shape="rect" title=" " alt="" coords="5,157,104,184"/>
+<area shape="rect" target="_parent" href="https://noxayyyy.github.io/nox-engine/Constants_8h.html" title=" " alt="" coords="5,157,104,184"/>
 <area shape="poly" title=" " alt="" coords="169,112,93,152,91,147,166,107"/>
 <area shape="rect" title=" " alt="" coords="128,157,256,184"/>
 <area shape="poly" title=" " alt="" coords="194,109,194,141,189,141,189,109"/>
@@ -135,16 +138,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Build_8h__dep__incl.png" border="0" usemap="#ainclude_2Build_8hdep" alt=""/></div>
 <map name="ainclude_2Build_8hdep" id="ainclude_2Build_8hdep">
-<area shape="rect" title=" " alt="" coords="174,5,291,33"/>
-<area shape="rect" href="Map_8h.html" title=" " alt="" coords="176,81,289,109"/>
-<area shape="poly" title=" " alt="" coords="235,49,235,81,230,81,230,49"/>
-<area shape="rect" href="GameplayScene_8h.html" title=" " alt="" coords="5,157,196,184"/>
-<area shape="poly" title=" " alt="" coords="197,119,125,159,123,154,194,114"/>
-<area shape="rect" href="Game_8cpp.html" title=" " alt="" coords="111,232,221,260"/>
-<area shape="poly" title=" " alt="" coords="230,125,210,185,179,234,174,231,205,183,224,123"/>
-<area shape="rect" href="Map_8cpp.html" title=" " alt="" coords="270,157,369,184"/>
-<area shape="poly" title=" " alt="" coords="261,117,306,154,302,158,258,121"/>
-<area shape="poly" title=" " alt="" coords="124,194,156,230,152,234,120,198"/>
+<area shape="rect" title="Defines structures for procedurally generating the game map layout." alt="" coords="42,5,159,33"/>
+<area shape="rect" href="Map_8h_source.html" title=" " alt="" coords="44,81,157,109"/>
+<area shape="poly" title=" " alt="" coords="103,49,103,81,98,81,98,49"/>
+<area shape="rect" href="GameplayScene_8h.html" title="Defines the main scene for the Pac&#45;Man game." alt="" coords="5,157,196,184"/>
+<area shape="poly" title=" " alt="" coords="103,124,103,156,98,156,98,124"/>
 </map>
 </div>
 </div>
@@ -153,11 +151,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBuilder.html">Builder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a single "digger" agent in the procedural map generation algorithm.  <a href="structBuilder.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBuilderSpawner.html">BuilderSpawner</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manages a collection of <a class="el" href="structBuilder.html" title="Represents a single &quot;digger&quot; agent in the procedural map generation algorithm.">Builder</a> agents to generate a map.  <a href="structBuilderSpawner.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defines structures for procedurally generating the game map layout. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -2,6 +2,11 @@
 \hypertarget{structTestScene}{}\label{structTestScene}\index{TestScene@{TestScene}}
 
 
+An empty scene implementation, useful for scaffolding or testing new features.  
+
+
+
+
 {\ttfamily \#include $<$Test\+Scene.\+h$>$}
 
 
@@ -11,7 +16,7 @@ Inheritance diagram for Test\+Scene\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=187pt]{structTestScene__inherit__graph}
+\includegraphics[height=550pt]{structTestScene__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -21,73 +26,144 @@ Collaboration diagram for Test\+Scene\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=187pt]{structTestScene__coll__graph}
+\includegraphics[height=550pt]{structTestScene__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structTestScene_a04fd916e8e52cd1335fc05e2ebf1c8df}{Test\+Scene}} ()
-\item 
 void \mbox{\hyperlink{structTestScene_a365110203eb94b8e2b9dc442b158620e}{init}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em (Empty) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structTestScene_adacd7f3c91597c6b710fe80257ac0001}{update}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em (Empty) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structTestScene_a40b709902dc1e4c8025265dd27a1d575}{reload}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em (Empty) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structTestScene_ab6a4bed158a735de2e6ff91e6f74cd79}{reload\+With\+State}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em (Empty) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structTestScene_ae7dfa27fc1c9da94520f4e6ac4e03b3b}{handle\+Events}} (SDL\+\_\+\+Event \&event) override
-\item 
+\begin{DoxyCompactList}\small\item\em (Empty) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structTestScene_a69d38eaa79627dd860d3924e0d1061c2}{draw}} () override
+\begin{DoxyCompactList}\small\item\em (Empty) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \textbf{ Scene}}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Scene} (std\+::string \textbf{ name}, int \textbf{ build\+Index}, bool is\+Panel, bool is\+Locking, int \textbf{ layer})
+\item 
+void \textbf{ add\+Entity\+To\+Scene} (\textbf{ Entity} \&entity)
+\item 
+void \textbf{ remove\+Entity\+From\+Scene} (\textbf{ Entity} \texorpdfstring{$\ast$}{*}entity)
+\item 
+bool \textbf{ exists\+In\+Scene} (\textbf{ Entity} \texorpdfstring{$\ast$}{*}entity)
+\item 
+void \textbf{ clear\+Scene} ()
+\item 
+void \textbf{ enable\+Scene} ()
+\item 
+void \textbf{ disable\+Scene} ()
+\item 
+const bool \& \textbf{ get\+Is\+Panel} () const
+\item 
+const bool \& \textbf{ get\+Is\+Locking} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \textbf{ Scene}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ name}
+\item 
+int \textbf{ build\+Index}
+\item 
+int \textbf{ layer}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{structTestScene_a04fd916e8e52cd1335fc05e2ebf1c8df}\index{TestScene@{TestScene}!TestScene@{TestScene}}
-\index{TestScene@{TestScene}!TestScene@{TestScene}}
-\doxysubsubsection{\texorpdfstring{TestScene()}{TestScene()}}
-{\footnotesize\ttfamily \label{structTestScene_a04fd916e8e52cd1335fc05e2ebf1c8df} 
-Test\+Scene\+::\+Test\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
+\doxysubsection{Detailed Description}
+An empty scene implementation, useful for scaffolding or testing new features. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{structTestScene_a69d38eaa79627dd860d3924e0d1061c2}\index{TestScene@{TestScene}!draw@{draw}}
 \index{draw@{draw}!TestScene@{TestScene}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
 {\footnotesize\ttfamily \label{structTestScene_a69d38eaa79627dd860d3924e0d1061c2} 
-void Test\+Scene\+::draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+void Test\+Scene\+::draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+(Empty) 
+
+
+
+Implements \textbf{ Scene}.
 
 \Hypertarget{structTestScene_ae7dfa27fc1c9da94520f4e6ac4e03b3b}\index{TestScene@{TestScene}!handleEvents@{handleEvents}}
 \index{handleEvents@{handleEvents}!TestScene@{TestScene}}
 \doxysubsubsection{\texorpdfstring{handleEvents()}{handleEvents()}}
 {\footnotesize\ttfamily \label{structTestScene_ae7dfa27fc1c9da94520f4e6ac4e03b3b} 
-void Test\+Scene\+::handle\+Events (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+void Test\+Scene\+::handle\+Events (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+(Empty) 
+
+
+
+Implements \textbf{ Scene}.
 
 \Hypertarget{structTestScene_a365110203eb94b8e2b9dc442b158620e}\index{TestScene@{TestScene}!init@{init}}
 \index{init@{init}!TestScene@{TestScene}}
 \doxysubsubsection{\texorpdfstring{init()}{init()}}
 {\footnotesize\ttfamily \label{structTestScene_a365110203eb94b8e2b9dc442b158620e} 
-void Test\+Scene\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+void Test\+Scene\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+(Empty) 
+
+
+
+Implements \textbf{ Scene}.
 
 \Hypertarget{structTestScene_a40b709902dc1e4c8025265dd27a1d575}\index{TestScene@{TestScene}!reload@{reload}}
 \index{reload@{reload}!TestScene@{TestScene}}
 \doxysubsubsection{\texorpdfstring{reload()}{reload()}}
 {\footnotesize\ttfamily \label{structTestScene_a40b709902dc1e4c8025265dd27a1d575} 
-void Test\+Scene\+::reload (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+void Test\+Scene\+::reload (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+(Empty) 
+
+
+
+Implements \textbf{ Scene}.
 
 \Hypertarget{structTestScene_ab6a4bed158a735de2e6ff91e6f74cd79}\index{TestScene@{TestScene}!reloadWithState@{reloadWithState}}
 \index{reloadWithState@{reloadWithState}!TestScene@{TestScene}}
 \doxysubsubsection{\texorpdfstring{reloadWithState()}{reloadWithState()}}
 {\footnotesize\ttfamily \label{structTestScene_ab6a4bed158a735de2e6ff91e6f74cd79} 
-void Test\+Scene\+::reload\+With\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+void Test\+Scene\+::reload\+With\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+(Empty) 
+
+
+
+Implements \textbf{ Scene}.
 
 \Hypertarget{structTestScene_adacd7f3c91597c6b710fe80257ac0001}\index{TestScene@{TestScene}!update@{update}}
 \index{update@{update}!TestScene@{TestScene}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily \label{structTestScene_adacd7f3c91597c6b710fe80257ac0001} 
-void Test\+Scene\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+void Test\+Scene\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+(Empty) 
+
+
+
+Implements \textbf{ Scene}.
 
 
 

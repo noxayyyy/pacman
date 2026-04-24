@@ -1,5 +1,10 @@
 \doxysection{include/\+Gameplay\+Scene.h File Reference}
 \hypertarget{GameplayScene_8h}{}\label{GameplayScene_8h}\index{include/GameplayScene.h@{include/GameplayScene.h}}
+
+
+Defines the main scene for the Pac-\/\+Man game.  
+
+
 {\ttfamily \#include "{}Animator.\+h"{}}\newline
 {\ttfamily \#include "{}Button.\+h"{}}\newline
 {\ttfamily \#include "{}Constants.\+h"{}}\newline
@@ -17,86 +22,40 @@ Include dependency graph for Gameplay\+Scene.\+h\+:
 \includegraphics[width=350pt]{GameplayScene_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=223pt]{GameplayScene_8h__dep__incl}
-\end{center}
-\end{figure}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structGameplayScene}{Gameplay\+Scene}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The main scene that orchestrates the core gameplay loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-Manager \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}
+\Hypertarget{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}\label{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f} 
+\textbf{ Manager} {\bfseries manager}
 \item 
-Scene\+Manager \mbox{\hyperlink{GameplayScene_8h_a9b68e0a0516c26a87a9c42a12e248d01}{scene\+Manager}}
+\Hypertarget{GameplayScene_8h_a9b68e0a0516c26a87a9c42a12e248d01}\label{GameplayScene_8h_a9b68e0a0516c26a87a9c42a12e248d01} 
+\textbf{ Scene\+Manager} {\bfseries scene\+Manager}
 \item 
-std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{GameplayScene_8h_a28f491721073d8d963d518e00b788d0d}{colliders}}
+\Hypertarget{GameplayScene_8h_a28f491721073d8d963d518e00b788d0d}\label{GameplayScene_8h_a28f491721073d8d963d518e00b788d0d} 
+std\+::vector$<$ \textbf{ Entity} \texorpdfstring{$\ast$}{*} $>$ {\bfseries colliders}
 \item 
-std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{GameplayScene_8h_a809306cc98b3ccc27184a58af0c24185}{tiles}}
+\Hypertarget{GameplayScene_8h_a809306cc98b3ccc27184a58af0c24185}\label{GameplayScene_8h_a809306cc98b3ccc27184a58af0c24185} 
+std\+::vector$<$ \textbf{ Entity} \texorpdfstring{$\ast$}{*} $>$ {\bfseries tiles}
 \item 
-std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{GameplayScene_8h_a68e9efb0940626c90aff0b03f2919294}{players}}
+\Hypertarget{GameplayScene_8h_a68e9efb0940626c90aff0b03f2919294}\label{GameplayScene_8h_a68e9efb0940626c90aff0b03f2919294} 
+std\+::vector$<$ \textbf{ Entity} \texorpdfstring{$\ast$}{*} $>$ {\bfseries players}
 \item 
-std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{GameplayScene_8h_a50dacac939cbf6b8aef26ce2dc2b0473}{ghosts}}
+\Hypertarget{GameplayScene_8h_a50dacac939cbf6b8aef26ce2dc2b0473}\label{GameplayScene_8h_a50dacac939cbf6b8aef26ce2dc2b0473} 
+std\+::vector$<$ \textbf{ Entity} \texorpdfstring{$\ast$}{*} $>$ {\bfseries ghosts}
 \item 
-std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{GameplayScene_8h_aaa2eabe59fadf1825855cb517bcfa9a4}{pellets}}
+\Hypertarget{GameplayScene_8h_aaa2eabe59fadf1825855cb517bcfa9a4}\label{GameplayScene_8h_aaa2eabe59fadf1825855cb517bcfa9a4} 
+std\+::vector$<$ \textbf{ Entity} \texorpdfstring{$\ast$}{*} $>$ {\bfseries pellets}
 \item 
-std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{GameplayScene_8h_a7c641ff50ec423294cc12b3650dce35d}{ghost\+Spawns}}
+\Hypertarget{GameplayScene_8h_a7c641ff50ec423294cc12b3650dce35d}\label{GameplayScene_8h_a7c641ff50ec423294cc12b3650dce35d} 
+std\+::vector$<$ \textbf{ Entity} \texorpdfstring{$\ast$}{*} $>$ {\bfseries ghost\+Spawns}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Variable Documentation}
-\Hypertarget{GameplayScene_8h_a28f491721073d8d963d518e00b788d0d}\index{GameplayScene.h@{GameplayScene.h}!colliders@{colliders}}
-\index{colliders@{colliders}!GameplayScene.h@{GameplayScene.h}}
-\doxysubsubsection{\texorpdfstring{colliders}{colliders}}
-{\footnotesize\ttfamily \label{GameplayScene_8h_a28f491721073d8d963d518e00b788d0d} 
-std\+::vector$<$Entity\texorpdfstring{$\ast$}{*}$>$ colliders\hspace{0.3cm}{\ttfamily [extern]}}
-
-\Hypertarget{GameplayScene_8h_a50dacac939cbf6b8aef26ce2dc2b0473}\index{GameplayScene.h@{GameplayScene.h}!ghosts@{ghosts}}
-\index{ghosts@{ghosts}!GameplayScene.h@{GameplayScene.h}}
-\doxysubsubsection{\texorpdfstring{ghosts}{ghosts}}
-{\footnotesize\ttfamily \label{GameplayScene_8h_a50dacac939cbf6b8aef26ce2dc2b0473} 
-std\+::vector$<$Entity\texorpdfstring{$\ast$}{*}$>$ ghosts\hspace{0.3cm}{\ttfamily [extern]}}
-
-\Hypertarget{GameplayScene_8h_a7c641ff50ec423294cc12b3650dce35d}\index{GameplayScene.h@{GameplayScene.h}!ghostSpawns@{ghostSpawns}}
-\index{ghostSpawns@{ghostSpawns}!GameplayScene.h@{GameplayScene.h}}
-\doxysubsubsection{\texorpdfstring{ghostSpawns}{ghostSpawns}}
-{\footnotesize\ttfamily \label{GameplayScene_8h_a7c641ff50ec423294cc12b3650dce35d} 
-std\+::vector$<$Entity\texorpdfstring{$\ast$}{*}$>$ ghost\+Spawns\hspace{0.3cm}{\ttfamily [extern]}}
-
-\Hypertarget{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}\index{GameplayScene.h@{GameplayScene.h}!manager@{manager}}
-\index{manager@{manager}!GameplayScene.h@{GameplayScene.h}}
-\doxysubsubsection{\texorpdfstring{manager}{manager}}
-{\footnotesize\ttfamily \label{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f} 
-Manager manager\hspace{0.3cm}{\ttfamily [extern]}}
-
-\Hypertarget{GameplayScene_8h_aaa2eabe59fadf1825855cb517bcfa9a4}\index{GameplayScene.h@{GameplayScene.h}!pellets@{pellets}}
-\index{pellets@{pellets}!GameplayScene.h@{GameplayScene.h}}
-\doxysubsubsection{\texorpdfstring{pellets}{pellets}}
-{\footnotesize\ttfamily \label{GameplayScene_8h_aaa2eabe59fadf1825855cb517bcfa9a4} 
-std\+::vector$<$Entity\texorpdfstring{$\ast$}{*}$>$ pellets\hspace{0.3cm}{\ttfamily [extern]}}
-
-\Hypertarget{GameplayScene_8h_a68e9efb0940626c90aff0b03f2919294}\index{GameplayScene.h@{GameplayScene.h}!players@{players}}
-\index{players@{players}!GameplayScene.h@{GameplayScene.h}}
-\doxysubsubsection{\texorpdfstring{players}{players}}
-{\footnotesize\ttfamily \label{GameplayScene_8h_a68e9efb0940626c90aff0b03f2919294} 
-std\+::vector$<$Entity\texorpdfstring{$\ast$}{*}$>$ players\hspace{0.3cm}{\ttfamily [extern]}}
-
-\Hypertarget{GameplayScene_8h_a9b68e0a0516c26a87a9c42a12e248d01}\index{GameplayScene.h@{GameplayScene.h}!sceneManager@{sceneManager}}
-\index{sceneManager@{sceneManager}!GameplayScene.h@{GameplayScene.h}}
-\doxysubsubsection{\texorpdfstring{sceneManager}{sceneManager}}
-{\footnotesize\ttfamily \label{GameplayScene_8h_a9b68e0a0516c26a87a9c42a12e248d01} 
-Scene\+Manager scene\+Manager\hspace{0.3cm}{\ttfamily [extern]}}
-
-\Hypertarget{GameplayScene_8h_a809306cc98b3ccc27184a58af0c24185}\index{GameplayScene.h@{GameplayScene.h}!tiles@{tiles}}
-\index{tiles@{tiles}!GameplayScene.h@{GameplayScene.h}}
-\doxysubsubsection{\texorpdfstring{tiles}{tiles}}
-{\footnotesize\ttfamily \label{GameplayScene_8h_a809306cc98b3ccc27184a58af0c24185} 
-std\+::vector$<$Entity\texorpdfstring{$\ast$}{*}$>$ tiles\hspace{0.3cm}{\ttfamily [extern]}}
+\doxysubsection{Detailed Description}
+Defines the main scene for the Pac-\/\+Man game. 
 

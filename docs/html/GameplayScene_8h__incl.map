@@ -1,35 +1,35 @@
 <map id="include/GameplayScene.h" name="include/GameplayScene.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="343,5,533,33"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,98,109"/>
+<area shape="rect" id="Node000001" title="Defines the main scene for the Pac&#45;Man game." alt="" coords="343,5,533,33"/>
+<area shape="rect" id="Node000002" href="/home/mfareed/repos/pacman/engine/engine.tag$Animator_8h.html" title=" " alt="" coords="5,81,98,109"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="363,36,113,83,112,78,362,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="121,81,198,109"/>
+<area shape="rect" id="Node000003" href="/home/mfareed/repos/pacman/engine/engine.tag$Button_8h.html" title=" " alt="" coords="121,81,198,109"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="389,36,213,82,212,77,388,31"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="169,308,267,336"/>
+<area shape="rect" id="Node000004" href="/home/mfareed/repos/pacman/engine/engine.tag$Constants_8h.html" title=" " alt="" coords="169,308,267,336"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="344,36,299,54,280,67,263,83,246,107,234,134,219,192,215,248,217,293,212,293,210,248,214,191,228,132,241,104,259,79,276,63,297,49,342,31"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="273,81,369,109"/>
+<area shape="rect" id="Node000005" href="/home/mfareed/repos/pacman/engine/engine.tag$Controller_8h.html" title=" " alt="" coords="273,81,369,109"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="419,36,356,75,353,71,416,31"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="392,81,484,109"/>
+<area shape="rect" id="Node000006" href="/home/mfareed/repos/pacman/engine/engine.tag$Counters_8h.html" title=" " alt="" coords="392,81,484,109"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="441,34,441,65,436,65,436,34"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="273,157,345,184"/>
+<area shape="rect" id="Node000007" href="/home/mfareed/repos/pacman/engine/engine.tag$Game_8h.html" title=" " alt="" coords="273,157,345,184"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="459,32,478,47,494,67,503,88,503,99,497,110,479,121,445,134,361,158,360,153,444,129,477,116,494,107,498,98,498,89,490,69,474,51,456,36"/>
-<area shape="rect" id="Node000008" href="$Map_8h.html" title=" " alt="" coords="565,81,626,109"/>
+<area shape="rect" id="Node000008" href="$Map_8h_source.html" title=" " alt="" coords="565,81,626,109"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="467,31,555,72,553,77,465,36"/>
-<area shape="rect" id="Node000022" title=" " alt="" coords="650,81,722,109"/>
+<area shape="rect" id="Node000022" href="/home/mfareed/repos/pacman/engine/engine.tag$Scene_8h.html" title=" " alt="" coords="650,81,722,109"/>
 <area shape="poly" id="edge25_Node000001_Node000022" title=" " alt="" coords="483,31,636,76,634,81,482,36"/>
-<area shape="rect" id="Node000023" title=" " alt="" coords="746,81,874,109"/>
+<area shape="rect" id="Node000023" href="/home/mfareed/repos/pacman/engine/engine.tag$SceneManager_8h.html" title=" " alt="" coords="746,81,874,109"/>
 <area shape="poly" id="edge26_Node000001_Node000023" title=" " alt="" coords="506,31,731,75,730,81,505,36"/>
 <area shape="poly" id="edge17_Node000008_Node000007" title=" " alt="" coords="565,107,361,159,359,154,564,102"/>
-<area shape="rect" id="Node000009" href="$Build_8h.html" title=" " alt="" coords="420,157,486,184"/>
+<area shape="rect" id="Node000009" href="$Build_8h.html" title="Defines structures for procedurally generating the game map layout." alt="" coords="420,157,486,184"/>
 <area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="571,112,493,152,490,147,569,107"/>
-<area shape="rect" id="Node000010" href="$UserConstants_8h.html" title=" " alt="" coords="282,232,410,260"/>
+<area shape="rect" id="Node000010" href="$UserConstants_8h.html" title="Defines game&#45;specific constants, separate from the core engine constants." alt="" coords="282,232,410,260"/>
 <area shape="poly" id="edge19_Node000008_Node000010" title=" " alt="" coords="565,103,490,120,448,136,409,159,381,188,361,220,356,217,377,185,406,155,445,131,488,115,564,97"/>
 <area shape="rect" id="Node000014" title=" " alt="" coords="543,232,605,260"/>
 <area shape="poly" id="edge24_Node000008_Node000014" title=" " alt="" coords="583,111,566,132,551,158,549,173,550,188,561,218,556,220,545,190,543,173,546,156,561,128,579,107"/>
-<area shape="rect" id="Node000015" title=" " alt="" coords="561,157,643,184"/>
+<area shape="rect" id="Node000015" href="/home/mfareed/repos/pacman/engine/engine.tag$Collider_8h.html" title=" " alt="" coords="561,157,643,184"/>
 <area shape="poly" id="edge15_Node000008_Node000015" title=" " alt="" coords="599,109,602,141,597,141,594,109"/>
-<area shape="rect" id="Node000016" title=" " alt="" coords="668,157,726,184"/>
+<area shape="rect" id="Node000016" href="/home/mfareed/repos/pacman/engine/engine.tag$ECS_8h.html" title=" " alt="" coords="668,157,726,184"/>
 <area shape="poly" id="edge16_Node000008_Node000016" title=" " alt="" coords="615,107,668,145,665,150,612,111"/>
-<area shape="rect" id="Node000017" title=" " alt="" coords="750,157,807,184"/>
+<area shape="rect" id="Node000017" href="/home/mfareed/repos/pacman/engine/engine.tag$Tile_8h.html" title=" " alt="" coords="750,157,807,184"/>
 <area shape="poly" id="edge18_Node000008_Node000017" title=" " alt="" coords="627,106,736,149,734,154,625,111"/>
 <area shape="rect" id="Node000018" title=" " alt="" coords="831,157,898,184"/>
 <area shape="poly" id="edge20_Node000008_Node000018" title=" " alt="" coords="627,103,639,106,817,153,816,158,637,111,626,108"/>

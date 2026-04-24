@@ -1,7 +1,5 @@
 var structGameplayScene =
 [
-    [ "GameplayScene", "structGameplayScene.html#afaf3d3a8840d7627fa1cfc5553352896", null ],
-    [ "~GameplayScene", "structGameplayScene.html#a04ed00f32476900612940bd6981cb1ec", null ],
     [ "draw", "structGameplayScene.html#ab39a3f23e2c0f7b41a4223c6b335f3aa", null ],
     [ "handleEvents", "structGameplayScene.html#a54618c6e397821a91a16e37d400a494d", null ],
     [ "init", "structGameplayScene.html#a8e6f07b6373b320c9ec6cd3643679e94", null ],

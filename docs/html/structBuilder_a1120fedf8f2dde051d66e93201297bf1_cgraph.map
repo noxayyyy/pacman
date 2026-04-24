@@ -1,5 +1,5 @@
 <map id="Builder::updateActivity" name="Builder::updateActivity">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,176,33"/>
-<area shape="rect" id="Node000002" href="$structBuilder.html#a9238ee51151896aa8dcd848f1f0b23f4" title=" " alt="" coords="224,5,360,33"/>
+<area shape="rect" id="Node000001" title="Updates the builder&#39;s active status based on the tiles it encounters." alt="" coords="5,5,176,33"/>
+<area shape="rect" id="Node000002" href="$structBuilder.html#a9238ee51151896aa8dcd848f1f0b23f4" title="Manually sets the active state of the builder." alt="" coords="224,5,360,33"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,16,208,16,208,22,176,22"/>
 </map>

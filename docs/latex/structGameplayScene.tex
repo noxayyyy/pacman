@@ -2,6 +2,11 @@
 \hypertarget{structGameplayScene}{}\label{structGameplayScene}\index{GameplayScene@{GameplayScene}}
 
 
+The main scene that orchestrates the core gameplay loop.  
+
+
+
+
 {\ttfamily \#include $<$Gameplay\+Scene.\+h$>$}
 
 
@@ -11,7 +16,7 @@ Inheritance diagram for Gameplay\+Scene\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=196pt]{structGameplayScene__inherit__graph}
+\includegraphics[height=550pt]{structGameplayScene__inherit__graph}
 \end{center}
 \end{figure}
 
@@ -21,70 +26,140 @@ Collaboration diagram for Gameplay\+Scene\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=196pt]{structGameplayScene__coll__graph}
+\includegraphics[height=550pt]{structGameplayScene__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structGameplayScene_afaf3d3a8840d7627fa1cfc5553352896}{Gameplay\+Scene}} ()
-\item 
-\mbox{\hyperlink{structGameplayScene_a04ed00f32476900612940bd6981cb1ec}{\texorpdfstring{$\sim$}{\string~}\+Gameplay\+Scene}} () override
-\item 
 void \mbox{\hyperlink{structGameplayScene_a8e6f07b6373b320c9ec6cd3643679e94}{init}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes all game elements\+: Pac-\/\+Man, the map, and UI components. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structGameplayScene_a8196705b494cceb00a711c0e79ee3a66}{update}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Contains the main game logic that runs each frame, such as checking win conditions. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structGameplayScene_a0c3e0a7ec463369e22944abf7c483fca}{reload}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Resets the level by reloading the map and resetting the player\textquotesingle{}s position. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structGameplayScene_a927ef0c0f1fe84952c2a589dd697fdab}{reload\+With\+State}} () override
-\item 
+\begin{DoxyCompactList}\small\item\em Reloads only the UI state, for use when unpausing. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structGameplayScene_a54618c6e397821a91a16e37d400a494d}{handle\+Events}} (SDL\+\_\+\+Event \&event) override
-\item 
+\begin{DoxyCompactList}\small\item\em Handles player input events for controlling Pac-\/\+Man. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structGameplayScene_ab39a3f23e2c0f7b41a4223c6b335f3aa}{draw}} () override
+\begin{DoxyCompactList}\small\item\em Draws all visible game elements in the correct order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \textbf{ Scene}}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Scene} (std\+::string \textbf{ name}, int \textbf{ build\+Index}, bool is\+Panel, bool is\+Locking, int \textbf{ layer})
+\item 
+void \textbf{ add\+Entity\+To\+Scene} (\textbf{ Entity} \&entity)
+\item 
+void \textbf{ remove\+Entity\+From\+Scene} (\textbf{ Entity} \texorpdfstring{$\ast$}{*}entity)
+\item 
+bool \textbf{ exists\+In\+Scene} (\textbf{ Entity} \texorpdfstring{$\ast$}{*}entity)
+\item 
+void \textbf{ clear\+Scene} ()
+\item 
+void \textbf{ enable\+Scene} ()
+\item 
+void \textbf{ disable\+Scene} ()
+\item 
+const bool \& \textbf{ get\+Is\+Panel} () const
+\item 
+const bool \& \textbf{ get\+Is\+Locking} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \textbf{ Scene}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \textbf{ name}
+\item 
+int \textbf{ build\+Index}
+\item 
+int \textbf{ layer}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{structGameplayScene_afaf3d3a8840d7627fa1cfc5553352896}\index{GameplayScene@{GameplayScene}!GameplayScene@{GameplayScene}}
-\index{GameplayScene@{GameplayScene}!GameplayScene@{GameplayScene}}
-\doxysubsubsection{\texorpdfstring{GameplayScene()}{GameplayScene()}}
-{\footnotesize\ttfamily \label{structGameplayScene_afaf3d3a8840d7627fa1cfc5553352896} 
-Gameplay\+Scene\+::\+Gameplay\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\doxysubsection{Detailed Description}
+The main scene that orchestrates the core gameplay loop. 
 
-\Hypertarget{structGameplayScene_a04ed00f32476900612940bd6981cb1ec}\index{GameplayScene@{GameplayScene}!````~GameplayScene@{\texorpdfstring{$\sim$}{\string~}GameplayScene}}
-\index{````~GameplayScene@{\texorpdfstring{$\sim$}{\string~}GameplayScene}!GameplayScene@{GameplayScene}}
-\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GameplayScene()}{\string~GameplayScene()}}
-{\footnotesize\ttfamily \label{structGameplayScene_a04ed00f32476900612940bd6981cb1ec} 
-Gameplay\+Scene\+::\texorpdfstring{$\sim$}{\string~}\+Gameplay\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
-
-
+This class is responsible for initializing the player, map, UI, and handling game logic. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{structGameplayScene_ab39a3f23e2c0f7b41a4223c6b335f3aa}\index{GameplayScene@{GameplayScene}!draw@{draw}}
 \index{draw@{draw}!GameplayScene@{GameplayScene}}
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
 {\footnotesize\ttfamily \label{structGameplayScene_ab39a3f23e2c0f7b41a4223c6b335f3aa} 
-void Gameplay\+Scene\+::draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+void Gameplay\+Scene\+::draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draws all visible game elements in the correct order. 
+
+
+
+Implements \textbf{ Scene}.
 
 \Hypertarget{structGameplayScene_a54618c6e397821a91a16e37d400a494d}\index{GameplayScene@{GameplayScene}!handleEvents@{handleEvents}}
 \index{handleEvents@{handleEvents}!GameplayScene@{GameplayScene}}
 \doxysubsubsection{\texorpdfstring{handleEvents()}{handleEvents()}}
 {\footnotesize\ttfamily \label{structGameplayScene_a54618c6e397821a91a16e37d400a494d} 
-void Gameplay\+Scene\+::handle\+Events (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+void Gameplay\+Scene\+::handle\+Events (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event \&}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles player input events for controlling Pac-\/\+Man. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The SDL\+\_\+\+Event to process. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Scene}.
 
 \Hypertarget{structGameplayScene_a8e6f07b6373b320c9ec6cd3643679e94}\index{GameplayScene@{GameplayScene}!init@{init}}
 \index{init@{init}!GameplayScene@{GameplayScene}}
 \doxysubsubsection{\texorpdfstring{init()}{init()}}
 {\footnotesize\ttfamily \label{structGameplayScene_a8e6f07b6373b320c9ec6cd3643679e94} 
-void Gameplay\+Scene\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+void Gameplay\+Scene\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Initializes all game elements\+: Pac-\/\+Man, the map, and UI components. 
+
+
+
+Implements \textbf{ Scene}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structGameplayScene_a8e6f07b6373b320c9ec6cd3643679e94_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{structGameplayScene_a0c3e0a7ec463369e22944abf7c483fca}\index{GameplayScene@{GameplayScene}!reload@{reload}}
 \index{reload@{reload}!GameplayScene@{GameplayScene}}
 \doxysubsubsection{\texorpdfstring{reload()}{reload()}}
 {\footnotesize\ttfamily \label{structGameplayScene_a0c3e0a7ec463369e22944abf7c483fca} 
-void Gameplay\+Scene\+::reload (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+void Gameplay\+Scene\+::reload (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
+
+
+Resets the level by reloading the map and resetting the player\textquotesingle{}s position. 
+
+
+
+Implements \textbf{ Scene}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structGameplayScene_a0c3e0a7ec463369e22944abf7c483fca_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -97,13 +172,29 @@ Here is the caller graph for this function\+:
 \index{reloadWithState@{reloadWithState}!GameplayScene@{GameplayScene}}
 \doxysubsubsection{\texorpdfstring{reloadWithState()}{reloadWithState()}}
 {\footnotesize\ttfamily \label{structGameplayScene_a927ef0c0f1fe84952c2a589dd697fdab} 
-void Gameplay\+Scene\+::reload\+With\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+void Gameplay\+Scene\+::reload\+With\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reloads only the UI state, for use when unpausing. 
+
+
+
+Implements \textbf{ Scene}.
 
 \Hypertarget{structGameplayScene_a8196705b494cceb00a711c0e79ee3a66}\index{GameplayScene@{GameplayScene}!update@{update}}
 \index{update@{update}!GameplayScene@{GameplayScene}}
 \doxysubsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily \label{structGameplayScene_a8196705b494cceb00a711c0e79ee3a66} 
-void Gameplay\+Scene\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+void Gameplay\+Scene\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Contains the main game logic that runs each frame, such as checking win conditions. 
+
+
+
+Implements \textbf{ Scene}.
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -115,6 +206,7 @@ Here is the call graph for this function\+:
 \end{figure}
 
 
-The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{GameplayScene_8h}{Gameplay\+Scene.\+h}}\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{GameplayScene_8h}{Gameplay\+Scene.\+h}}\item 
+src/Gameplay\+Scene.\+cpp\end{DoxyCompactItemize}

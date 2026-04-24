@@ -1,5 +1,23 @@
 var searchData=
 [
-  ['handleevents_0',['handleEvents',['../structGameplayScene.html#a54618c6e397821a91a16e37d400a494d',1,'GameplayScene::handleEvents()'],['../structTestScene.html#ae7dfa27fc1c9da94520f4e6ac4e03b3b',1,'TestScene::handleEvents()']]],
-  ['height_1',['height',['../structMap_1_1MapArray.html#a14326d9b8636396585386f5de5d5d1b9',1,'Map::MapArray']]]
+  ['game_0',['Game',['https://noxayyyy.github.io/nox-engine/classGame.html',1,'Game'],['https://noxayyyy.github.io/nox-engine/classGame.html#ad59df6562a58a614fda24622d3715b65',1,'Game::Game()']]],
+  ['game_2eh_1',['Game.h',['https://noxayyyy.github.io/nox-engine/Game_8h.html',1,'']]],
+  ['gameplayscene_2',['GameplayScene',['../structGameplayScene.html',1,'']]],
+  ['gameplayscene_2eh_3',['GameplayScene.h',['../GameplayScene_8h.html',1,'']]],
+  ['getcomponent_4',['getComponent',['https://noxayyyy.github.io/nox-engine/structEntity.html#ad5ce9d4246498a5a2ffd163a2d38c98f',1,'Entity']]],
+  ['getcurranimid_5',['getCurrAnimID',['https://noxayyyy.github.io/nox-engine/structAnimator.html#a05dbf02b17e983baa9984133df8900e9',1,'Animator']]],
+  ['getcurrentscene_6',['getCurrentScene',['https://noxayyyy.github.io/nox-engine/structSceneManager.html#ad307aea07c7664dcdcd8a18ac41fce89',1,'SceneManager']]],
+  ['getgroupmembers_7',['getGroupMembers',['https://noxayyyy.github.io/nox-engine/structManager.html#a5e1017b17f0612ad6a2b5dad02efad5c',1,'Manager']]],
+  ['getid_8',['getID',['https://noxayyyy.github.io/nox-engine/structEntity.html#acf456649975d568c848741a38bf3fa1f',1,'Entity']]],
+  ['getislocking_9',['getIsLocking',['https://noxayyyy.github.io/nox-engine/structScene.html#a6b6e6f58bf56b8a2f563687927e84ca3',1,'Scene']]],
+  ['getispanel_10',['getIsPanel',['https://noxayyyy.github.io/nox-engine/structScene.html#afd4007289e6a1fab14313ec559cb3db8',1,'Scene']]],
+  ['getmousebuttonpressed_11',['getMouseButtonPressed',['https://noxayyyy.github.io/nox-engine/structMouseTracker.html#af9a7225b5f043ca4eac2bdbee0aafcdb',1,'MouseTracker']]],
+  ['getpaused_12',['getPaused',['https://noxayyyy.github.io/nox-engine/classGame.html#aa153f0da6707884d25383acc9fd711f1',1,'Game']]],
+  ['getpelletcount_13',['getPelletCount',['../structMap.html#a0c6bb8230dde066248ebb23a67c63596',1,'Map']]],
+  ['getsizeofsurface_14',['GetSizeOfSurface',['https://noxayyyy.github.io/nox-engine/structTextureManager.html#affabc7a219da0e5c10988c64f9a97466',1,'TextureManager']]],
+  ['ghost_15',['Ghost',['../structGhost.html',1,'']]],
+  ['ghost_2eh_16',['Ghost.h',['../Ghost_8h.html',1,'']]],
+  ['ghost_5fbar_5fchar_17',['GHOST_BAR_CHAR',['../UserConstants_8h.html#ae1747dfe8a33ab0368bf16826f895281',1,'UserConstants.h']]],
+  ['ghost_5fspawn_18',['GHOST_SPAWN',['../UserConstants_8h.html#ad26adc5f61a2aad5152d3ca2e7df1e4d',1,'UserConstants.h']]],
+  ['ghostspawn_19',['ghostSpawn',['https://noxayyyy.github.io/nox-engine/classGame.html#adbbce2f78e1de148e187a4bc70b493d7',1,'Game']]]
 ];

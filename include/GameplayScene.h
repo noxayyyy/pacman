@@ -1,3 +1,8 @@
+/**
+ * @file GameplayScene.h
+ * @brief Defines the main scene for the Pac-Man game.
+ */
+
 #include "Animator.h"
 #include "Button.h"
 #include "Constants.h"
@@ -18,133 +23,40 @@ extern std::vector<Entity*> ghosts;
 extern std::vector<Entity*> pellets;
 extern std::vector<Entity*> ghostSpawns;
 
-// TODO: Buttons causing crash
+/**
+ * @brief The main scene that orchestrates the core gameplay loop.
+ * @details This class is responsible for initializing the player, map, UI, and handling game logic.
+ */
 struct GameplayScene : public Scene {
 public:
-	GameplayScene()
-		: Scene("Gameplay", 0, false, true, 0), pacman(manager.addEntity(PACMAN_TAG)),
-		  fps(manager.addEntity("fps")), points(manager.addEntity("points")),
-		  pauseButton(manager.addEntity("pauseButton")),
-		  reloadButton(manager.addEntity("reloadButton")) {}
+	GameplayScene();
+	~GameplayScene() override;
 
-	~GameplayScene() override {
-		clearScene();
-
-		delete controller;
-		delete pointVal;
-		controller = nullptr;
-		pointVal = nullptr;
-
-		pacmanPos = nullptr;
-		pacmanColl = nullptr;
-
-		map.reset();
-	}
-
-	void init() override {
-		pacmanInit();
-		mapInit();
-
-		pelletCount = map->getPelletCount();
-
-		fps.addComponent<FPS>("FPS");
-		pointVal = &points.addComponent<Points>("POINTS").value;
-		pauseButton.addComponent<Button>("PAUSE", 1234, 700, 128, 64, []() {
-			Game::setPause(!Game::getPaused());
-			// sceneManager.loadNextScene();
-		});
-		reloadButton.addComponent<Button>("RELOAD", 8, 700, 128, 64, []() {
-			sceneManager.reloadScene();
-		});
-
-		addEntityToScene(fps);
-		addEntityToScene(points);
-		addEntityToScene(pauseButton);
-		addEntityToScene(reloadButton);
-
-		colliders = manager.getGroupMembers(COLLIDERS);
-		players = manager.getGroupMembers(PACMAN);
-		tiles = manager.getGroupMembers(MAP);
-		pellets = manager.getGroupMembers(PELLETS);
-
-		enableScene();
-		manager.refresh();
-	}
-
-	void update() override {
-		// collisionResponse(controller->getLastVel());
-		// checkCollisions();
-
-		// points.update();
-		// fps.update();
-		// pauseButton.update();
-		// reloadButton.update();
-
-		if (pelletCount == *pointVal / VALUE_PER_PELLET) {
-			reload();
-			pelletCount += map->getPelletCount();
-		}
-	}
-
-	void reload() override {
-		pacman.reload();
-
-		for (auto& t : tiles) {
-			t->disable();
-			removeEntityFromScene(t);
-		}
-		manager.refresh();
-		map->reloadMap();
-
-		colliders = manager.getGroupMembers(COLLIDERS);
-		tiles = manager.getGroupMembers(MAP);
-		pellets = manager.getGroupMembers(PELLETS);
-
-		enableScene();
-		manager.refresh();
-	}
-
-	void reloadWithState() override {
-		pauseButton.reload();
-	}
-
-	void handleEvents(SDL_Event& event) override {
-		switch (event.type) {
-		case SDL_KEYDOWN:
-			controller->updateKeyDown(event.key.keysym.sym);
-			break;
-		case SDL_KEYUP:
-			controller->updateKeyUp(event.key.keysym.sym);
-			break;
-		default:
-			break;
-		}
-	}
-
-	void draw() override {
-		colliders = manager.getGroupMembers(COLLIDERS);
-		players = manager.getGroupMembers(PACMAN);
-		tiles = manager.getGroupMembers(MAP);
-		pellets = manager.getGroupMembers(PELLETS);
-
-		for (auto& t : tiles) {
-			t->draw();
-		}
-		for (auto& p : pellets) {
-			p->draw();
-		}
-		for (auto& g : ghosts) {
-			g->draw();
-		}
-		for (auto& p : players) {
-			p->draw();
-		}
-
-		points.draw();
-		fps.draw();
-		pauseButton.draw();
-		reloadButton.draw();
-	}
+	/**
+	 * @brief Initializes all game elements: Pac-Man, the map, and UI components.
+	 */
+	void init() override;
+	/**
+	 * @brief Contains the main game logic that runs each frame, such as checking win conditions.
+	 */
+	void update() override;
+	/**
+	 * @brief Resets the level by reloading the map and resetting the player's position.
+	 */
+	void reload() override;
+	/**
+	 * @brief Reloads only the UI state, for use when unpausing.
+	 */
+	void reloadWithState() override;
+	/**
+	 * @brief Handles player input events for controlling Pac-Man.
+	 * @param event The SDL_Event to process.
+	 */
+	void handleEvents(SDL_Event& event) override;
+	/**
+	 * @brief Draws all visible game elements in the correct order.
+	 */
+	void draw() override;
 
 private:
 	Entity& pacman;
@@ -162,38 +74,6 @@ private:
 
 	std::unique_ptr<Map> map;
 
-	void pacmanInit() {
-		pacmanPos = &pacman.addComponent<Transform>(
-			PACMAN_SPAWN.x * 32 + MAP_PADDING.x + 1, PACMAN_SPAWN.y * 32 + MAP_PADDING.y + 1
-		);
-		pacmanColl = &pacman.addComponent<Collider>(
-			"pacman",
-			[this](Collider& other) {
-				if (other.tag == PELLET_TAG) {
-					*pointVal += VALUE_PER_PELLET;
-					other.entity->disable();
-				}
-			},
-			false,
-			false,
-			false,
-			false
-		);
-		pacman.addComponent<Sprites>("./sprites/pacman_move.png");
-		Animator& pacmanAnim = pacman.addComponent<Animator>();
-		pacmanAnim.addAnimation("idle", "./sprites/pacman_move.png");
-		pacmanAnim.addEdge(ANIM_ENTRY, "idle", { std::shared_ptr<bool>(new bool(true)) });
-		controller = &pacman.addComponent<Controller>();
-		if (!pacman.hasGroup(PACMAN)) {
-			pacman.addGroup(PACMAN);
-		}
-		addEntityToScene(pacman);
-	}
-
-	void mapInit() {
-		map = std::make_unique<Map>();
-		map->init();
-		map->drawMap();
-		map->loadMap();
-	}
+	void pacmanInit();
+	void mapInit();
 };

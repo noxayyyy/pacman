@@ -1,5 +1,9 @@
 <map id="GameplayScene::update" name="GameplayScene::update">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,186,33"/>
-<area shape="rect" id="Node000002" href="$structGameplayScene.html#a0c3e0a7ec463369e22944abf7c483fca" title=" " alt="" coords="234,5,410,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,16,218,16,218,22,186,22"/>
+<area shape="rect" id="Node000001" title="Contains the main game logic that runs each frame, such as checking win conditions." alt="" coords="5,32,186,60"/>
+<area shape="rect" id="Node000002" href="$structGameplayScene.html#a0c3e0a7ec463369e22944abf7c483fca" title="Resets the level by reloading the map and resetting the player&#39;s position." alt="" coords="234,32,410,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,43,218,43,218,48,186,48"/>
+<area shape="rect" id="Node000003" href="/home/mfareed/repos/pacman/engine/engine.tag$structScene.html#aa3e52280b56676471e6fa85692ae8abe" title=" " alt="" coords="496,5,648,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="410,34,481,26,482,31,411,39"/>
+<area shape="rect" id="Node000004" href="/home/mfareed/repos/pacman/engine/engine.tag$structScene.html#a6d94e9e8483bf03c6aa5d786fb2f948e" title=" " alt="" coords="458,57,686,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="411,52,442,55,442,61,410,57"/>
 </map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_0',['y',['../structBuilder.html#ad9bdf0b9b4f03550346e9c4e134fb478',1,'Builder::y'],['../structBuilderSpawner.html#aec52dfc7ac96868f91a3084cf3ee1a33',1,'BuilderSpawner::y']]]
+  ['name_0',['name',['https://noxayyyy.github.io/nox-engine/structScene.html#a44b2d6bffa153dda02f026f8533ceb08',1,'Scene']]]
 ];

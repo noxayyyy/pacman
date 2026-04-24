@@ -1,6 +1,6 @@
 \doxysection{Map.\+h}
 \hypertarget{Map_8h_source}{}\label{Map_8h_source}\index{include/Map.h@{include/Map.h}}
-\mbox{\hyperlink{Map_8h}{Go to the documentation of this file.}}
+
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
@@ -16,130 +16,130 @@
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structMap_a0f5ad0fd4563497b4214038cbca8b582}{Map}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{struct\ }Map\ \{}
 \DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structMap_1_1MapArray_a1cd864acc64aa269b33b62e9fd36ffa6}{MapArray}}\ \{}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::vector<T>\ arr;}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ w;}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ h;}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structMap_1_1MapArray_a1cd864acc64aa269b33b62e9fd36ffa6}{MapArray}}(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h)\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ arr\ =\ std::vector<T>(w\ *\ h);}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>w\ =\ w;}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>h\ =\ h;}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structMap_1_1MapArray_a50e4e3e4f19005466d435c03c2af21d2}{MapArray}}(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h,\ T\ entry)\ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ arr\ =\ std::vector<T>(w\ *\ h,\ entry);}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>w\ =\ w;}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>h\ =\ h;}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structMap_1_1MapArray_a658b4a962dab3f4c0fbf7ff68c516941}{MapArray}}(T\ entry)\ \{}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ arr\ =\ std::vector<T>(\mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.x\ *\ \mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.y,\ entry);}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ w\ =\ \mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.x;}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ h\ =\ \mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.y;}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structMap_1_1MapArray_a045759cd9f6ac029fc06bf259abbbc99}{MapArray}}()\ \{}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ arr\ =\ std::vector<T>(\mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.x\ *\ \mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.y);}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ w\ =\ \mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.x;}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ h\ =\ \mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.y;}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structMap_1_1MapArray_ae5d0967fca9b3d9e303afd5e72c499bf}{\string~MapArray}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_1_1MapArray_a98d98f10e6e0ddd09862d6ed61a10ede}{clear}}(T\ entry)\ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ arr.clear();}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ arr\ =\ std::vector<T>(w\ *\ h,\ entry);}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ T\&\ \mbox{\hyperlink{structMap_1_1MapArray_a9c68c4712de04428c649d13e69653474}{operator()}}(\textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ x)\ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y\ >=\ h\ ||\ y\ <\ 0)\ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Map\ oob\ access."{}});}
-\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ >=\ w\ ||\ x\ <\ 0)\ \{}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Map\ oob\ access."{}});}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ arr[y\ *\ w\ +\ x];}
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{structMap_1_1MapArray_a937f558107ca6fd96e25d80b9e1ea466}{operator()}}(\textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ x)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y\ >=\ h\ ||\ y\ <\ 0)\ \{}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Map\ oob\ access."{}});}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ >=\ w\ ||\ x\ <\ 0)\ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Map\ oob\ access."{}});}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ arr[y\ *\ w\ +\ x];}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{structMap_1_1MapArray_a8d49f7d178abc78637e220595167b44e}{operator[]}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ h\ *\ w)\ \{}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Map\ oob\ access."{}});}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ arr[i];}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ T\&\ \mbox{\hyperlink{structMap_1_1MapArray_aa1c19350282540d554dd933eefac3a77}{operator[]}}(\textcolor{keywordtype}{int}\ i)\ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ h\ *\ w)\ \{}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Map\ oob\ access."{}});}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ arr[i];}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_1_1MapArray_a5c6f12e88f761c35906def09a8f49c9c}{operator=}}(\mbox{\hyperlink{structMap_1_1MapArray_a1cd864acc64aa269b33b62e9fd36ffa6}{MapArray<T>}}\ other)\ \{}
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ arr.clear();}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ w\ =\ other.w;}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ h\ =\ other.h;}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ arr\ =\ std::vector<T>(w\ *\ h);}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ h;\ y++)\ \{}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ w;\ x++)\ \{}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*this)(y,\ x)\ =\ other(y,\ x);}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structMap_1_1MapArray_a749d926b7fb5154c12397bfee90f75bd}{width}}()\ \{}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ w;}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structMap_1_1MapArray_a14326d9b8636396585386f5de5d5d1b9}{height}}()\ \{}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ h;}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00109\ \ \ \ \ \};}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{structMap_a0f5ad0fd4563497b4214038cbca8b582}{Map}}();}
-\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{structMap_aa403fbe09394ccf39747588f5168e3b2}{\string~Map}}();}
-\DoxyCodeLine{00113\ }
-\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_ae3a387c6842c05596b004e2735b8cbf5}{init}}();}
-\DoxyCodeLine{00115\ }
-\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structMap_a162159fb9596c0fc43ec7c19320b3c3f}{colourReference}}(\textcolor{keywordtype}{char}\ colour);}
-\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_ae206cb92ab2c008e89fbc070dfcbd63e}{drawMap}}();}
-\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a365d25a9d88fa04491fccc1210c41bf9}{loadMap}}();}
-\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a47baf1af3323f35cbbe6e824f7e9237a}{reloadMap}}();}
-\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a4cea1b725517357d3ae84033bc9b29c1}{updateImg}}(\mbox{\hyperlink{structBuilderSpawner}{BuilderSpawner}}\&\ spawner,\ std::vector<bool>\ killPrevBlock);}
-\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a87b32ee66f6a5e0d4bc382a8ddaad027}{addWalls}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_aef3427afdac76a71796307af55600b12}{addTile}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a545016e7e64a650993439b6e2313b84f}{addCollPass}}();}
-\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a3398e909d5095967294a6176de7717f2}{addRowPass}}(\textcolor{keywordtype}{int}\ y);}
-\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a766156a4fb4fba6f64fc3b796aeb34c1}{addSpawnBox}}();}
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a71b8962d821916cc00b2b495db79f786}{optimiseMap}}();}
-\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structMap_a47a441ca004b287bcbad0c353e7c7035}{optimiseHelper}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ GroupID\ antiGroup,\ \textcolor{keywordtype}{bool}\ optimiseDirection\ =\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_aa20b3f427f84ba953750dad66686c7c5}{optimiseDeleter}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ count,\ \textcolor{keywordtype}{bool}\ horizontal\ =\ \textcolor{keyword}{true});}
-\DoxyCodeLine{00129\ }
-\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structMap_a0c6bb8230dde066248ebb23a67c63596}{getPelletCount}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pelletCount;}
-\DoxyCodeLine{00132\ \ \ \ \ \}}
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00134\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ pelletCount;}
-\DoxyCodeLine{00136\ \ \ \ \ std::unordered\_map<char,\ int>\ colourMap;}
-\DoxyCodeLine{00137\ \ \ \ \ MapArray<char>\ img;}
-\DoxyCodeLine{00138\ \ \ \ \ MapArray<Entity*>\ tileSet;}
-\DoxyCodeLine{00139\ \};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{struct\ }MapArray\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::vector<T>\ arr;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ w;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ h;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ MapArray(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h)\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ arr\ =\ std::vector<T>(w\ *\ h);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>w\ =\ w;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>h\ =\ h;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ MapArray(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h,\ T\ entry)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ arr\ =\ std::vector<T>(w\ *\ h,\ entry);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>w\ =\ w;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>h\ =\ h;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ MapArray(T\ entry)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ arr\ =\ std::vector<T>(\mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.x\ *\ \mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.y,\ entry);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ w\ =\ \mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.x;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ h\ =\ \mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.y;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ MapArray()\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ arr\ =\ std::vector<T>(\mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.x\ *\ \mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.y);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ w\ =\ \mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.x;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ h\ =\ \mbox{\hyperlink{UserConstants_8h_abdb1ca1b7cab04d5d7f436d893af040a}{MAP\_SIZE}}.y;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \string~MapArray()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_1_1MapArray_a98d98f10e6e0ddd09862d6ed61a10ede}{clear}}(T\ entry)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ arr.clear();}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ arr\ =\ std::vector<T>(w\ *\ h,\ entry);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ T\&\ \mbox{\hyperlink{structMap_1_1MapArray_a9c68c4712de04428c649d13e69653474}{operator()}}(\textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ x)\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y\ >=\ h\ ||\ y\ <\ 0)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Map\ oob\ access."{}});}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ >=\ w\ ||\ x\ <\ 0)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Map\ oob\ access."{}});}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ arr[y\ *\ w\ +\ x];}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{structMap_1_1MapArray_a937f558107ca6fd96e25d80b9e1ea466}{operator()}}(\textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ x)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (y\ >=\ h\ ||\ y\ <\ 0)\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Map\ oob\ access."{}});}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\ >=\ w\ ||\ x\ <\ 0)\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Map\ oob\ access."{}});}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ arr[y\ *\ w\ +\ x];}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ T\&\ \mbox{\hyperlink{structMap_1_1MapArray_a8d49f7d178abc78637e220595167b44e}{operator[]}}(\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ h\ *\ w)\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Map\ oob\ access."{}});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ arr[i];}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ T\&\ \mbox{\hyperlink{structMap_1_1MapArray_aa1c19350282540d554dd933eefac3a77}{operator[]}}(\textcolor{keywordtype}{int}\ i)\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ >=\ h\ *\ w)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Map\ oob\ access."{}});}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ arr[i];}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ operator=(\mbox{\hyperlink{structMap_1_1MapArray}{MapArray<T>}}\ other)\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ arr.clear();}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ w\ =\ other.w;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ h\ =\ other.h;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ arr\ =\ std::vector<T>(w\ *\ h);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ y\ =\ 0;\ y\ <\ h;\ y++)\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ x\ =\ 0;\ x\ <\ w;\ x++)\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (*this)(y,\ x)\ =\ other(y,\ x);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ width()\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ w;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ height()\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ h;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ \};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ Map();}
+\DoxyCodeLine{00142\ \ \ \ \ \string~Map();}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_ae3a387c6842c05596b004e2735b8cbf5}{init}}();}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structMap_a162159fb9596c0fc43ec7c19320b3c3f}{colourReference}}(\textcolor{keywordtype}{char}\ colour);}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_ae206cb92ab2c008e89fbc070dfcbd63e}{drawMap}}();}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a365d25a9d88fa04491fccc1210c41bf9}{loadMap}}();}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a47baf1af3323f35cbbe6e824f7e9237a}{reloadMap}}();}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a4cea1b725517357d3ae84033bc9b29c1}{updateImg}}(BuilderSpawner\&\ spawner,\ std::vector<bool>\ killPrevBlock);}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a87b32ee66f6a5e0d4bc382a8ddaad027}{addWalls}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_aef3427afdac76a71796307af55600b12}{addTile}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a545016e7e64a650993439b6e2313b84f}{addCollPass}}();}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a3398e909d5095967294a6176de7717f2}{addRowPass}}(\textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a766156a4fb4fba6f64fc3b796aeb34c1}{addSpawnBox}}();}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structMap_a71b8962d821916cc00b2b495db79f786}{optimiseMap}}();}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{int}\ optimiseHelper(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ GroupID\ antiGroup,\ \textcolor{keywordtype}{bool}\ optimiseDirection\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{void}\ optimiseDeleter(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ count,\ \textcolor{keywordtype}{bool}\ horizontal\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structMap_a0c6bb8230dde066248ebb23a67c63596}{getPelletCount}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ pelletCount;}
+\DoxyCodeLine{00212\ \ \ \ \ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ pelletCount;}
+\DoxyCodeLine{00216\ \ \ \ \ std::unordered\_map<char,\ int>\ colourMap;}
+\DoxyCodeLine{00217\ \ \ \ \ MapArray<char>\ img;}
+\DoxyCodeLine{00218\ \ \ \ \ MapArray<Entity*>\ tileSet;}
+\DoxyCodeLine{00219\ \};}
 
 \end{DoxyCode}

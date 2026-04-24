@@ -14,6 +14,10 @@
 
 struct Map {
 public:
+	/**
+	 * @brief A 2D array container with bounds checking for map data.
+	 * @tparam T The data type to be stored in the grid.
+	 */
 	template<typename T>
 	struct MapArray {
 	private:
@@ -48,11 +52,21 @@ public:
 
 		~MapArray() = default;
 
+		/**
+		 * @brief Clears the array and fills it with a new entry.
+		 * @param entry The value to fill the array with.
+		 */
 		void clear(T entry) {
 			arr.clear();
 			arr = std::vector<T>(w * h, entry);
 		}
 
+		/**
+		 * @brief Accesses an element using 2D coordinates.
+		 * @param y The row index.
+		 * @param x The column index.
+		 * @return A reference to the element.
+		 */
 		inline T& operator()(int y, int x) {
 			if (y >= h || y < 0) {
 				throw std::runtime_error("Map oob access.");
@@ -63,6 +77,12 @@ public:
 			return arr[y * w + x];
 		}
 
+		/**
+		 * @brief Accesses an element using 2D coordinates.
+		 * @param y The row index.
+		 * @param x The column index.
+		 * @return A reference to the element.
+		 */
 		inline const T& operator()(int y, int x) const {
 			if (y >= h || y < 0) {
 				throw std::runtime_error("Map oob access.");
@@ -73,6 +93,11 @@ public:
 			return arr[y * w + x];
 		}
 
+		/**
+		 * @brief Accesses an element using a 1D index.
+		 * @param i The linear index.
+		 * @return A reference to the element.
+		 */
 		inline const T& operator[](int i) const {
 			if (i >= h * w) {
 				throw std::runtime_error("Map oob access.");
@@ -80,6 +105,11 @@ public:
 			return arr[i];
 		}
 
+		/**
+		 * @brief Accesses an element using a 1D index.
+		 * @param i The linear index.
+		 * @return A reference to the element.
+		 */
 		inline T& operator[](int i) {
 			if (i >= h * w) {
 				throw std::runtime_error("Map oob access.");
@@ -111,22 +141,72 @@ public:
 	Map();
 	~Map();
 
+	/**
+	 * @brief Initializes the map generation process.
+	 */
 	void init();
 
+	/**
+	 * @brief Helper to get a tile ID from a character representation.
+	 * @param colour The character representing the tile type.
+	 * @return The integer ID of the tile.
+	 */
 	int colourReference(char colour);
+	/**
+	 * @brief Procedurally generates the map layout using Builder agents.
+	 */
 	void drawMap();
+	/**
+	 * @brief Creates entities (Tiles) based on the generated map layout.
+	 */
 	void loadMap();
+	/**
+	 * @brief Clears and re-loads the map entities.
+	 */
 	void reloadMap();
+	/**
+	 * @brief Updates the internal character map based on builder positions.
+	 * @param spawner The BuilderSpawner managing the generation agents.
+	 * @param killPrevBlock Flags for tile-overwriting logic.
+	 */
 	void updateImg(BuilderSpawner& spawner, std::vector<bool> killPrevBlock);
+	/**
+	 * @brief Adds wall tiles around a specified path tile.
+	 * @param x The grid x-coordinate of the path tile.
+	 * @param y The grid y-coordinate of the path tile.
+	 */
 	void addWalls(int x, int y);
+	/**
+	 * @brief Creates a single tile entity at a specific location.
+	 * @param id The type ID of the tile.
+	 * @param x The grid x-coordinate.
+	 * @param y The grid y-coordinate.
+	 */
 	void addTile(int id, int x, int y);
+	/**
+	 * @brief Post-processing pass to add colliders to all wall tiles.
+	 */
 	void addCollPass();
+	/**
+	 * @brief Post-processing pass to fill in a row with tiles.
+	 * @param y The row index to process.
+	 */
 	void addRowPass(int y);
+	/**
+	 * @brief Adds the central ghost spawn box to the map.
+	 */
 	void addSpawnBox();
+	/**
+	 * @brief Optimizes the map by merging adjacent wall colliders into larger ones.
+	 */
 	void optimiseMap();
 	int optimiseHelper(int x, int y, GroupID antiGroup, bool optimiseDirection = false);
 	void optimiseDeleter(int x, int y, int count, bool horizontal = true);
 
+	/**
+	 * @brief Gets the total number of pellets on the map.
+	 * @return The pellet count.
+	 */
 	const int getPelletCount() const {
 		return pelletCount;
 	}

@@ -111,176 +111,104 @@ $(function(){initNavTree('structBuilder.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Represents a single "digger" agent in the procedural map generation algorithm.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Build_8h_source.html">Build.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Builder:</div>
 <div class="dyncontent">
 <div class="center"><img src="structBuilder__coll__graph.png" border="0" usemap="#aBuilder_coll__map" alt="Collaboration graph"/></div>
 <map name="aBuilder_coll__map" id="aBuilder_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,171,413"/>
+<area shape="rect" title="Represents a single &quot;digger&quot; agent in the procedural map generation algorithm." alt="" coords="5,5,171,413"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a3a8f33c440a85fc0511fb524834022a4" id="r_a3a8f33c440a85fc0511fb524834022a4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a8f33c440a85fc0511fb524834022a4">Direction</a> { <br />
-&#160;&#160;<a class="el" href="#a3a8f33c440a85fc0511fb524834022a4a68ca7f04ffc28109cb3c7d6f7938e524">UP</a>
-, <a class="el" href="#a3a8f33c440a85fc0511fb524834022a4aaf475fec944d983f45bd0c0820644301">DOWN</a>
-, <a class="el" href="#a3a8f33c440a85fc0511fb524834022a4ab1c131a9d11c0466abcdefb38878bc26">LEFT</a>
-, <a class="el" href="#a3a8f33c440a85fc0511fb524834022a4a14df7877fb0a6a7b278edbdf3decee3e">RIGHT</a>
+<tr class="memitem:a3a8f33c440a85fc0511fb524834022a4" id="r_a3a8f33c440a85fc0511fb524834022a4"><td class="memItemLeft" align="right" valign="top"><a id="a3a8f33c440a85fc0511fb524834022a4" name="a3a8f33c440a85fc0511fb524834022a4"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a8f33c440a85fc0511fb524834022a4">Direction</a> { <br />
+&#160;&#160;<b>UP</b>
+, <b>DOWN</b>
+, <b>LEFT</b>
+, <b>RIGHT</b>
 , <br />
-&#160;&#160;<a class="el" href="#a3a8f33c440a85fc0511fb524834022a4aa889a31ef5d6a80526f65f41b6824a2f">NONE</a>
+&#160;&#160;<b>NONE</b>
 <br />
  }</td></tr>
+<tr class="memdesc:a3a8f33c440a85fc0511fb524834022a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The four cardinal directions of movement. <br /></td></tr>
 <tr class="separator:a3a8f33c440a85fc0511fb524834022a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af8e018e77879c6136e6dabbd5eab0634" id="r_af8e018e77879c6136e6dabbd5eab0634"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8e018e77879c6136e6dabbd5eab0634">Builder</a> ()</td></tr>
-<tr class="separator:af8e018e77879c6136e6dabbd5eab0634"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95eb728c831324087c1d93312a44f556" id="r_a95eb728c831324087c1d93312a44f556"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95eb728c831324087c1d93312a44f556">~Builder</a> ()=default</td></tr>
-<tr class="separator:a95eb728c831324087c1d93312a44f556"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab765778eda85a0235d2823bce5b6079f" id="r_ab765778eda85a0235d2823bce5b6079f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab765778eda85a0235d2823bce5b6079f">updateChance</a> ()</td></tr>
+<tr class="memitem:ab765778eda85a0235d2823bce5b6079f" id="r_ab765778eda85a0235d2823bce5b6079f"><td class="memItemLeft" align="right" valign="top"><a id="ab765778eda85a0235d2823bce5b6079f" name="ab765778eda85a0235d2823bce5b6079f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>updateChance</b> ()</td></tr>
+<tr class="memdesc:ab765778eda85a0235d2823bce5b6079f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly determines if the builder should consider changing direction. <br /></td></tr>
 <tr class="separator:ab765778eda85a0235d2823bce5b6079f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a9111341791ef48b9faa786584b120c" id="r_a5a9111341791ef48b9faa786584b120c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a9111341791ef48b9faa786584b120c">updateForceChange</a> ()</td></tr>
+<tr class="memitem:a5a9111341791ef48b9faa786584b120c" id="r_a5a9111341791ef48b9faa786584b120c"><td class="memItemLeft" align="right" valign="top"><a id="a5a9111341791ef48b9faa786584b120c" name="a5a9111341791ef48b9faa786584b120c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>updateForceChange</b> ()</td></tr>
+<tr class="memdesc:a5a9111341791ef48b9faa786584b120c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the builder <em>must</em> change direction due to map boundaries or step limits. <br /></td></tr>
 <tr class="separator:a5a9111341791ef48b9faa786584b120c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a118255e92337b64c87c5a68d9b8fb3cf" id="r_a118255e92337b64c87c5a68d9b8fb3cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a118255e92337b64c87c5a68d9b8fb3cf">assignDirection</a> ()</td></tr>
+<tr class="memitem:a118255e92337b64c87c5a68d9b8fb3cf" id="r_a118255e92337b64c87c5a68d9b8fb3cf"><td class="memItemLeft" align="right" valign="top"><a id="a118255e92337b64c87c5a68d9b8fb3cf" name="a118255e92337b64c87c5a68d9b8fb3cf"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>assignDirection</b> ()</td></tr>
+<tr class="memdesc:a118255e92337b64c87c5a68d9b8fb3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns a new, valid direction to the builder if a change is forced. <br /></td></tr>
 <tr class="separator:a118255e92337b64c87c5a68d9b8fb3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1120fedf8f2dde051d66e93201297bf1" id="r_a1120fedf8f2dde051d66e93201297bf1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1120fedf8f2dde051d66e93201297bf1">updateActivity</a> (char <a class="el" href="#a6dea396d4b5398a554130b6f59da40dc">currBlock</a>, char <a class="el" href="#a18c574396b54999ea12fe697ec1e1be6">prevBlock</a>)</td></tr>
+<tr class="memdesc:a1120fedf8f2dde051d66e93201297bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the builder's active status based on the tiles it encounters.  <br /></td></tr>
 <tr class="separator:a1120fedf8f2dde051d66e93201297bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9238ee51151896aa8dcd848f1f0b23f4" id="r_a9238ee51151896aa8dcd848f1f0b23f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9238ee51151896aa8dcd848f1f0b23f4">setActive</a> (bool val)</td></tr>
+<tr class="memdesc:a9238ee51151896aa8dcd848f1f0b23f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually sets the active state of the builder.  <br /></td></tr>
 <tr class="separator:a9238ee51151896aa8dcd848f1f0b23f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefa6ef3c297647e6978951ccfb14833d" id="r_aefa6ef3c297647e6978951ccfb14833d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefa6ef3c297647e6978951ccfb14833d">isActive</a> ()</td></tr>
+<tr class="memdesc:aefa6ef3c297647e6978951ccfb14833d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the builder is currently active.  <br /></td></tr>
 <tr class="separator:aefa6ef3c297647e6978951ccfb14833d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a943ff493999ba5af5b145ae9ad94fcf3" id="r_a943ff493999ba5af5b145ae9ad94fcf3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a943ff493999ba5af5b145ae9ad94fcf3">x</a></td></tr>
+<tr class="memitem:a943ff493999ba5af5b145ae9ad94fcf3" id="r_a943ff493999ba5af5b145ae9ad94fcf3"><td class="memItemLeft" align="right" valign="top"><a id="a943ff493999ba5af5b145ae9ad94fcf3" name="a943ff493999ba5af5b145ae9ad94fcf3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
 <tr class="separator:a943ff493999ba5af5b145ae9ad94fcf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9bdf0b9b4f03550346e9c4e134fb478" id="r_ad9bdf0b9b4f03550346e9c4e134fb478"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9bdf0b9b4f03550346e9c4e134fb478">y</a></td></tr>
+<tr class="memitem:ad9bdf0b9b4f03550346e9c4e134fb478" id="r_ad9bdf0b9b4f03550346e9c4e134fb478"><td class="memItemLeft" align="right" valign="top"><a id="ad9bdf0b9b4f03550346e9c4e134fb478" name="ad9bdf0b9b4f03550346e9c4e134fb478"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
+<tr class="memdesc:ad9bdf0b9b4f03550346e9c4e134fb478"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current grid coordinates. <br /></td></tr>
 <tr class="separator:ad9bdf0b9b4f03550346e9c4e134fb478"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50b8b83d52bf006d4b1890ef8ea6600a" id="r_a50b8b83d52bf006d4b1890ef8ea6600a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50b8b83d52bf006d4b1890ef8ea6600a">currCount</a></td></tr>
+<tr class="memitem:a50b8b83d52bf006d4b1890ef8ea6600a" id="r_a50b8b83d52bf006d4b1890ef8ea6600a"><td class="memItemLeft" align="right" valign="top"><a id="a50b8b83d52bf006d4b1890ef8ea6600a" name="a50b8b83d52bf006d4b1890ef8ea6600a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>currCount</b></td></tr>
+<tr class="memdesc:a50b8b83d52bf006d4b1890ef8ea6600a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of steps taken in the current direction. <br /></td></tr>
 <tr class="separator:a50b8b83d52bf006d4b1890ef8ea6600a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b638c2091a3cade940726d710475a22" id="r_a0b638c2091a3cade940726d710475a22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3a8f33c440a85fc0511fb524834022a4">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b638c2091a3cade940726d710475a22">currDir</a></td></tr>
+<tr class="memitem:a0b638c2091a3cade940726d710475a22" id="r_a0b638c2091a3cade940726d710475a22"><td class="memItemLeft" align="right" valign="top"><a id="a0b638c2091a3cade940726d710475a22" name="a0b638c2091a3cade940726d710475a22"></a>
+<a class="el" href="#a3a8f33c440a85fc0511fb524834022a4">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>currDir</b></td></tr>
+<tr class="memdesc:a0b638c2091a3cade940726d710475a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current direction of movement. <br /></td></tr>
 <tr class="separator:a0b638c2091a3cade940726d710475a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91aaf4ea8161bf927724d0565c3cb240" id="r_a91aaf4ea8161bf927724d0565c3cb240"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3a8f33c440a85fc0511fb524834022a4">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91aaf4ea8161bf927724d0565c3cb240">prevDir</a></td></tr>
+<tr class="memitem:a91aaf4ea8161bf927724d0565c3cb240" id="r_a91aaf4ea8161bf927724d0565c3cb240"><td class="memItemLeft" align="right" valign="top"><a id="a91aaf4ea8161bf927724d0565c3cb240" name="a91aaf4ea8161bf927724d0565c3cb240"></a>
+<a class="el" href="#a3a8f33c440a85fc0511fb524834022a4">Direction</a>&#160;</td><td class="memItemRight" valign="bottom"><b>prevDir</b></td></tr>
+<tr class="memdesc:a91aaf4ea8161bf927724d0565c3cb240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Previous direction of movement. <br /></td></tr>
 <tr class="separator:a91aaf4ea8161bf927724d0565c3cb240"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dea396d4b5398a554130b6f59da40dc" id="r_a6dea396d4b5398a554130b6f59da40dc"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6dea396d4b5398a554130b6f59da40dc">currBlock</a></td></tr>
+<tr class="memitem:a6dea396d4b5398a554130b6f59da40dc" id="r_a6dea396d4b5398a554130b6f59da40dc"><td class="memItemLeft" align="right" valign="top"><a id="a6dea396d4b5398a554130b6f59da40dc" name="a6dea396d4b5398a554130b6f59da40dc"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>currBlock</b></td></tr>
+<tr class="memdesc:a6dea396d4b5398a554130b6f59da40dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character of the tile the builder is currently on. <br /></td></tr>
 <tr class="separator:a6dea396d4b5398a554130b6f59da40dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18c574396b54999ea12fe697ec1e1be6" id="r_a18c574396b54999ea12fe697ec1e1be6"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18c574396b54999ea12fe697ec1e1be6">prevBlock</a></td></tr>
+<tr class="memitem:a18c574396b54999ea12fe697ec1e1be6" id="r_a18c574396b54999ea12fe697ec1e1be6"><td class="memItemLeft" align="right" valign="top"><a id="a18c574396b54999ea12fe697ec1e1be6" name="a18c574396b54999ea12fe697ec1e1be6"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>prevBlock</b></td></tr>
+<tr class="memdesc:a18c574396b54999ea12fe697ec1e1be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The character of the tile the builder was previously on. <br /></td></tr>
 <tr class="separator:a18c574396b54999ea12fe697ec1e1be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a781cb1e9d290a6d83b0f5e48b112e739" id="r_a781cb1e9d290a6d83b0f5e48b112e739"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a781cb1e9d290a6d83b0f5e48b112e739">forceChange</a></td></tr>
+<tr class="memitem:a781cb1e9d290a6d83b0f5e48b112e739" id="r_a781cb1e9d290a6d83b0f5e48b112e739"><td class="memItemLeft" align="right" valign="top"><a id="a781cb1e9d290a6d83b0f5e48b112e739" name="a781cb1e9d290a6d83b0f5e48b112e739"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>forceChange</b></td></tr>
+<tr class="memdesc:a781cb1e9d290a6d83b0f5e48b112e739"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the builder must change direction. <br /></td></tr>
 <tr class="separator:a781cb1e9d290a6d83b0f5e48b112e739"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa66fc8c4ca83fe37da0360123f86330e" id="r_aa66fc8c4ca83fe37da0360123f86330e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa66fc8c4ca83fe37da0360123f86330e">chanceChange</a></td></tr>
+<tr class="memitem:aa66fc8c4ca83fe37da0360123f86330e" id="r_aa66fc8c4ca83fe37da0360123f86330e"><td class="memItemLeft" align="right" valign="top"><a id="aa66fc8c4ca83fe37da0360123f86330e" name="aa66fc8c4ca83fe37da0360123f86330e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>chanceChange</b></td></tr>
+<tr class="memdesc:aa66fc8c4ca83fe37da0360123f86330e"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the builder might randomly change direction. <br /></td></tr>
 <tr class="separator:aa66fc8c4ca83fe37da0360123f86330e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="a3a8f33c440a85fc0511fb524834022a4" name="a3a8f33c440a85fc0511fb524834022a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a8f33c440a85fc0511fb524834022a4">&#9670;&#160;</a></span>Direction</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a3a8f33c440a85fc0511fb524834022a4">Builder::Direction</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3a8f33c440a85fc0511fb524834022a4a68ca7f04ffc28109cb3c7d6f7938e524" name="a3a8f33c440a85fc0511fb524834022a4a68ca7f04ffc28109cb3c7d6f7938e524"></a>UP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3a8f33c440a85fc0511fb524834022a4aaf475fec944d983f45bd0c0820644301" name="a3a8f33c440a85fc0511fb524834022a4aaf475fec944d983f45bd0c0820644301"></a>DOWN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3a8f33c440a85fc0511fb524834022a4ab1c131a9d11c0466abcdefb38878bc26" name="a3a8f33c440a85fc0511fb524834022a4ab1c131a9d11c0466abcdefb38878bc26"></a>LEFT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3a8f33c440a85fc0511fb524834022a4a14df7877fb0a6a7b278edbdf3decee3e" name="a3a8f33c440a85fc0511fb524834022a4a14df7877fb0a6a7b278edbdf3decee3e"></a>RIGHT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a3a8f33c440a85fc0511fb524834022a4aa889a31ef5d6a80526f65f41b6824a2f" name="a3a8f33c440a85fc0511fb524834022a4aa889a31ef5d6a80526f65f41b6824a2f"></a>NONE&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af8e018e77879c6136e6dabbd5eab0634" name="af8e018e77879c6136e6dabbd5eab0634"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8e018e77879c6136e6dabbd5eab0634">&#9670;&#160;</a></span>Builder()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Builder::Builder </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a95eb728c831324087c1d93312a44f556" name="a95eb728c831324087c1d93312a44f556"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95eb728c831324087c1d93312a44f556">&#9670;&#160;</a></span>~Builder()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Builder::~Builder </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a118255e92337b64c87c5a68d9b8fb3cf" name="a118255e92337b64c87c5a68d9b8fb3cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a118255e92337b64c87c5a68d9b8fb3cf">&#9670;&#160;</a></span>assignDirection()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Builder::assignDirection </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a single "digger" agent in the procedural map generation algorithm. </p>
+<p>A <a class="el" href="structBuilder.html" title="Represents a single &quot;digger&quot; agent in the procedural map generation algorithm.">Builder</a> moves around a grid, carving out paths according to a set of rules. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aefa6ef3c297647e6978951ccfb14833d" name="aefa6ef3c297647e6978951ccfb14833d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aefa6ef3c297647e6978951ccfb14833d">&#9670;&#160;</a></span>isActive()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool Builder::isActive </td>
@@ -289,12 +217,10 @@ Public Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p>Checks if the builder is currently active. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if the builder is active. </dd></dl>
 
 </div>
 </div>
@@ -303,9 +229,6 @@ Public Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Builder::setActive </td>
@@ -314,19 +237,22 @@ Public Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p>Manually sets the active state of the builder. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">val</td><td>The new active state. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structBuilder_a9238ee51151896aa8dcd848f1f0b23f4_icgraph.png" border="0" usemap="#astructBuilder_a9238ee51151896aa8dcd848f1f0b23f4_icgraph" alt=""/></div>
 <map name="astructBuilder_a9238ee51151896aa8dcd848f1f0b23f4_icgraph" id="astructBuilder_a9238ee51151896aa8dcd848f1f0b23f4_icgraph">
-<area shape="rect" title=" " alt="" coords="224,5,360,33"/>
-<area shape="rect" href="structBuilder.html#a1120fedf8f2dde051d66e93201297bf1" title=" " alt="" coords="5,5,176,33"/>
+<area shape="rect" title="Manually sets the active state of the builder." alt="" coords="224,5,360,33"/>
+<area shape="rect" href="structBuilder.html#a1120fedf8f2dde051d66e93201297bf1" title="Updates the builder&#39;s active status based on the tiles it encounters." alt="" coords="5,5,176,33"/>
 <area shape="poly" title=" " alt="" coords="208,22,176,22,176,16,208,16"/>
 </map>
 </div>
@@ -338,9 +264,6 @@ Here is the caller graph for this function:</div>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool Builder::updateActivity </td>
@@ -353,204 +276,33 @@ Here is the caller graph for this function:</div>
           <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>prevBlock</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p>Updates the builder's active status based on the tiles it encounters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currBlock</td><td>The character representing the current tile type. </td></tr>
+    <tr><td class="paramname">prevBlock</td><td>The character representing the previous tile type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the builder just moved from a non-path to a path tile. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structBuilder_a1120fedf8f2dde051d66e93201297bf1_cgraph.png" border="0" usemap="#astructBuilder_a1120fedf8f2dde051d66e93201297bf1_cgraph" alt=""/></div>
 <map name="astructBuilder_a1120fedf8f2dde051d66e93201297bf1_cgraph" id="astructBuilder_a1120fedf8f2dde051d66e93201297bf1_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,176,33"/>
-<area shape="rect" href="structBuilder.html#a9238ee51151896aa8dcd848f1f0b23f4" title=" " alt="" coords="224,5,360,33"/>
+<area shape="rect" title="Updates the builder&#39;s active status based on the tiles it encounters." alt="" coords="5,5,176,33"/>
+<area shape="rect" href="structBuilder.html#a9238ee51151896aa8dcd848f1f0b23f4" title="Manually sets the active state of the builder." alt="" coords="224,5,360,33"/>
 <area shape="poly" title=" " alt="" coords="176,16,208,16,208,22,176,22"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ab765778eda85a0235d2823bce5b6079f" name="ab765778eda85a0235d2823bce5b6079f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab765778eda85a0235d2823bce5b6079f">&#9670;&#160;</a></span>updateChance()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Builder::updateChance </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5a9111341791ef48b9faa786584b120c" name="a5a9111341791ef48b9faa786584b120c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a9111341791ef48b9faa786584b120c">&#9670;&#160;</a></span>updateForceChange()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Builder::updateForceChange </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="aa66fc8c4ca83fe37da0360123f86330e" name="aa66fc8c4ca83fe37da0360123f86330e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa66fc8c4ca83fe37da0360123f86330e">&#9670;&#160;</a></span>chanceChange</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Builder::chanceChange</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6dea396d4b5398a554130b6f59da40dc" name="a6dea396d4b5398a554130b6f59da40dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dea396d4b5398a554130b6f59da40dc">&#9670;&#160;</a></span>currBlock</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char Builder::currBlock</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a50b8b83d52bf006d4b1890ef8ea6600a" name="a50b8b83d52bf006d4b1890ef8ea6600a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50b8b83d52bf006d4b1890ef8ea6600a">&#9670;&#160;</a></span>currCount</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Builder::currCount</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0b638c2091a3cade940726d710475a22" name="a0b638c2091a3cade940726d710475a22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b638c2091a3cade940726d710475a22">&#9670;&#160;</a></span>currDir</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a3a8f33c440a85fc0511fb524834022a4">Direction</a> Builder::currDir</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a781cb1e9d290a6d83b0f5e48b112e739" name="a781cb1e9d290a6d83b0f5e48b112e739"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a781cb1e9d290a6d83b0f5e48b112e739">&#9670;&#160;</a></span>forceChange</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Builder::forceChange</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a18c574396b54999ea12fe697ec1e1be6" name="a18c574396b54999ea12fe697ec1e1be6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18c574396b54999ea12fe697ec1e1be6">&#9670;&#160;</a></span>prevBlock</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char Builder::prevBlock</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a91aaf4ea8161bf927724d0565c3cb240" name="a91aaf4ea8161bf927724d0565c3cb240"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91aaf4ea8161bf927724d0565c3cb240">&#9670;&#160;</a></span>prevDir</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a3a8f33c440a85fc0511fb524834022a4">Direction</a> Builder::prevDir</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a943ff493999ba5af5b145ae9ad94fcf3" name="a943ff493999ba5af5b145ae9ad94fcf3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a943ff493999ba5af5b145ae9ad94fcf3">&#9670;&#160;</a></span>x</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Builder::x</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad9bdf0b9b4f03550346e9c4e134fb478" name="ad9bdf0b9b4f03550346e9c4e134fb478"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9bdf0b9b4f03550346e9c4e134fb478">&#9670;&#160;</a></span>y</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Builder::y</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>include/<a class="el" href="Build_8h_source.html">Build.h</a></li>
+<li>src/<b>Build.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

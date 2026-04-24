@@ -2,204 +2,58 @@
 \hypertarget{GameplayScene_8h_source}{}\label{GameplayScene_8h_source}\index{include/GameplayScene.h@{include/GameplayScene.h}}
 \mbox{\hyperlink{GameplayScene_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}Animator.h"{}}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}Button.h"{}}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Constants.h"{}}}
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Controller.h"{}}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Counters.h"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Game.h"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Map_8h}{Map.h}}"{}}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Scene.h"{}}}
-\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}SceneManager.h"{}}}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{extern}\ Manager\ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}};}
-\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ SceneManager\ \mbox{\hyperlink{GameplayScene_8h_a9b68e0a0516c26a87a9c42a12e248d01}{sceneManager}};}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{extern}\ std::vector<Entity*>\ \mbox{\hyperlink{GameplayScene_8h_a28f491721073d8d963d518e00b788d0d}{colliders}};}
-\DoxyCodeLine{00015\ \textcolor{keyword}{extern}\ std::vector<Entity*>\ \mbox{\hyperlink{GameplayScene_8h_a809306cc98b3ccc27184a58af0c24185}{tiles}};}
-\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ std::vector<Entity*>\ \mbox{\hyperlink{GameplayScene_8h_a68e9efb0940626c90aff0b03f2919294}{players}};}
-\DoxyCodeLine{00017\ \textcolor{keyword}{extern}\ std::vector<Entity*>\ \mbox{\hyperlink{GameplayScene_8h_a50dacac939cbf6b8aef26ce2dc2b0473}{ghosts}};}
-\DoxyCodeLine{00018\ \textcolor{keyword}{extern}\ std::vector<Entity*>\ \mbox{\hyperlink{GameplayScene_8h_aaa2eabe59fadf1825855cb517bcfa9a4}{pellets}};}
-\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ std::vector<Entity*>\ \mbox{\hyperlink{GameplayScene_8h_a7c641ff50ec423294cc12b3650dce35d}{ghostSpawns}};}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00021\ \textcolor{comment}{//\ TODO:\ Buttons\ causing\ crash}}
-\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGameplayScene_afaf3d3a8840d7627fa1cfc5553352896}{GameplayScene}}\ :\ \textcolor{keyword}{public}\ Scene\ \{}
-\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{structGameplayScene_afaf3d3a8840d7627fa1cfc5553352896}{GameplayScene}}()}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ :\ Scene(\textcolor{stringliteral}{"{}Gameplay"{}},\ 0,\ false,\ true,\ 0),\ pacman(\mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.addEntity(\mbox{\hyperlink{UserConstants_8h_a8c11aa42a8be3cd552e0496436261cbd}{PACMAN\_TAG}})),}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ fps(\mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.addEntity(\textcolor{stringliteral}{"{}fps"{}})),\ points(\mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.addEntity(\textcolor{stringliteral}{"{}points"{}})),}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ pauseButton(\mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.addEntity(\textcolor{stringliteral}{"{}pauseButton"{}})),}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ reloadButton(\mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.addEntity(\textcolor{stringliteral}{"{}reloadButton"{}}))\ \{\}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{structGameplayScene_a04ed00f32476900612940bd6981cb1ec}{\string~GameplayScene}}()\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ clearScene();}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ controller;}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ pointVal;}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ controller\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ pointVal\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ pacmanPos\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ pacmanColl\ =\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ map.reset();}
-\DoxyCodeLine{00042\ \ \ \ \ \}}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGameplayScene_a8e6f07b6373b320c9ec6cd3643679e94}{init}}()\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ pacmanInit();}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ mapInit();}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ pelletCount\ =\ map-\/>getPelletCount();}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ fps.addComponent<FPS>(\textcolor{stringliteral}{"{}FPS"{}});}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ pointVal\ =\ \&points.addComponent<Points>(\textcolor{stringliteral}{"{}POINTS"{}}).value;}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ pauseButton.addComponent<Button>(\textcolor{stringliteral}{"{}PAUSE"{}},\ 1234,\ 700,\ 128,\ 64,\ []()\ \{}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ Game::setPause(!Game::getPaused());}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ sceneManager.loadNextScene();}}
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ reloadButton.addComponent<Button>(\textcolor{stringliteral}{"{}RELOAD"{}},\ 8,\ 700,\ 128,\ 64,\ []()\ \{}
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_a9b68e0a0516c26a87a9c42a12e248d01}{sceneManager}}.reloadScene();}
-\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \});}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ addEntityToScene(fps);}
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ addEntityToScene(points);}
-\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ addEntityToScene(pauseButton);}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ addEntityToScene(reloadButton);}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_a28f491721073d8d963d518e00b788d0d}{colliders}}\ =\ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.getGroupMembers(COLLIDERS);}
-\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_a68e9efb0940626c90aff0b03f2919294}{players}}\ =\ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.getGroupMembers(PACMAN);}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_a809306cc98b3ccc27184a58af0c24185}{tiles}}\ =\ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.getGroupMembers(MAP);}
-\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_aaa2eabe59fadf1825855cb517bcfa9a4}{pellets}}\ =\ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.getGroupMembers(PELLETS);}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ enableScene();}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.refresh();}
-\DoxyCodeLine{00072\ \ \ \ \ \}}
-\DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGameplayScene_a8196705b494cceb00a711c0e79ee3a66}{update}}()\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ collisionResponse(controller-\/>getLastVel());}}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ checkCollisions();}}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ points.update();}}
-\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ fps.update();}}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ pauseButton.update();}}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reloadButton.update();}}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pelletCount\ ==\ *pointVal\ /\ \mbox{\hyperlink{UserConstants_8h_ad4c01431fdd27af7149817a929fc449a}{VALUE\_PER\_PELLET}})\ \{}
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structGameplayScene_a0c3e0a7ec463369e22944abf7c483fca}{reload}}();}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ pelletCount\ +=\ map-\/>getPelletCount();}
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00087\ \ \ \ \ \}}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGameplayScene_a0c3e0a7ec463369e22944abf7c483fca}{reload}}()\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ pacman.reload();}
-\DoxyCodeLine{00091\ }
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ t\ :\ \mbox{\hyperlink{GameplayScene_8h_a809306cc98b3ccc27184a58af0c24185}{tiles}})\ \{}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ t-\/>disable();}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ removeEntityFromScene(t);}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.refresh();}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ map-\/>reloadMap();}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_a28f491721073d8d963d518e00b788d0d}{colliders}}\ =\ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.getGroupMembers(COLLIDERS);}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_a809306cc98b3ccc27184a58af0c24185}{tiles}}\ =\ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.getGroupMembers(MAP);}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_aaa2eabe59fadf1825855cb517bcfa9a4}{pellets}}\ =\ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.getGroupMembers(PELLETS);}
-\DoxyCodeLine{00102\ }
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ enableScene();}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.refresh();}
-\DoxyCodeLine{00105\ \ \ \ \ \}}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGameplayScene_a927ef0c0f1fe84952c2a589dd697fdab}{reloadWithState}}()\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ pauseButton.reload();}
-\DoxyCodeLine{00109\ \ \ \ \ \}}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGameplayScene_a54618c6e397821a91a16e37d400a494d}{handleEvents}}(SDL\_Event\&\ event)\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (event.type)\ \{}
-\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_KEYDOWN:}
-\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ controller-\/>updateKeyDown(event.key.keysym.sym);}
-\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ SDL\_KEYUP:}
-\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ controller-\/>updateKeyUp(event.key.keysym.sym);}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00122\ \ \ \ \ \}}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGameplayScene_ab39a3f23e2c0f7b41a4223c6b335f3aa}{draw}}()\textcolor{keyword}{\ override\ }\{}
-\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_a28f491721073d8d963d518e00b788d0d}{colliders}}\ =\ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.getGroupMembers(COLLIDERS);}
-\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_a68e9efb0940626c90aff0b03f2919294}{players}}\ =\ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.getGroupMembers(PACMAN);}
-\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_a809306cc98b3ccc27184a58af0c24185}{tiles}}\ =\ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.getGroupMembers(MAP);}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{GameplayScene_8h_aaa2eabe59fadf1825855cb517bcfa9a4}{pellets}}\ =\ \mbox{\hyperlink{GameplayScene_8h_a8b88105956ea929e3c74c65791e92c6f}{manager}}.getGroupMembers(PELLETS);}
-\DoxyCodeLine{00129\ }
-\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ t\ :\ \mbox{\hyperlink{GameplayScene_8h_a809306cc98b3ccc27184a58af0c24185}{tiles}})\ \{}
-\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ t-\/>draw();}
-\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ p\ :\ \mbox{\hyperlink{GameplayScene_8h_aaa2eabe59fadf1825855cb517bcfa9a4}{pellets}})\ \{}
-\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ p-\/>draw();}
-\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ g\ :\ \mbox{\hyperlink{GameplayScene_8h_a50dacac939cbf6b8aef26ce2dc2b0473}{ghosts}})\ \{}
-\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ g-\/>draw();}
-\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ p\ :\ \mbox{\hyperlink{GameplayScene_8h_a68e9efb0940626c90aff0b03f2919294}{players}})\ \{}
-\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ p-\/>draw();}
-\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00142\ }
-\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ points.draw();}
-\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ fps.draw();}
-\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ pauseButton.draw();}
-\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ reloadButton.draw();}
-\DoxyCodeLine{00147\ \ \ \ \ \}}
-\DoxyCodeLine{00148\ }
-\DoxyCodeLine{00149\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00150\ \ \ \ \ Entity\&\ pacman;}
-\DoxyCodeLine{00151\ \ \ \ \ Entity\&\ fps;}
-\DoxyCodeLine{00152\ \ \ \ \ Entity\&\ points;}
-\DoxyCodeLine{00153\ \ \ \ \ Entity\&\ pauseButton;}
-\DoxyCodeLine{00154\ \ \ \ \ Entity\&\ reloadButton;}
-\DoxyCodeLine{00155\ }
-\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{int}*\ pointVal;}
-\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{int}\ pelletCount;}
-\DoxyCodeLine{00158\ }
-\DoxyCodeLine{00159\ \ \ \ \ Transform*\ pacmanPos;}
-\DoxyCodeLine{00160\ \ \ \ \ Collider*\ pacmanColl;}
-\DoxyCodeLine{00161\ \ \ \ \ Controller*\ controller;}
-\DoxyCodeLine{00162\ }
-\DoxyCodeLine{00163\ \ \ \ \ std::unique\_ptr<Map>\ map;}
-\DoxyCodeLine{00164\ }
-\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ pacmanInit()\ \{}
-\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ pacmanPos\ =\ \&pacman.addComponent<Transform>(}
-\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{UserConstants_8h_a7b1a05d8f891c7d8f69480d1bf1e39eb}{PACMAN\_SPAWN}}.x\ *\ 32\ +\ \mbox{\hyperlink{UserConstants_8h_aab69733e34eee05b3faa010c34a90dd0}{MAP\_PADDING}}.x\ +\ 1,\ \mbox{\hyperlink{UserConstants_8h_a7b1a05d8f891c7d8f69480d1bf1e39eb}{PACMAN\_SPAWN}}.y\ *\ 32\ +\ \mbox{\hyperlink{UserConstants_8h_aab69733e34eee05b3faa010c34a90dd0}{MAP\_PADDING}}.y\ +\ 1}
-\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ pacmanColl\ =\ \&pacman.addComponent<Collider>(}
-\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}pacman"{}},}
-\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{keyword}{this}](Collider\&\ other)\ \{}
-\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (other.tag\ ==\ \mbox{\hyperlink{UserConstants_8h_a682d2920a7a5f8cb0b47ca9f839ffe37}{PELLET\_TAG}})\ \{}
-\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *pointVal\ +=\ \mbox{\hyperlink{UserConstants_8h_ad4c01431fdd27af7149817a929fc449a}{VALUE\_PER\_PELLET}};}
-\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ other.entity-\/>disable();}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
-\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},}
-\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},}
-\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},}
-\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ false}
-\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ );}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ pacman.addComponent<Sprites>(\textcolor{stringliteral}{"{}./sprites/pacman\_move.png"{}});}
-\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ Animator\&\ pacmanAnim\ =\ pacman.addComponent<Animator>();}
-\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ pacmanAnim.addAnimation(\textcolor{stringliteral}{"{}idle"{}},\ \textcolor{stringliteral}{"{}./sprites/pacman\_move.png"{}});}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ pacmanAnim.addEdge(ANIM\_ENTRY,\ \textcolor{stringliteral}{"{}idle"{}},\ \{\ std::shared\_ptr<bool>(\textcolor{keyword}{new}\ \textcolor{keywordtype}{bool}(\textcolor{keyword}{true}))\ \});}
-\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ controller\ =\ \&pacman.addComponent<Controller>();}
-\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!pacman.hasGroup(PACMAN))\ \{}
-\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ pacman.addGroup(PACMAN);}
-\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ addEntityToScene(pacman);}
-\DoxyCodeLine{00191\ \ \ \ \ \}}
-\DoxyCodeLine{00192\ }
-\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ mapInit()\ \{}
-\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ map\ =\ std::make\_unique<Map>();}
-\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ map-\/>init();}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ map-\/>drawMap();}
-\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ map-\/>loadMap();}
-\DoxyCodeLine{00198\ \ \ \ \ \}}
-\DoxyCodeLine{00199\ \};}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Animator.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}Button.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}Constants.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}Controller.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Counters.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Game.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Map.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Scene.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}SceneManager.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ Manager\ manager;}
+\DoxyCodeLine{00017\ \textcolor{keyword}{extern}\ SceneManager\ sceneManager;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ std::vector<Entity*>\ colliders;}
+\DoxyCodeLine{00020\ \textcolor{keyword}{extern}\ std::vector<Entity*>\ tiles;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ std::vector<Entity*>\ players;}
+\DoxyCodeLine{00022\ \textcolor{keyword}{extern}\ std::vector<Entity*>\ ghosts;}
+\DoxyCodeLine{00023\ \textcolor{keyword}{extern}\ std::vector<Entity*>\ pellets;}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ std::vector<Entity*>\ ghostSpawns;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{struct\ }GameplayScene\ :\ \textcolor{keyword}{public}\ Scene\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ GameplayScene();}
+\DoxyCodeLine{00033\ \ \ \ \ \string~GameplayScene()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGameplayScene_a8e6f07b6373b320c9ec6cd3643679e94}{init}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGameplayScene_a8196705b494cceb00a711c0e79ee3a66}{update}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGameplayScene_a0c3e0a7ec463369e22944abf7c483fca}{reload}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGameplayScene_a927ef0c0f1fe84952c2a589dd697fdab}{reloadWithState}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGameplayScene_a54618c6e397821a91a16e37d400a494d}{handleEvents}}(SDL\_Event\&\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structGameplayScene_ab39a3f23e2c0f7b41a4223c6b335f3aa}{draw}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ Entity\&\ pacman;}
+\DoxyCodeLine{00063\ \ \ \ \ Entity\&\ fps;}
+\DoxyCodeLine{00064\ \ \ \ \ Entity\&\ points;}
+\DoxyCodeLine{00065\ \ \ \ \ Entity\&\ pauseButton;}
+\DoxyCodeLine{00066\ \ \ \ \ Entity\&\ reloadButton;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}*\ pointVal;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{int}\ pelletCount;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ Transform*\ pacmanPos;}
+\DoxyCodeLine{00072\ \ \ \ \ Collider*\ pacmanColl;}
+\DoxyCodeLine{00073\ \ \ \ \ Controller*\ controller;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ std::unique\_ptr<Map>\ map;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ pacmanInit();}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ mapInit();}
+\DoxyCodeLine{00079\ \};}
 
 \end{DoxyCode}

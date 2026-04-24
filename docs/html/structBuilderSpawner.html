@@ -110,145 +110,57 @@ $(function(){initNavTree('structBuilderSpawner.html',''); initResizable(true); }
 </div><!--header-->
 <div class="contents">
 
+<p>Manages a collection of <a class="el" href="structBuilder.html" title="Represents a single &quot;digger&quot; agent in the procedural map generation algorithm.">Builder</a> agents to generate a map.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Build_8h_source.html">Build.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for BuilderSpawner:</div>
 <div class="dyncontent">
 <div class="center"><img src="structBuilderSpawner__coll__graph.png" border="0" usemap="#aBuilderSpawner_coll__map" alt="Collaboration graph"/></div>
 <map name="aBuilderSpawner_coll__map" id="aBuilderSpawner_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,155,234"/>
+<area shape="rect" title="Manages a collection of Builder agents to generate a map." alt="" coords="5,5,155,234"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae378ce2baadf05142c40966a4d711979" id="r_ae378ce2baadf05142c40966a4d711979"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae378ce2baadf05142c40966a4d711979">BuilderSpawner</a> ()</td></tr>
-<tr class="separator:ae378ce2baadf05142c40966a4d711979"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a139e46c2999f5b6caaccf3adc63e8af5" id="r_a139e46c2999f5b6caaccf3adc63e8af5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a139e46c2999f5b6caaccf3adc63e8af5">~BuilderSpawner</a> ()</td></tr>
-<tr class="separator:a139e46c2999f5b6caaccf3adc63e8af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f4493308b84572901a529c8fd4e270e" id="r_a8f4493308b84572901a529c8fd4e270e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f4493308b84572901a529c8fd4e270e">moveBuilders</a> ()</td></tr>
+<tr class="memitem:a8f4493308b84572901a529c8fd4e270e" id="r_a8f4493308b84572901a529c8fd4e270e"><td class="memItemLeft" align="right" valign="top"><a id="a8f4493308b84572901a529c8fd4e270e" name="a8f4493308b84572901a529c8fd4e270e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>moveBuilders</b> ()</td></tr>
+<tr class="memdesc:a8f4493308b84572901a529c8fd4e270e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the coordinates of all active builders based on their current direction. <br /></td></tr>
 <tr class="separator:a8f4493308b84572901a529c8fd4e270e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a564c452a5c105d43fa238614496e2aad" id="r_a564c452a5c105d43fa238614496e2aad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a564c452a5c105d43fa238614496e2aad">updateBuilders</a> ()</td></tr>
+<tr class="memitem:a564c452a5c105d43fa238614496e2aad" id="r_a564c452a5c105d43fa238614496e2aad"><td class="memItemLeft" align="right" valign="top"><a id="a564c452a5c105d43fa238614496e2aad" name="a564c452a5c105d43fa238614496e2aad"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>updateBuilders</b> ()</td></tr>
+<tr class="memdesc:a564c452a5c105d43fa238614496e2aad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the internal state of all builders (e.g., direction changes). <br /></td></tr>
 <tr class="separator:a564c452a5c105d43fa238614496e2aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82d1430250e6cb8db70091129d1b2d8f" id="r_a82d1430250e6cb8db70091129d1b2d8f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82d1430250e6cb8db70091129d1b2d8f">isActive</a> ()</td></tr>
+<tr class="memdesc:a82d1430250e6cb8db70091129d1b2d8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if any builder in the collection is still active.  <br /></td></tr>
 <tr class="separator:a82d1430250e6cb8db70091129d1b2d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9addf9449b4e191367ef28e052b0c0bd" id="r_a9addf9449b4e191367ef28e052b0c0bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9addf9449b4e191367ef28e052b0c0bd">clear</a> ()</td></tr>
+<tr class="memitem:a9addf9449b4e191367ef28e052b0c0bd" id="r_a9addf9449b4e191367ef28e052b0c0bd"><td class="memItemLeft" align="right" valign="top"><a id="a9addf9449b4e191367ef28e052b0c0bd" name="a9addf9449b4e191367ef28e052b0c0bd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
+<tr class="memdesc:a9addf9449b4e191367ef28e052b0c0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the collection of builders. <br /></td></tr>
 <tr class="separator:a9addf9449b4e191367ef28e052b0c0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a2d794f246e55e4e431ac876f0bcd3bcc" id="r_a2d794f246e55e4e431ac876f0bcd3bcc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d794f246e55e4e431ac876f0bcd3bcc">x</a></td></tr>
+<tr class="memitem:a2d794f246e55e4e431ac876f0bcd3bcc" id="r_a2d794f246e55e4e431ac876f0bcd3bcc"><td class="memItemLeft" align="right" valign="top"><a id="a2d794f246e55e4e431ac876f0bcd3bcc" name="a2d794f246e55e4e431ac876f0bcd3bcc"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
 <tr class="separator:a2d794f246e55e4e431ac876f0bcd3bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec52dfc7ac96868f91a3084cf3ee1a33" id="r_aec52dfc7ac96868f91a3084cf3ee1a33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec52dfc7ac96868f91a3084cf3ee1a33">y</a></td></tr>
+<tr class="memitem:aec52dfc7ac96868f91a3084cf3ee1a33" id="r_aec52dfc7ac96868f91a3084cf3ee1a33"><td class="memItemLeft" align="right" valign="top"><a id="aec52dfc7ac96868f91a3084cf3ee1a33" name="aec52dfc7ac96868f91a3084cf3ee1a33"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
 <tr class="separator:aec52dfc7ac96868f91a3084cf3ee1a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e0f55a014dc43a44dbaf0953d2f84e9" id="r_a6e0f55a014dc43a44dbaf0953d2f84e9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structBuilder.html">Builder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e0f55a014dc43a44dbaf0953d2f84e9">builders</a></td></tr>
+<tr class="memitem:a6e0f55a014dc43a44dbaf0953d2f84e9" id="r_a6e0f55a014dc43a44dbaf0953d2f84e9"><td class="memItemLeft" align="right" valign="top"><a id="a6e0f55a014dc43a44dbaf0953d2f84e9" name="a6e0f55a014dc43a44dbaf0953d2f84e9"></a>
+std::vector&lt; <a class="el" href="structBuilder.html">Builder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>builders</b></td></tr>
 <tr class="separator:a6e0f55a014dc43a44dbaf0953d2f84e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae378ce2baadf05142c40966a4d711979" name="ae378ce2baadf05142c40966a4d711979"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae378ce2baadf05142c40966a4d711979">&#9670;&#160;</a></span>BuilderSpawner()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">BuilderSpawner::BuilderSpawner </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a139e46c2999f5b6caaccf3adc63e8af5" name="a139e46c2999f5b6caaccf3adc63e8af5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a139e46c2999f5b6caaccf3adc63e8af5">&#9670;&#160;</a></span>~BuilderSpawner()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">BuilderSpawner::~BuilderSpawner </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="structBuilderSpawner_a139e46c2999f5b6caaccf3adc63e8af5_cgraph.png" border="0" usemap="#astructBuilderSpawner_a139e46c2999f5b6caaccf3adc63e8af5_cgraph" alt=""/></div>
-<map name="astructBuilderSpawner_a139e46c2999f5b6caaccf3adc63e8af5_cgraph" id="astructBuilderSpawner_a139e46c2999f5b6caaccf3adc63e8af5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,194,50"/>
-<area shape="rect" href="structBuilderSpawner.html#a9addf9449b4e191367ef28e052b0c0bd" title=" " alt="" coords="242,14,405,42"/>
-<area shape="poly" title=" " alt="" coords="194,25,226,25,226,30,194,30"/>
-</map>
-</div>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9addf9449b4e191367ef28e052b0c0bd" name="a9addf9449b4e191367ef28e052b0c0bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9addf9449b4e191367ef28e052b0c0bd">&#9670;&#160;</a></span>clear()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BuilderSpawner::clear </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="structBuilderSpawner_a9addf9449b4e191367ef28e052b0c0bd_icgraph.png" border="0" usemap="#astructBuilderSpawner_a9addf9449b4e191367ef28e052b0c0bd_icgraph" alt=""/></div>
-<map name="astructBuilderSpawner_a9addf9449b4e191367ef28e052b0c0bd_icgraph" id="astructBuilderSpawner_a9addf9449b4e191367ef28e052b0c0bd_icgraph">
-<area shape="rect" title=" " alt="" coords="242,14,405,42"/>
-<area shape="rect" href="structBuilderSpawner.html#a139e46c2999f5b6caaccf3adc63e8af5" title=" " alt="" coords="5,5,194,50"/>
-<area shape="poly" title=" " alt="" coords="226,30,194,30,194,25,226,25"/>
-</map>
-</div>
-
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Manages a collection of <a class="el" href="structBuilder.html" title="Represents a single &quot;digger&quot; agent in the procedural map generation algorithm.">Builder</a> agents to generate a map. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a82d1430250e6cb8db70091129d1b2d8f" name="a82d1430250e6cb8db70091129d1b2d8f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a82d1430250e6cb8db70091129d1b2d8f">&#9670;&#160;</a></span>isActive()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool BuilderSpawner::isActive </td>
@@ -257,110 +169,16 @@ Here is the caller graph for this function:</div>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a8f4493308b84572901a529c8fd4e270e" name="a8f4493308b84572901a529c8fd4e270e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f4493308b84572901a529c8fd4e270e">&#9670;&#160;</a></span>moveBuilders()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BuilderSpawner::moveBuilders </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Checks if any builder in the collection is still active. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if at least one builder is active. </dd></dl>
 
 </div>
 </div>
-<a id="a564c452a5c105d43fa238614496e2aad" name="a564c452a5c105d43fa238614496e2aad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a564c452a5c105d43fa238614496e2aad">&#9670;&#160;</a></span>updateBuilders()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BuilderSpawner::updateBuilders </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a6e0f55a014dc43a44dbaf0953d2f84e9" name="a6e0f55a014dc43a44dbaf0953d2f84e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e0f55a014dc43a44dbaf0953d2f84e9">&#9670;&#160;</a></span>builders</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="structBuilder.html">Builder</a>&gt; BuilderSpawner::builders</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2d794f246e55e4e431ac876f0bcd3bcc" name="a2d794f246e55e4e431ac876f0bcd3bcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d794f246e55e4e431ac876f0bcd3bcc">&#9670;&#160;</a></span>x</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int BuilderSpawner::x</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aec52dfc7ac96868f91a3084cf3ee1a33" name="aec52dfc7ac96868f91a3084cf3ee1a33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec52dfc7ac96868f91a3084cf3ee1a33">&#9670;&#160;</a></span>y</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int BuilderSpawner::y</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<hr/>The documentation for this struct was generated from the following files:<ul>
 <li>include/<a class="el" href="Build_8h_source.html">Build.h</a></li>
+<li>src/<b>Build.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

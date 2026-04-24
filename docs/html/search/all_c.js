@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['pacman_0',['pacman',['../index.html',1,'']]],
-  ['pacman_5fspawn_1',['PACMAN_SPAWN',['../UserConstants_8h.html#a7b1a05d8f891c7d8f69480d1bf1e39eb',1,'UserConstants.h']]],
-  ['pacman_5ftag_2',['PACMAN_TAG',['../UserConstants_8h.html#a8c11aa42a8be3cd552e0496436261cbd',1,'UserConstants.h']]],
-  ['path_3',['PATH',['../UserConstants_8h.html#a8b7cb09acec89dc654c73f6880e676fa',1,'UserConstants.h']]],
-  ['pellet_5ftag_4',['PELLET_TAG',['../UserConstants_8h.html#a682d2920a7a5f8cb0b47ca9f839ffe37',1,'UserConstants.h']]],
-  ['pellets_5',['pellets',['../GameplayScene_8h.html#aaa2eabe59fadf1825855cb517bcfa9a4',1,'pellets:&#160;GameplayScene.h'],['../Game_8cpp.html#aa8fc224a6886992f21b6a74e2fbd007f',1,'pellets(manager.getGroupMembers(PELLETS)):&#160;Game.cpp']]],
-  ['players_6',['players',['../GameplayScene_8h.html#a68e9efb0940626c90aff0b03f2919294',1,'players:&#160;GameplayScene.h'],['../Game_8cpp.html#aad81e0bf04ff7022292c2ba805a1d4aa',1,'players(manager.getGroupMembers(PACMAN)):&#160;Game.cpp']]],
-  ['prevblock_7',['prevBlock',['../structBuilder.html#a18c574396b54999ea12fe697ec1e1be6',1,'Builder']]],
-  ['prevdir_8',['prevDir',['../structBuilder.html#a91aaf4ea8161bf927724d0565c3cb240',1,'Builder']]]
+  ['oncollision_0',['onCollision',['https://noxayyyy.github.io/nox-engine/structCollider.html#a6b79610fbf8052480ee21ca2f7b3fbd5',1,'Collider']]],
+  ['operator_28_29_1',['operator()',['../structMap_1_1MapArray.html#a9c68c4712de04428c649d13e69653474',1,'Map::MapArray::operator()(int y, int x)'],['../structMap_1_1MapArray.html#a937f558107ca6fd96e25d80b9e1ea466',1,'Map::MapArray::operator()(int y, int x) const']]],
+  ['operator_2a_2',['operator*',['https://noxayyyy.github.io/nox-engine/structVector2D.html#a3365fdbe09c701b88caac54ef64dc7f2',1,'Vector2D']]],
+  ['operator_5b_5d_3',['operator[]',['../structMap_1_1MapArray.html#a8d49f7d178abc78637e220595167b44e',1,'Map::MapArray::operator[](int i) const'],['../structMap_1_1MapArray.html#aa1c19350282540d554dd933eefac3a77',1,'Map::MapArray::operator[](int i)']]],
+  ['optimisemap_4',['optimiseMap',['../structMap.html#a71b8962d821916cc00b2b495db79f786',1,'Map']]]
 ];

@@ -1,5 +1,5 @@
 <map id="GameplayScene" name="GameplayScene">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,126,159,354"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="58,5,107,78"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,93,85,126,80,126,80,93"/>
+<area shape="rect" id="Node000001" title="The main scene that orchestrates the core gameplay loop." alt="" coords="27,483,181,712"/>
+<area shape="rect" id="Node000002" href="/home/mfareed/repos/pacman/engine/engine.tag$structScene.html" title=" " alt="" coords="5,5,202,435"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,450,106,483,101,483,101,450"/>
 </map>

@@ -7,8 +7,6 @@ var structBuilder =
       [ "RIGHT", "structBuilder.html#a3a8f33c440a85fc0511fb524834022a4a14df7877fb0a6a7b278edbdf3decee3e", null ],
       [ "NONE", "structBuilder.html#a3a8f33c440a85fc0511fb524834022a4aa889a31ef5d6a80526f65f41b6824a2f", null ]
     ] ],
-    [ "Builder", "structBuilder.html#af8e018e77879c6136e6dabbd5eab0634", null ],
-    [ "~Builder", "structBuilder.html#a95eb728c831324087c1d93312a44f556", null ],
     [ "assignDirection", "structBuilder.html#a118255e92337b64c87c5a68d9b8fb3cf", null ],
     [ "isActive", "structBuilder.html#aefa6ef3c297647e6978951ccfb14833d", null ],
     [ "setActive", "structBuilder.html#a9238ee51151896aa8dcd848f1f0b23f4", null ],
@@ -22,6 +20,5 @@ var structBuilder =
     [ "forceChange", "structBuilder.html#a781cb1e9d290a6d83b0f5e48b112e739", null ],
     [ "prevBlock", "structBuilder.html#a18c574396b54999ea12fe697ec1e1be6", null ],
     [ "prevDir", "structBuilder.html#a91aaf4ea8161bf927724d0565c3cb240", null ],
-    [ "x", "structBuilder.html#a943ff493999ba5af5b145ae9ad94fcf3", null ],
     [ "y", "structBuilder.html#ad9bdf0b9b4f03550346e9c4e134fb478", null ]
 ];

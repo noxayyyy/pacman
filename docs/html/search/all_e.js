@@ -1,7 +1,19 @@
 var searchData=
 [
-  ['scenemanager_0',['sceneManager',['../GameplayScene_8h.html#a9b68e0a0516c26a87a9c42a12e248d01',1,'sceneManager:&#160;Game.cpp'],['../Game_8cpp.html#a9b68e0a0516c26a87a9c42a12e248d01',1,'sceneManager:&#160;Game.cpp'],['../Map_8cpp.html#a9b68e0a0516c26a87a9c42a12e248d01',1,'sceneManager:&#160;Game.cpp']]],
-  ['setactive_1',['setActive',['../structBuilder.html#a9238ee51151896aa8dcd848f1f0b23f4',1,'Builder']]],
-  ['spawner_5fcount_2',['SPAWNER_COUNT',['../UserConstants_8h.html#a0907d0bc52e7ae7c216e65d85346602b',1,'UserConstants.h']]],
-  ['spawners_3',['spawners',['../Map_8cpp.html#a7c23f9be9afc6a233a66c8c53ddcd95d',1,'Map.cpp']]]
+  ['recalcspritedimensions_0',['recalcSpriteDimensions',['https://noxayyyy.github.io/nox-engine/structSprites.html#a9767aacb914fde74ce286c466dd0345a',1,'Sprites']]],
+  ['refresh_1',['refresh',['https://noxayyyy.github.io/nox-engine/structEntity.html#aabcc7161ef99ca8dbe5d68f95af59a42',1,'Entity::refresh()'],['https://noxayyyy.github.io/nox-engine/structManager.html#adc5c66704fd1b0a9b9d38de8fdcb3748',1,'Manager::refresh()']]],
+  ['refreshgroups_2',['refreshGroups',['https://noxayyyy.github.io/nox-engine/structManager.html#a91664ffe84b1acc07269ce65eb504d79',1,'Manager']]],
+  ['reload_3',['reload',['https://noxayyyy.github.io/nox-engine/structButton.html#ac73fe4dc081674c116aabe8145386332',1,'Button::reload()'],['https://noxayyyy.github.io/nox-engine/structComponent.html#abd8b82630598fe8a13318ecc13a5c159',1,'Component::reload()'],['https://noxayyyy.github.io/nox-engine/structController.html#a66dcd5056f1c90515405d4a77f86dd67',1,'Controller::reload()'],['https://noxayyyy.github.io/nox-engine/structEntity.html#a8f7c3e30f4e93df3ae2f14501e705f23',1,'Entity::reload()'],['https://noxayyyy.github.io/nox-engine/structFPS.html#adfc6d925757aafc98ea17e9540b866df',1,'FPS::reload()'],['https://noxayyyy.github.io/nox-engine/structMouseTracker.html#aa37b0f2556c8b0c64bf5197a30eafb81',1,'MouseTracker::reload()'],['https://noxayyyy.github.io/nox-engine/structPoints.html#a9b6c82fcf421a12d2ca76483622fdfbb',1,'Points::reload()'],['https://noxayyyy.github.io/nox-engine/structScene.html#a24ed31537c3c9c40f708e68295e2f51e',1,'Scene::reload()'],['https://noxayyyy.github.io/nox-engine/structTransform.html#a4f24046feadc161265f75f821b162a22',1,'Transform::reload()'],['../structGameplayScene.html#a0c3e0a7ec463369e22944abf7c483fca',1,'GameplayScene::reload()'],['../structTestScene.html#a40b709902dc1e4c8025265dd27a1d575',1,'TestScene::reload()']]],
+  ['reloadmap_4',['reloadMap',['../structMap.html#a47baf1af3323f35cbbe6e824f7e9237a',1,'Map']]],
+  ['reloadscene_5',['reloadScene',['https://noxayyyy.github.io/nox-engine/structSceneManager.html#a480638fd9cd3f8b96e7ba0f5b5feefa7',1,'SceneManager']]],
+  ['reloadwithstate_6',['reloadWithState',['https://noxayyyy.github.io/nox-engine/structScene.html#a94fd9954ef4f4562e3c29e69f6f27e8c',1,'Scene::reloadWithState()'],['../structGameplayScene.html#a927ef0c0f1fe84952c2a589dd697fdab',1,'GameplayScene::reloadWithState()'],['../structTestScene.html#ab6a4bed158a735de2e6ff91e6f74cd79',1,'TestScene::reloadWithState()']]],
+  ['removebgscene_7',['removeBgScene',['https://noxayyyy.github.io/nox-engine/structSceneManager.html#a8fba3fa586bae5b43a2e7397c7f8ec19',1,'SceneManager']]],
+  ['removeentityfromscene_8',['removeEntityFromScene',['https://noxayyyy.github.io/nox-engine/structScene.html#a6d94e9e8483bf03c6aa5d786fb2f948e',1,'Scene']]],
+  ['render_9',['render',['https://noxayyyy.github.io/nox-engine/classGame.html#a15ddd769261d923827a3cdf41499c843',1,'Game']]],
+  ['renderer_10',['renderer',['https://noxayyyy.github.io/nox-engine/classGame.html#ae5164c37c0dc74cfb56041174017bf57',1,'Game']]],
+  ['resizetile_11',['resizeTile',['https://noxayyyy.github.io/nox-engine/structTile.html#a2a78af6e82cf111b1d078f8c96a444ab',1,'Tile']]],
+  ['reversible_12',['reversible',['https://noxayyyy.github.io/nox-engine/structAnimator_1_1Animation.html#a309d420a31e2da9522188aec21ff5b6f',1,'Animator::Animation']]],
+  ['rotate_13',['rotate',['https://noxayyyy.github.io/nox-engine/structTransform.html#a0067e69d59b0510d386bd6ffd5ddaeb6',1,'Transform']]],
+  ['rotations_14',['Rotations',['https://noxayyyy.github.io/nox-engine/structTransform.html#ada80898bd2a05f81a7a1b503c82737f6',1,'Transform']]],
+  ['running_15',['running',['https://noxayyyy.github.io/nox-engine/classGame.html#afd9af52dcc5835f2a8c37f441a256b9d',1,'Game']]]
 ];

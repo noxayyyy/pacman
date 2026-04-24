@@ -1,6 +1,5 @@
 var structTestScene =
 [
-    [ "TestScene", "structTestScene.html#a04fd916e8e52cd1335fc05e2ebf1c8df", null ],
     [ "draw", "structTestScene.html#a69d38eaa79627dd860d3924e0d1061c2", null ],
     [ "handleEvents", "structTestScene.html#ae7dfa27fc1c9da94520f4e6ac4e03b3b", null ],
     [ "init", "structTestScene.html#a365110203eb94b8e2b9dc442b158620e", null ],
