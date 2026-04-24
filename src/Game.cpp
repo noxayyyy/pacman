@@ -14,7 +14,9 @@ SceneManager sceneManager = SceneManager();
 
 Game::Game() : mouse(manager.addEntity(MOUSE_TAG)) {}
 
-Game::~Game() {}
+Game::~Game() {
+	clean();
+}
 
 TTF_Font* TextureManager::font;
 
@@ -31,12 +33,12 @@ bool MouseTracker::isPressed;
 SDL_Event Game::event;
 SDL_Renderer* Game::renderer = nullptr;
 
-std::vector<Entity*>& colliders(manager.getGroupMembers(COLLIDERS));
-std::vector<Entity*>& tiles(manager.getGroupMembers(MAP));
-std::vector<Entity*>& players(manager.getGroupMembers(PACMAN));
-std::vector<Entity*>& ghosts(manager.getGroupMembers(GHOSTS));
-std::vector<Entity*>& pellets(manager.getGroupMembers(PELLETS));
-std::vector<Entity*>& ghostSpawns(manager.getGroupMembers(GHOST_BAR));
+std::vector<Entity*> colliders(manager.getGroupMembers(COLLIDERS));
+std::vector<Entity*> tiles(manager.getGroupMembers(MAP));
+std::vector<Entity*> players(manager.getGroupMembers(PACMAN));
+std::vector<Entity*> ghosts(manager.getGroupMembers(GHOSTS));
+std::vector<Entity*> pellets(manager.getGroupMembers(PELLETS));
+std::vector<Entity*> ghostSpawns(manager.getGroupMembers(GHOST_BAR));
 
 // game initialisation function
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
@@ -69,7 +71,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	}
 	std::cout << "TTF system loaded succesfully\n";
 
-	if (Mix_Init(MIX_INIT_WAVPACK)) { // set to filetype
+	if (!Mix_Init(MIX_INIT_WAVPACK)) { // set to filetype
 		std::cout << "Mixer failed to initialise, error: " << Mix_GetError() << '\n';
 		return;
 	}

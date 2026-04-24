@@ -55,34 +55,34 @@ public:
 
 		inline T& operator()(int y, int x) {
 			if (y >= h || y < 0) {
-				throw SIGSEGV;
+				throw std::runtime_error("Map oob access.");
 			}
 			if (x >= w || x < 0) {
-				throw SIGSEGV;
+				throw std::runtime_error("Map oob access.");
 			}
 			return arr[y * w + x];
 		}
 
 		inline const T& operator()(int y, int x) const {
 			if (y >= h || y < 0) {
-				throw SIGSEGV;
+				throw std::runtime_error("Map oob access.");
 			}
 			if (x >= w || x < 0) {
-				throw SIGSEGV;
+				throw std::runtime_error("Map oob access.");
 			}
 			return arr[y * w + x];
 		}
 
 		inline const T& operator[](int i) const {
 			if (i >= h * w) {
-				throw SIGSEGV;
+				throw std::runtime_error("Map oob access.");
 			}
 			return arr[i];
 		}
 
 		inline T& operator[](int i) {
 			if (i >= h * w) {
-				throw SIGSEGV;
+				throw std::runtime_error("Map oob access.");
 			}
 			return arr[i];
 		}

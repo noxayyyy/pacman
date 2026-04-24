@@ -2,6 +2,7 @@
 #include "Constants.h"
 #include "SceneManager.h"
 #include "UserConstants.h"
+#include <cstdlib>
 
 extern Manager manager;
 extern SceneManager sceneManager;
@@ -209,7 +210,7 @@ int Map::colourReference(char colour) {
 }
 
 void Map::addTile(int id, int x, int y) {
-	Entity& tile(manager.addEntity("tile"));
+	Entity& tile(manager.addEntity("tile_" + std::to_string(x) + "_" + std::to_string(y)));
 	tile.addComponent<Tile>(x, y, 50, 50, id);
 	switch (id) {
 	case 0:
@@ -241,9 +242,13 @@ void Map::addTile(int id, int x, int y) {
 }
 
 int Map::optimiseHelper(int x, int y, GroupID antiGroup, bool optimiseDirection) {
+	if (x < 0 || x >= tileSet.width() || y < 0 || y >= tileSet.height()) return 0;
+
 	int count = 0;
 	int mainID = tileSet(y, x)->getComponent<Tile>().tileID;
-	while (tileSet(y, x) && !tileSet(y, x)->hasGroup(antiGroup) &&
+
+	while (x < tileSet.width() && x >= 0 && y < tileSet.height() && y >= 0 && tileSet(y, x) &&
+		   !tileSet(y, x)->hasGroup(antiGroup) &&
 		   tileSet(y, x)->getComponent<Tile>().tileID == mainID) {
 		y += optimiseDirection;
 		x += !optimiseDirection;
@@ -255,6 +260,7 @@ int Map::optimiseHelper(int x, int y, GroupID antiGroup, bool optimiseDirection)
 void Map::optimiseDeleter(int x, int y, int count, bool horizontal) {
 	tileSet(y, x) = nullptr;
 	for (int i = 1; i < count; i++) {
+		tileSet(y + i * !horizontal, x + i * horizontal)->disable();
 		sceneManager.getCurrentScene()->removeEntityFromScene(
 			tileSet(y + i * !horizontal, x + i * horizontal)
 		);

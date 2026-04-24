@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
 		}
 		Game::deltaTime *= Game::timeScale;
 	}
-	game->clean();
+	delete game;
 
 	return 0;
 }

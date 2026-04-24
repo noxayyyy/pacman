@@ -11,12 +11,12 @@
 extern Manager manager;
 extern SceneManager sceneManager;
 
-extern std::vector<Entity*>& colliders;
-extern std::vector<Entity*>& tiles;
-extern std::vector<Entity*>& players;
-extern std::vector<Entity*>& ghosts;
-extern std::vector<Entity*>& pellets;
-extern std::vector<Entity*>& ghostSpawns;
+extern std::vector<Entity*> colliders;
+extern std::vector<Entity*> tiles;
+extern std::vector<Entity*> players;
+extern std::vector<Entity*> ghosts;
+extern std::vector<Entity*> pellets;
+extern std::vector<Entity*> ghostSpawns;
 
 // TODO: Buttons causing crash
 struct GameplayScene : public Scene {
@@ -68,16 +68,17 @@ public:
 		pellets = manager.getGroupMembers(PELLETS);
 
 		enableScene();
+		manager.refresh();
 	}
 
 	void update() override {
 		// collisionResponse(controller->getLastVel());
 		// checkCollisions();
 
-		points.update();
-		fps.update();
-		pauseButton.update();
-		reloadButton.update();
+		// points.update();
+		// fps.update();
+		// pauseButton.update();
+		// reloadButton.update();
 
 		if (pelletCount == *pointVal / VALUE_PER_PELLET) {
 			reload();
@@ -100,6 +101,7 @@ public:
 		pellets = manager.getGroupMembers(PELLETS);
 
 		enableScene();
+		manager.refresh();
 	}
 
 	void reloadWithState() override {
@@ -120,6 +122,11 @@ public:
 	}
 
 	void draw() override {
+		colliders = manager.getGroupMembers(COLLIDERS);
+		players = manager.getGroupMembers(PACMAN);
+		tiles = manager.getGroupMembers(MAP);
+		pellets = manager.getGroupMembers(PELLETS);
+
 		for (auto& t : tiles) {
 			t->draw();
 		}
