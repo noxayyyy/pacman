@@ -1,0 +1,96 @@
+\doxysection{src/\+Game.cpp File Reference}
+\hypertarget{Game_8cpp}{}\label{Game_8cpp}\index{src/Game.cpp@{src/Game.cpp}}
+{\ttfamily \#include "{}Game.\+h"{}}\newline
+{\ttfamily \#include "{}Controller.\+h"{}}\newline
+{\ttfamily \#include "{}Counters.\+h"{}}\newline
+{\ttfamily \#include "{}Gameplay\+Scene.\+h"{}}\newline
+{\ttfamily \#include "{}Map.\+h"{}}\newline
+{\ttfamily \#include "{}Mouse\+Tracker.\+h"{}}\newline
+{\ttfamily \#include "{}Scene\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}Texture\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}Vector2\+D.\+h"{}}\newline
+{\ttfamily \#include $<$SDL2/\+SDL\+\_\+mixer.\+h$>$}\newline
+Include dependency graph for Game.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Game_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{Game_8cpp_a9e515d4016db0549b111a1f9081dfc5e}{colliders}} (manager.\+get\+Group\+Members(COLLIDERS))
+\item 
+std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{Game_8cpp_a3945fa89c2899c7241850dd561131d32}{tiles}} (manager.\+get\+Group\+Members(MAP))
+\item 
+std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{Game_8cpp_aad81e0bf04ff7022292c2ba805a1d4aa}{players}} (manager.\+get\+Group\+Members(PACMAN))
+\item 
+std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{Game_8cpp_a5c48f9b5c84a1f1520c85c155ab895a6}{ghosts}} (manager.\+get\+Group\+Members(GHOSTS))
+\item 
+std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{Game_8cpp_aa8fc224a6886992f21b6a74e2fbd007f}{pellets}} (manager.\+get\+Group\+Members(PELLETS))
+\item 
+std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{Game_8cpp_ae0928dd9f2d9970b204898a3a915b285}{ghost\+Spawns}} (manager.\+get\+Group\+Members(GHOST\+\_\+\+BAR))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Manager \mbox{\hyperlink{Game_8cpp_a8b88105956ea929e3c74c65791e92c6f}{manager}}
+\item 
+Scene\+Manager \mbox{\hyperlink{Game_8cpp_a9b68e0a0516c26a87a9c42a12e248d01}{scene\+Manager}} = Scene\+Manager()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Game_8cpp_a9e515d4016db0549b111a1f9081dfc5e}\index{Game.cpp@{Game.cpp}!colliders@{colliders}}
+\index{colliders@{colliders}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{colliders()}{colliders()}}
+{\footnotesize\ttfamily \label{Game_8cpp_a9e515d4016db0549b111a1f9081dfc5e} 
+std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ colliders (\begin{DoxyParamCaption}\item[{manager.}]{get\+Group\+Members}{COLLIDERS}\end{DoxyParamCaption})}
+
+\Hypertarget{Game_8cpp_a5c48f9b5c84a1f1520c85c155ab895a6}\index{Game.cpp@{Game.cpp}!ghosts@{ghosts}}
+\index{ghosts@{ghosts}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{ghosts()}{ghosts()}}
+{\footnotesize\ttfamily \label{Game_8cpp_a5c48f9b5c84a1f1520c85c155ab895a6} 
+std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ ghosts (\begin{DoxyParamCaption}\item[{manager.}]{get\+Group\+Members}{GHOSTS}\end{DoxyParamCaption})}
+
+\Hypertarget{Game_8cpp_ae0928dd9f2d9970b204898a3a915b285}\index{Game.cpp@{Game.cpp}!ghostSpawns@{ghostSpawns}}
+\index{ghostSpawns@{ghostSpawns}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{ghostSpawns()}{ghostSpawns()}}
+{\footnotesize\ttfamily \label{Game_8cpp_ae0928dd9f2d9970b204898a3a915b285} 
+std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ ghost\+Spawns (\begin{DoxyParamCaption}\item[{manager.}]{get\+Group\+Members}{GHOST\+\_\+\+BAR}\end{DoxyParamCaption})}
+
+\Hypertarget{Game_8cpp_aa8fc224a6886992f21b6a74e2fbd007f}\index{Game.cpp@{Game.cpp}!pellets@{pellets}}
+\index{pellets@{pellets}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{pellets()}{pellets()}}
+{\footnotesize\ttfamily \label{Game_8cpp_aa8fc224a6886992f21b6a74e2fbd007f} 
+std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ pellets (\begin{DoxyParamCaption}\item[{manager.}]{get\+Group\+Members}{PELLETS}\end{DoxyParamCaption})}
+
+\Hypertarget{Game_8cpp_aad81e0bf04ff7022292c2ba805a1d4aa}\index{Game.cpp@{Game.cpp}!players@{players}}
+\index{players@{players}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{players()}{players()}}
+{\footnotesize\ttfamily \label{Game_8cpp_aad81e0bf04ff7022292c2ba805a1d4aa} 
+std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ players (\begin{DoxyParamCaption}\item[{manager.}]{get\+Group\+Members}{PACMAN}\end{DoxyParamCaption})}
+
+\Hypertarget{Game_8cpp_a3945fa89c2899c7241850dd561131d32}\index{Game.cpp@{Game.cpp}!tiles@{tiles}}
+\index{tiles@{tiles}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{tiles()}{tiles()}}
+{\footnotesize\ttfamily \label{Game_8cpp_a3945fa89c2899c7241850dd561131d32} 
+std\+::vector$<$ Entity \texorpdfstring{$\ast$}{*} $>$ tiles (\begin{DoxyParamCaption}\item[{manager.}]{get\+Group\+Members}{MAP}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{Game_8cpp_a8b88105956ea929e3c74c65791e92c6f}\index{Game.cpp@{Game.cpp}!manager@{manager}}
+\index{manager@{manager}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{manager}{manager}}
+{\footnotesize\ttfamily \label{Game_8cpp_a8b88105956ea929e3c74c65791e92c6f} 
+Manager manager}
+
+\Hypertarget{Game_8cpp_a9b68e0a0516c26a87a9c42a12e248d01}\index{Game.cpp@{Game.cpp}!sceneManager@{sceneManager}}
+\index{sceneManager@{sceneManager}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{sceneManager}{sceneManager}}
+{\footnotesize\ttfamily \label{Game_8cpp_a9b68e0a0516c26a87a9c42a12e248d01} 
+Scene\+Manager scene\+Manager = Scene\+Manager()}
+

@@ -1,0 +1,83 @@
+\doxysection{src/\+Map.cpp File Reference}
+\hypertarget{Map_8cpp}{}\label{Map_8cpp}\index{src/Map.cpp@{src/Map.cpp}}
+{\ttfamily \#include "{}Map.\+h"{}}\newline
+{\ttfamily \#include "{}Constants.\+h"{}}\newline
+{\ttfamily \#include "{}Scene\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}User\+Constants.\+h"{}}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+Include dependency graph for Map.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Map_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{Map_8cpp_ac07b13ffe85c099f7acb03e0482b2014}{update\+Spawner\+Activities}} (\mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ char $>$ img\+Arr, \mbox{\hyperlink{structBuilderSpawner}{Builder\+Spawner}} \&spawner)
+\item 
+bool \mbox{\hyperlink{Map_8cpp_ad65ea91440c23f1cdc81ee785f1f7ec1}{check\+Spawner\+Activities}} (std\+::vector$<$ \mbox{\hyperlink{structBuilderSpawner}{Builder\+Spawner}} $>$ \&\mbox{\hyperlink{Map_8cpp_a7c23f9be9afc6a233a66c8c53ddcd95d}{spawners}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Manager \mbox{\hyperlink{Map_8cpp_a8b88105956ea929e3c74c65791e92c6f}{manager}}
+\item 
+Scene\+Manager \mbox{\hyperlink{Map_8cpp_a9b68e0a0516c26a87a9c42a12e248d01}{scene\+Manager}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structBuilderSpawner}{Builder\+Spawner}} $>$ \mbox{\hyperlink{Map_8cpp_a7c23f9be9afc6a233a66c8c53ddcd95d}{spawners}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Map_8cpp_ad65ea91440c23f1cdc81ee785f1f7ec1}\index{Map.cpp@{Map.cpp}!checkSpawnerActivities@{checkSpawnerActivities}}
+\index{checkSpawnerActivities@{checkSpawnerActivities}!Map.cpp@{Map.cpp}}
+\doxysubsubsection{\texorpdfstring{checkSpawnerActivities()}{checkSpawnerActivities()}}
+{\footnotesize\ttfamily \label{Map_8cpp_ad65ea91440c23f1cdc81ee785f1f7ec1} 
+bool check\+Spawner\+Activities (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structBuilderSpawner}{Builder\+Spawner}} $>$ \&}]{spawners}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Map_8cpp_ad65ea91440c23f1cdc81ee785f1f7ec1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{Map_8cpp_ac07b13ffe85c099f7acb03e0482b2014}\index{Map.cpp@{Map.cpp}!updateSpawnerActivities@{updateSpawnerActivities}}
+\index{updateSpawnerActivities@{updateSpawnerActivities}!Map.cpp@{Map.cpp}}
+\doxysubsubsection{\texorpdfstring{updateSpawnerActivities()}{updateSpawnerActivities()}}
+{\footnotesize\ttfamily \label{Map_8cpp_ac07b13ffe85c099f7acb03e0482b2014} 
+std\+::vector$<$ bool $>$ update\+Spawner\+Activities (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMap_1_1MapArray}{Map\+::\+Map\+Array}}$<$ char $>$}]{img\+Arr}{, }\item[{\mbox{\hyperlink{structBuilderSpawner}{Builder\+Spawner}} \&}]{spawner}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Map_8cpp_ac07b13ffe85c099f7acb03e0482b2014_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{Map_8cpp_a8b88105956ea929e3c74c65791e92c6f}\index{Map.cpp@{Map.cpp}!manager@{manager}}
+\index{manager@{manager}!Map.cpp@{Map.cpp}}
+\doxysubsubsection{\texorpdfstring{manager}{manager}}
+{\footnotesize\ttfamily \label{Map_8cpp_a8b88105956ea929e3c74c65791e92c6f} 
+Manager manager\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{Map_8cpp_a9b68e0a0516c26a87a9c42a12e248d01}\index{Map.cpp@{Map.cpp}!sceneManager@{sceneManager}}
+\index{sceneManager@{sceneManager}!Map.cpp@{Map.cpp}}
+\doxysubsubsection{\texorpdfstring{sceneManager}{sceneManager}}
+{\footnotesize\ttfamily \label{Map_8cpp_a9b68e0a0516c26a87a9c42a12e248d01} 
+Scene\+Manager scene\+Manager\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{Map_8cpp_a7c23f9be9afc6a233a66c8c53ddcd95d}\index{Map.cpp@{Map.cpp}!spawners@{spawners}}
+\index{spawners@{spawners}!Map.cpp@{Map.cpp}}
+\doxysubsubsection{\texorpdfstring{spawners}{spawners}}
+{\footnotesize\ttfamily \label{Map_8cpp_a7c23f9be9afc6a233a66c8c53ddcd95d} 
+std\+::vector$<$\mbox{\hyperlink{structBuilderSpawner}{Builder\+Spawner}}$>$ spawners}
+
