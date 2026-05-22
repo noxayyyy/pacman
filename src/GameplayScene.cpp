@@ -13,7 +13,7 @@ extern std::vector<Entity*> ghostSpawns;
 // TODO: Buttons causing crash
 GameplayScene::GameplayScene()
 	: Scene("Gameplay", 0, false, true, 0), pacman(manager.addEntity(PACMAN_TAG)),
-	  fps(manager.addEntity("fps")), points(manager.addEntity("points")),
+	  // fps(manager.addEntity("fps")), points(manager.addEntity("points")),
 	  pauseButton(manager.addEntity("pauseButton")),
 	  reloadButton(manager.addEntity("reloadButton")) {}
 
@@ -37,8 +37,9 @@ void GameplayScene::init() {
 
 	pelletCount = map->getPelletCount();
 
-	fps.addComponent<FPS>("FPS");
-	pointVal = &points.addComponent<Points>("POINTS").value;
+	// fps.addComponent<FPS>("FPS");
+	// pointVal = &points.addComponent<Points>("POINTS").value;
+	pointVal = new int(0);
 	pauseButton.addComponent<Button>("PAUSE", 1234, 700, 128, 64, []() {
 		Game::setPause(!Game::getPaused());
 		// sceneManager.loadNextScene();
@@ -47,8 +48,8 @@ void GameplayScene::init() {
 		sceneManager.reloadScene();
 	});
 
-	addEntityToScene(fps);
-	addEntityToScene(points);
+	// addEntityToScene(fps);
+	// addEntityToScene(points);
 	addEntityToScene(pauseButton);
 	addEntityToScene(reloadButton);
 
@@ -70,7 +71,7 @@ void GameplayScene::update() {
 	// pauseButton.update();
 	// reloadButton.update();
 
-	if (pelletCount == *pointVal / VALUE_PER_PELLET) {
+	if (pelletCount <= *pointVal / VALUE_PER_PELLET) {
 		reload();
 		pelletCount += map->getPelletCount();
 	}
@@ -130,8 +131,8 @@ void GameplayScene::draw() {
 		p->draw();
 	}
 
-	points.draw();
-	fps.draw();
+	// points.draw();
+	// fps.draw();
 	pauseButton.draw();
 	reloadButton.draw();
 }

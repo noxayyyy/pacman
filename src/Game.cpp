@@ -18,7 +18,7 @@ Game::~Game() {
 	clean();
 }
 
-TTF_Font* TextureManager::font;
+// TTF_Font* TextureManager::font;
 
 float Game::deltaTime;
 float Game::timeScale = 1.0f;
@@ -65,26 +65,26 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		std::cout << "Renderer created\n";
 	}
 
-	if (TTF_Init()) {
-		std::cout << "TTF system failed to load, error: " << TTF_GetError() << '\n';
-		return;
-	}
-	std::cout << "TTF system loaded succesfully\n";
+	// if (TTF_Init()) {
+	// 	std::cout << "TTF system failed to load, error: " << TTF_GetError() << '\n';
+	// 	return;
+	// }
+	// std::cout << "TTF system loaded succesfully\n";
+	//
+	// if (!Mix_Init(MIX_INIT_WAVPACK)) { // set to filetype
+	// 	std::cout << "Mixer failed to initialise, error: " << Mix_GetError() << '\n';
+	// 	return;
+	// }
+	// std::cout << "Mixer initialised\n";
 
-	if (!Mix_Init(MIX_INIT_WAVPACK)) { // set to filetype
-		std::cout << "Mixer failed to initialise, error: " << Mix_GetError() << '\n';
-		return;
-	}
-	std::cout << "Mixer initialised\n";
-
-	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 2048);
+	// Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 2048);
 	// Mix_Music* audio = Mix_LoadMUS("./audio/audio.wav");
 	// Mix_PlayMusic(audio, 0);
 	// Mix_PauseMusic();
 
 	mouse.enable();
 	mouse.addComponent<MouseTracker>();
-	TextureManager::font = TTF_OpenFont("./fonts/VCR_OSD_MONO.ttf", 32);
+	// TextureManager::font = TTF_OpenFont("./fonts/VCR_OSD_MONO.ttf", 32);
 	isRunning = true;
 
 	GameplayScene* gameScene = new GameplayScene();
@@ -138,24 +138,24 @@ void Game::ghostSpawn() {
 
 // clean resources on game quitting
 void Game::clean() {
-	TTF_CloseFont(TextureManager::font);
+	// TTF_CloseFont(TextureManager::font);
 
 	manager.destroyAll();
 
-	Mix_HaltChannel(-1);
-	Mix_HaltMusic();
+	// Mix_HaltChannel(-1);
+	// Mix_HaltMusic();
 
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 
-	Mix_Quit();
-	TTF_Quit();
+	// Mix_Quit();
+	// TTF_Quit();
 	SDL_Quit();
 
 	std::cout << "\nGame cleaned\n";
 }
 
-const bool Game::getPaused() {
+bool Game::getPaused() {
 	return isPaused;
 }
 
