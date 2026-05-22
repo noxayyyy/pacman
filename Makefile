@@ -1,4 +1,4 @@
-CC=clang++
+CC=arm-linux-g++
 BINARY=bin
 
 ENGINE_DIR=./engine
