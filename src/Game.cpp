@@ -8,6 +8,7 @@
 #include "TextureManager.h"
 #include "Vector2D.h"
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_video.h>
 
 Manager manager;
 SceneManager sceneManager = SceneManager();
@@ -45,6 +46,11 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	int flags = 0;
 	if (fullscreen) {
 		flags = SDL_WINDOW_FULLSCREEN;
+	}
+
+	int num_drivers = SDL_GetNumVideoDrivers();
+	for (int i = 0; i < num_drivers; i++) {
+		std::cout << " - " << SDL_GetVideoDriver(i) << '\n';
 	}
 
 	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS | SDL_INIT_TIMER)) {
