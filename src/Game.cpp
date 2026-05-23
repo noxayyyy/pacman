@@ -7,7 +7,6 @@
 #include "SceneManager.h"
 #include "TextureManager.h"
 #include "Vector2D.h"
-#include <SDL2/SDL_mixer.h>
 
 Manager manager;
 SceneManager sceneManager = SceneManager();

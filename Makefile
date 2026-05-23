@@ -9,7 +9,7 @@ INC_DIRS=./include ./engine/include
 OBJ_DIRS=./obj
 
 DEP_FLAGS=-MP -MMD
-CFLAGS=-std=c++11 -Wall -Wextra -Wpedantic -g $(foreach D,$(INC_DIRS),-I$(D)) $(DEP_FLAGS)
+CFLAGS=-std=c++11 -Wall -Wextra -pedantic -g $(foreach D,$(INC_DIRS),-I$(D)) $(DEP_FLAGS)
 LD_FLAGS=-L$(ENGINE_DIR) -lnox_engine -lSDL2 -lSDL2_image
 
 CFILES=main.cpp $(wildcard $(SRC_DIRS)/*.cpp)
