@@ -72,7 +72,7 @@ private:
 	Collider* pacmanColl;
 	Controller* controller;
 
-	std::unique_ptr<Map> map;
+	std::shared_ptr<Map> map;
 
 	void pacmanInit();
 	void mapInit();

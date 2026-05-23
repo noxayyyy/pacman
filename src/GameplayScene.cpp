@@ -166,7 +166,7 @@ void GameplayScene::pacmanInit() {
 }
 
 void GameplayScene::mapInit() {
-	map = std::make_unique<Map>();
+	map = std::make_shared<Map>();
 	map->init();
 	map->drawMap();
 	map->loadMap();
