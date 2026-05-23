@@ -80,9 +80,9 @@ void GameplayScene::update() {
 void GameplayScene::reload() {
 	pacman.reload();
 
-	for (auto& t : tiles) {
-		t->disable();
-		removeEntityFromScene(t);
+	for (auto it = tiles.begin(); it != tiles.end(); it++) {
+		(*it)->disable();
+		removeEntityFromScene(*it);
 	}
 	manager.refresh();
 	map->reloadMap();
@@ -118,17 +118,17 @@ void GameplayScene::draw() {
 	tiles = manager.getGroupMembers(MAP);
 	pellets = manager.getGroupMembers(PELLETS);
 
-	for (auto& t : tiles) {
-		t->draw();
+	for (auto it = tiles.begin(); it != tiles.end(); it++) {
+		(*it)->draw();
 	}
-	for (auto& p : pellets) {
-		p->draw();
+	for (auto it = pellets.begin(); it != pellets.end(); it++) {
+		(*it)->draw();
 	}
-	for (auto& g : ghosts) {
-		g->draw();
+	for (auto it = ghosts.begin(); it != ghosts.end(); it++) {
+		(*it)->draw();
 	}
-	for (auto& p : players) {
-		p->draw();
+	for (auto it = players.begin(); it != players.end(); it++) {
+		(*it)->draw();
 	}
 
 	// points.draw();

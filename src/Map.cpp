@@ -44,28 +44,28 @@ void Map::addWalls(int x, int y) {
 
 void Map::updateImg(BuilderSpawner& spawner, std::vector<bool> killPrevBlock) {
 	int counter = 0;
-	for (auto& builder : spawner.builders) {
-		img(builder.y, builder.x) = PATH;
+	for (auto builder = spawner.builders.begin(); builder != spawner.builders.end(); builder++) {
+		img(builder->y, builder->x) = PATH;
 
-		switch (builder.currDir) {
+		switch (builder->currDir) {
 		case Builder::UP:
-			img(builder.y + 1, builder.x) = PATH;
+			img(builder->y + 1, builder->x) = PATH;
 			break;
 		case Builder::DOWN:
-			img(builder.y - 1, builder.x) = PATH;
+			img(builder->y - 1, builder->x) = PATH;
 			break;
 		case Builder::LEFT:
-			img(builder.y, builder.x + 1) = PATH;
+			img(builder->y, builder->x + 1) = PATH;
 			break;
 		case Builder::RIGHT:
-			img(builder.y, builder.x - 1) = PATH;
+			img(builder->y, builder->x - 1) = PATH;
 			break;
 		default:
 			break;
 		}
 
 		if (killPrevBlock[counter++]) {
-			img(builder.y, builder.x) = BLANK;
+			img(builder->y, builder->x) = BLANK;
 		}
 	}
 }
@@ -73,34 +73,34 @@ void Map::updateImg(BuilderSpawner& spawner, std::vector<bool> killPrevBlock) {
 std::vector<bool> updateSpawnerActivities(Map::MapArray<char> imgArr, BuilderSpawner& spawner) {
 	std::vector<bool> killPrevBlock = { false, false, false };
 	int count = 0;
-	for (auto& builder : spawner.builders) {
-		char currBlock = imgArr(builder.y, builder.x);
+	for (auto builder = spawner.builders.begin(); builder != spawner.builders.end(); builder++) {
+		char currBlock = imgArr(builder->y, builder->x);
 		char prevBlock;
 
-		switch (builder.currDir) {
+		switch (builder->currDir) {
 		case Builder::UP:
-			prevBlock = imgArr(builder.y + 1, builder.x);
+			prevBlock = imgArr(builder->y + 1, builder->x);
 			break;
 		case Builder::DOWN:
-			prevBlock = imgArr(builder.y - 1, builder.x);
+			prevBlock = imgArr(builder->y - 1, builder->x);
 			break;
 		case Builder::LEFT:
-			prevBlock = imgArr(builder.y, builder.x + 1);
+			prevBlock = imgArr(builder->y, builder->x + 1);
 			break;
 		case Builder::RIGHT:
-			prevBlock = imgArr(builder.y, builder.x - 1);
+			prevBlock = imgArr(builder->y, builder->x - 1);
 			break;
 		default:
 			return std::vector<bool>(false);
 		}
-		killPrevBlock[count++] = builder.updateActivity(currBlock, prevBlock);
+		killPrevBlock[count++] = builder->updateActivity(currBlock, prevBlock);
 	}
 	return killPrevBlock;
 }
 
 bool checkSpawnerActivities(std::vector<BuilderSpawner>& spawners) {
-	for (auto& spawn : spawners) {
-		if (spawn.isActive()) {
+	for (auto it = spawners.begin(); it != spawners.end(); it++) {
+		if (it->isActive()) {
 			return true;
 		}
 	}
@@ -137,12 +137,12 @@ void Map::drawMap() {
 	spawners[0].y = 3;
 	spawners[1].y = MAP_SIZE.y - 3;
 
-	for (auto& spawn : spawners) {
-		spawn.builders[0].x = spawn.x + 8;
-		spawn.builders[1].x = spawn.x - 8;
-		spawn.builders[2].x = spawn.x;
+	for (auto spawn = spawners.begin(); spawn != spawners.end(); spawn++) {
+		spawn->builders[0].x = spawn->x + 8;
+		spawn->builders[1].x = spawn->x - 8;
+		spawn->builders[2].x = spawn->x;
 
-		spawn.builders[0].y = spawn.builders[1].y = spawn.y;
+		spawn->builders[0].y = spawn->builders[1].y = spawn->y;
 	}
 
 	spawners[0].builders[2].y = spawners[0].y + 2;

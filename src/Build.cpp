@@ -100,34 +100,34 @@ BuilderSpawner::~BuilderSpawner() {
 }
 
 void BuilderSpawner::moveBuilders() {
-	for (auto& build : builders) {
-		if (!build.isActive()) continue;
+	for (auto build = builders.begin(); build != builders.end(); build++) {
+		if (!build->isActive()) continue;
 
-		switch (build.currDir) {
+		switch (build->currDir) {
 		case Builder::UP:
-			build.y -= 2;
+			build->y -= 2;
 			break;
 		case Builder::DOWN:
-			build.y += 2;
+			build->y += 2;
 			break;
 		case Builder::LEFT:
-			build.x -= 2;
+			build->x -= 2;
 			break;
 		case Builder::RIGHT:
-			build.x += 2;
+			build->x += 2;
 			break;
 		default:
 			break;
 		}
-		build.currCount++;
+		build->currCount++;
 	}
 }
 
 void BuilderSpawner::updateBuilders() {
-	for (auto& build : builders) {
-		build.updateChance();
-		build.updateForceChange();
-		build.assignDirection();
+	for (auto build = builders.begin(); build != builders.end(); build++) {
+		build->updateChance();
+		build->updateForceChange();
+		build->assignDirection();
 	}
 }
 
