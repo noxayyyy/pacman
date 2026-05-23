@@ -7,6 +7,7 @@
 #include "SceneManager.h"
 #include "TextureManager.h"
 #include "Vector2D.h"
+#include <SDL2/SDL.h>
 
 Manager manager;
 SceneManager sceneManager = SceneManager();
@@ -46,7 +47,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		flags = SDL_WINDOW_FULLSCREEN;
 	}
 
-	if (SDL_Init(SDL_INIT_EVERYTHING)) {
+	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS | SDL_INIT_TIMER)) {
 		std::cout << "Subsystem failed to intialise, error: " << SDL_GetError() << '\n';
 		isRunning = false;
 		return;
