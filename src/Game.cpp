@@ -9,15 +9,10 @@
 #include "Vector2D.h"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_video.h>
+#include <cstdio>
 
 Manager manager;
 SceneManager sceneManager = SceneManager();
-
-Game::Game() : mouse(manager.addEntity(MOUSE_TAG)) {}
-
-Game::~Game() {
-	clean();
-}
 
 // TTF_Font* TextureManager::font;
 
@@ -34,6 +29,8 @@ bool MouseTracker::isPressed;
 SDL_Event Game::event;
 SDL_Renderer* Game::renderer = nullptr;
 
+char Game::btn_state[8];
+
 std::vector<Entity*> colliders(manager.getGroupMembers(COLLIDERS));
 std::vector<Entity*> tiles(manager.getGroupMembers(MAP));
 std::vector<Entity*> players(manager.getGroupMembers(PACMAN));
@@ -41,7 +38,21 @@ std::vector<Entity*> ghosts(manager.getGroupMembers(GHOSTS));
 std::vector<Entity*> pellets(manager.getGroupMembers(PELLETS));
 std::vector<Entity*> ghostSpawns(manager.getGroupMembers(GHOST_BAR));
 
-// game initialisation function
+Game::Game() : mouse(manager.addEntity(MOUSE_TAG)) {
+	fd = open("/dev/buttons", O_RDONLY | O_NONBLOCK);
+	if (fd < 0) {
+		perror("Controller: failed to open /dev/buttons\n");
+	}
+	memset(btn_state, '0', sizeof(btn_state));
+}
+
+Game::~Game() {
+	if (fd >= 0) {
+		close(fd);
+	}
+	clean();
+}
+
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
 	int flags = 0;
 	if (fullscreen) {
@@ -105,6 +116,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 // function to handle game events
 void Game::handleEvents() {
+	read(fd, btn_state, sizeof(btn_state));
 	SDL_PollEvent(&event);
 	switch (event.type) {
 	case SDL_QUIT:
@@ -168,4 +180,8 @@ bool Game::getPaused() {
 void Game::setPause(bool pause) {
 	isPaused = pause;
 	timeScale = pause ? 0.0 : 1.0;
+}
+
+char Game::getBtnState(int idx) {
+	return btn_state[idx];
 }

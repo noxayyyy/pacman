@@ -13,10 +13,11 @@ extern std::vector<Entity*> ghostSpawns;
 
 // TODO: Buttons causing crash
 GameplayScene::GameplayScene()
-	: Scene("Gameplay", 0, false, true, 0), pacman(manager.addEntity(PACMAN_TAG)),
-	  // fps(manager.addEntity("fps")), points(manager.addEntity("points")),
-	  pauseButton(manager.addEntity("pauseButton")),
-	  reloadButton(manager.addEntity("reloadButton")) {}
+	: Scene("Gameplay", 0, false, true, 0), pacman(manager.addEntity(PACMAN_TAG)) {}
+
+// fps(manager.addEntity("fps")), points(manager.addEntity("points")),
+// pauseButton(manager.addEntity("pauseButton")),
+// reloadButton(manager.addEntity("reloadButton"))
 
 GameplayScene::~GameplayScene() {
 	clearScene();
@@ -41,18 +42,18 @@ void GameplayScene::init() {
 	// fps.addComponent<FPS>("FPS");
 	// pointVal = &points.addComponent<Points>("POINTS").value;
 	pointVal = new int(0);
-	pauseButton.addComponent<Button>("PAUSE", 400, 222, 64, 32, []() {
-		Game::setPause(!Game::getPaused());
-		// sceneManager.loadNextScene();
-	});
-	reloadButton.addComponent<Button>("RELOAD", 8, 222, 64, 32, []() {
-		sceneManager.reloadScene();
-	});
+	// pauseButton.addComponent<Button>("PAUSE", 400, 222, 64, 32, []() {
+	// 	Game::setPause(!Game::getPaused());
+	// 	// sceneManager.loadNextScene();
+	// });
+	// reloadButton.addComponent<Button>("RELOAD", 8, 222, 64, 32, []() {
+	// 	sceneManager.reloadScene();
+	// });
 
 	// addEntityToScene(fps);
 	// addEntityToScene(points);
-	addEntityToScene(pauseButton);
-	addEntityToScene(reloadButton);
+	// addEntityToScene(pauseButton);
+	// addEntityToScene(reloadButton);
 
 	colliders = manager.getGroupMembers(COLLIDERS);
 	players = manager.getGroupMembers(PACMAN);
@@ -97,19 +98,25 @@ void GameplayScene::reload() {
 }
 
 void GameplayScene::reloadWithState() {
-	pauseButton.reload();
+	// pauseButton.reload();
 }
 
 void GameplayScene::handleEvents(SDL_Event& event) {
-	switch (event.type) {
-	case SDL_KEYDOWN:
-		controller->updateKeyDown(event.key.keysym.sym);
-		break;
-	case SDL_KEYUP:
-		controller->updateKeyUp(event.key.keysym.sym);
-		break;
-	default:
-		break;
+	// switch (event.type) {
+	// case SDL_KEYDOWN:
+	// 	controller->updateKeyDown(event.key.keysym.sym);
+	// 	break;
+	// case SDL_KEYUP:
+	// 	controller->updateKeyUp(event.key.keysym.sym);
+	// 	break;
+	// default:
+	// 	break;
+	// }
+	if (Game::getBtnState(1) == '1') {
+		Game::setPause(!Game::getPaused());
+	}
+	if (Game::getBtnState(2) == '1') {
+		sceneManager.reloadScene();
 	}
 }
 
@@ -134,8 +141,8 @@ void GameplayScene::draw() {
 
 	// points.draw();
 	// fps.draw();
-	pauseButton.draw();
-	reloadButton.draw();
+	// pauseButton.draw();
+	// reloadButton.draw();
 }
 
 void GameplayScene::pacmanInit() {
