@@ -8,8 +8,10 @@
 #include "TextureManager.h"
 #include "Vector2D.h"
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_pixels.h>
 #include <SDL2/SDL_video.h>
 #include <cstdio>
+#include <fcntl.h>
 
 Manager manager;
 SceneManager sceneManager = SceneManager();
@@ -59,11 +61,6 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		flags = SDL_WINDOW_FULLSCREEN;
 	}
 
-	int num_drivers = SDL_GetNumVideoDrivers();
-	for (int i = 0; i < num_drivers; i++) {
-		std::cout << " - " << SDL_GetVideoDriver(i) << '\n';
-	}
-
 	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS | SDL_INIT_TIMER)) {
 		std::cout << "Subsystem failed to intialise, error: " << SDL_GetError() << '\n';
 		isRunning = false;
@@ -76,7 +73,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		std::cout << "Window created\n";
 	}
 
-	// SDL_EventState(SDL_MOUSEMOTION, SDL_IGNORE);
+	SDL_EventState(SDL_MOUSEMOTION, SDL_IGNORE);
 	renderer = SDL_CreateRenderer(window, -1, 0);
 	if (renderer) {
 		std::cout << "Renderer created\n";
@@ -99,8 +96,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	// Mix_PlayMusic(audio, 0);
 	// Mix_PauseMusic();
 
-	mouse.enable();
-	mouse.addComponent<MouseTracker>();
+	// mouse.enable();
+	// mouse.addComponent<MouseTracker>();
 	// TextureManager::font = TTF_OpenFont("./fonts/VCR_OSD_MONO.ttf", 32);
 	isRunning = true;
 
@@ -122,15 +119,15 @@ void Game::handleEvents() {
 	case SDL_QUIT:
 		isRunning = false;
 		break;
-	case SDL_MOUSEMOTION:
-		SDL_GetMouseState(&mouseCoords.x, &mouseCoords.y);
-		break;
-	case SDL_MOUSEBUTTONDOWN:
-		mouseButtonPressed = true;
-		break;
-	case SDL_MOUSEBUTTONUP:
-		mouseButtonPressed = false;
-		break;
+	// case SDL_MOUSEMOTION:
+	// 	SDL_GetMouseState(&mouseCoords.x, &mouseCoords.y);
+	// 	break;
+	// case SDL_MOUSEBUTTONDOWN:
+	// 	mouseButtonPressed = true;
+	// 	break;
+	// case SDL_MOUSEBUTTONUP:
+	// 	mouseButtonPressed = false;
+	// 	break;
 	default:
 		break;
 	}
