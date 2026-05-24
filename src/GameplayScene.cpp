@@ -1,4 +1,5 @@
 #include "GameplayScene.h"
+#include "UserConstants.h"
 
 extern Manager manager;
 extern SceneManager sceneManager;
@@ -40,11 +41,11 @@ void GameplayScene::init() {
 	// fps.addComponent<FPS>("FPS");
 	// pointVal = &points.addComponent<Points>("POINTS").value;
 	pointVal = new int(0);
-	pauseButton.addComponent<Button>("PAUSE", 1234, 700, 128, 64, []() {
+	pauseButton.addComponent<Button>("PAUSE", 400, 222, 64, 32, []() {
 		Game::setPause(!Game::getPaused());
 		// sceneManager.loadNextScene();
 	});
-	reloadButton.addComponent<Button>("RELOAD", 8, 700, 128, 64, []() {
+	reloadButton.addComponent<Button>("RELOAD", 8, 222, 64, 32, []() {
 		sceneManager.reloadScene();
 	});
 
@@ -139,7 +140,11 @@ void GameplayScene::draw() {
 
 void GameplayScene::pacmanInit() {
 	pacmanPos = &pacman.addComponent<Transform>(
-		PACMAN_SPAWN.x * 32 + MAP_PADDING.x + 1, PACMAN_SPAWN.y * 32 + MAP_PADDING.y + 1
+		PACMAN_SPAWN.x * (MAP_TILE_SIZE * MAP_TILE_SCALE) + MAP_PADDING.x + 1,
+		PACMAN_SPAWN.y * (MAP_TILE_SIZE * MAP_TILE_SCALE) + MAP_PADDING.y + 1,
+		50,
+		50,
+		(MAP_TILE_SCALE - 0.03f)
 	);
 	pacmanColl = &pacman.addComponent<Collider>(
 		"pacman",

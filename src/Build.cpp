@@ -26,7 +26,7 @@ void Builder::updateForceChange() {
 		}
 		break;
 	case DOWN:
-		if (y + 2 > 20) {
+		if (y + 2 > MAP_SIZE.y) {
 			forceChange = true;
 		}
 		break;
@@ -36,7 +36,7 @@ void Builder::updateForceChange() {
 		}
 		break;
 	case RIGHT:
-		if (x + 2 > 18) {
+		if (x + 2 > MAP_SIZE.x - 2) {
 			forceChange = true;
 		}
 		break;
@@ -49,10 +49,10 @@ void Builder::assignDirection() {
 	if (!active || !forceChange) return;
 	std::vector<Direction> invalidDir = { NONE, NONE, NONE, NONE };
 
-	if (y >= 19 || currDir == UP) {
+	if (y >= MAP_SIZE.y - 5 || currDir == UP) {
 		invalidDir[3] = DOWN;
 	}
-	if (x >= 17 || currDir == LEFT) {
+	if (x >= MAP_SIZE.x - 3 || currDir == LEFT) {
 		invalidDir[1] = RIGHT;
 	}
 	if (y <= 2 || currDir == DOWN) {

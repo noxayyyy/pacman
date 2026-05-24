@@ -108,11 +108,12 @@ bool checkSpawnerActivities(std::vector<BuilderSpawner>& spawners) {
 }
 
 void Map::addCollPass() {
-	int y = rand() % 18 + 4;
-	while (img(y, 18) != PATH || img(y - 1, 19) == PATH || img(y + 1, 19) == PATH) {
-		y = rand() % 18 + 4;
+	int y = rand() % (MAP_SIZE.y - 6) + 4;
+	while (img(y, MAP_SIZE.x - 2) != PATH || img(y - 1, MAP_SIZE.x - 1) == PATH ||
+		   img(y + 1, MAP_SIZE.x - 1) == PATH) {
+		y = rand() % (MAP_SIZE.y - 6) + 4;
 	}
-	img(y, 19) = PATH;
+	img(y, MAP_SIZE.x - 1) = PATH;
 }
 
 void Map::addRowPass(int y) {
@@ -125,21 +126,21 @@ void Map::addRowPass(int y) {
 }
 
 void Map::addSpawnBox() {
-	img(1, 17) = img(1, 18) = img(1, 19) = GHOST_SPAWN;
-	img(3, 19) = PATH;
-	img(2, 19) = GHOST_BAR_CHAR;
+	img(1, MAP_SIZE.x - 3) = img(1, MAP_SIZE.x - 2) = img(1, MAP_SIZE.x - 1) = GHOST_SPAWN;
+	img(3, MAP_SIZE.x - 1) = PATH;
+	img(2, MAP_SIZE.x - 1) = GHOST_BAR_CHAR;
 }
 
 void Map::drawMap() {
 	srand(time(0));
 
-	spawners[0].x = spawners[1].x = 10;
+	spawners[0].x = spawners[1].x = MAP_SIZE.x / 2;
 	spawners[0].y = 3;
 	spawners[1].y = MAP_SIZE.y - 3;
 
 	for (auto spawn = spawners.begin(); spawn != spawners.end(); spawn++) {
-		spawn->builders[0].x = spawn->x + 8;
-		spawn->builders[1].x = spawn->x - 8;
+		spawn->builders[0].x = spawn->x + ((MAP_SIZE.x / 2) - 2);
+		spawn->builders[1].x = spawn->x - ((MAP_SIZE.x / 2) - 2);
 		spawn->builders[2].x = spawn->x;
 
 		spawn->builders[0].y = spawn->builders[1].y = spawn->y;
@@ -154,7 +155,8 @@ void Map::drawMap() {
 	}
 	addSpawnBox();
 
-	for (int i = spawners[0].x - 8; i < spawners[0].x + 9; i++) {
+	for (int i = spawners[0].x - ((MAP_SIZE.x / 2) - 2); i < spawners[0].x + ((MAP_SIZE.x / 2) - 1);
+		 i++) {
 		img(spawners[0].y, i) = PATH;
 		img(spawners[1].y, i) = PATH;
 	}
@@ -236,7 +238,10 @@ void Map::addTile(int id, int x, int y) {
 		std::cout << "Invalid Tile ID: " << id << '\n';
 		return;
 	}
-	tileSet((y - MAP_PADDING.y) / 32, (x - MAP_PADDING.x) / 32) = &tile;
+	tileSet(
+		(y - MAP_PADDING.y) / (MAP_TILE_SIZE * MAP_TILE_SCALE),
+		(x - MAP_PADDING.x) / (MAP_TILE_SIZE * MAP_TILE_SCALE)
+	) = &tile;
 	tile.addGroup(MAP);
 	sceneManager.getCurrentScene()->addEntityToScene(tile);
 }
@@ -286,7 +291,8 @@ void Map::optimiseMap() {
 
 			tileSet(y, x)->getComponent<Tile>().resizeTile(
 				tileRect.w + tileRect.w * (count - 1) * horizontal,
-				tileRect.h + tileRect.h * (count - 1) * !horizontal
+				tileRect.h + tileRect.h * (count - 1) * !horizontal,
+				MAP_TILE_SCALE
 			);
 			optimiseDeleter(x, y, count, horizontal);
 		}
@@ -301,13 +307,14 @@ void Map::loadMap() {
 		for (int y = 0; y < img.height(); y++) {
 			pixelVal = colourReference(img(y, x));
 			if (!pixelVal) continue;
-			xpos = x * 32 + MAP_PADDING.x;
-			ypos = y * 32 + MAP_PADDING.y;
+			xpos = x * (MAP_TILE_SIZE * MAP_TILE_SCALE) + MAP_PADDING.x;
+			ypos = y * (MAP_TILE_SIZE * MAP_TILE_SCALE) + MAP_PADDING.y;
 
 			addTile(pixelVal, xpos, ypos);
 			if (x == img.width() - 1) continue;
 
-			xpos += (img.width() - x) * 64 - 64;
+			xpos += (img.width() - x) * (MAP_TILE_SIZE * MAP_TILE_SCALE * 2) -
+					(MAP_TILE_SIZE * MAP_TILE_SCALE * 2);
 			addTile(pixelVal, xpos, ypos);
 		}
 	}
