@@ -1,7 +1,7 @@
-#include "Map.h"
-#include "Constants.h"
+#include "../include/Map.h"
+#include "../include/Constants.h"
+#include "../include/UserConstants.h"
 #include "SceneManager.h"
-#include "UserConstants.h"
 #include <cstdlib>
 
 extern Manager manager;

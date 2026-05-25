@@ -86,6 +86,10 @@ void GameplayScene::reload() {
 		(*it)->disable();
 		removeEntityFromScene(*it);
 	}
+	for (auto it = pellets.begin(); it != pellets.end(); it++) {
+		(*it)->disable();
+		removeEntityFromScene(*it);
+	}
 	manager.refresh();
 	map->reloadMap();
 
@@ -102,16 +106,16 @@ void GameplayScene::reloadWithState() {
 }
 
 void GameplayScene::handleEvents(SDL_Event& event) {
-	// switch (event.type) {
-	// case SDL_KEYDOWN:
-	// 	controller->updateKeyDown(event.key.keysym.sym);
-	// 	break;
-	// case SDL_KEYUP:
-	// 	controller->updateKeyUp(event.key.keysym.sym);
-	// 	break;
-	// default:
-	// 	break;
-	// }
+	switch (event.type) {
+	case SDL_KEYDOWN:
+		controller->updateKeyDown(event.key.keysym.sym);
+		break;
+	case SDL_KEYUP:
+		controller->updateKeyUp(event.key.keysym.sym);
+		break;
+	default:
+		break;
+	}
 	if (Game::getBtnState(1) == '1') {
 		Game::setPause(!Game::getPaused());
 	}

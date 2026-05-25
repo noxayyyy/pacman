@@ -145,7 +145,7 @@ void Game::update() {
 // render sprites to screen
 void Game::render() {
 	// SDL_RenderClear(renderer);
-	SDL_FillRect(screen, nullptr, 0);
+	SDL_FillRect(screen, NULL, 0);
 	sceneManager.drawScene();
 	// SDL_RenderPresent(renderer);
 	SDL_UpdateWindowSurface(window);
