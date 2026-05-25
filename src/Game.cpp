@@ -1,14 +1,15 @@
-#include "Game.h"
-#include "Controller.h"
-#include "Counters.h"
-#include "GameplayScene.h"
-#include "Map.h"
-#include "MouseTracker.h"
-#include "SceneManager.h"
-#include "TextureManager.h"
-#include "Vector2D.h"
+#include "../engine/include/Game.h"
+#include "../engine/include/Controller.h"
+#include "../engine/include/Counters.h"
+#include "../engine/include/MouseTracker.h"
+#include "../engine/include/SceneManager.h"
+#include "../engine/include/TextureManager.h"
+#include "../engine/include/Vector2D.h"
+#include "../include/GameplayScene.h"
+#include "../include/Map.h"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_pixels.h>
+#include <SDL2/SDL_surface.h>
 #include <SDL2/SDL_video.h>
 #include <cstdio>
 #include <fcntl.h>
@@ -29,7 +30,7 @@ bool Game::isPaused;
 bool MouseTracker::isPressed;
 
 SDL_Event Game::event;
-SDL_Renderer* Game::renderer = nullptr;
+SDL_Surface* Game::screen = nullptr;
 
 char Game::btn_state[8];
 
@@ -74,10 +75,11 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	}
 
 	SDL_EventState(SDL_MOUSEMOTION, SDL_IGNORE);
-	renderer = SDL_CreateRenderer(window, -1, 0);
-	if (renderer) {
-		std::cout << "Renderer created\n";
-	}
+	// renderer = SDL_CreateRenderer(window, -1, 0);
+	// if (renderer) {
+	// 	std::cout << "Renderer created\n";
+	// }
+	screen = SDL_GetWindowSurface(window);
 
 	// if (TTF_Init()) {
 	// 	std::cout << "TTF system failed to load, error: " << TTF_GetError() << '\n';
@@ -142,9 +144,11 @@ void Game::update() {
 
 // render sprites to screen
 void Game::render() {
-	SDL_RenderClear(renderer);
+	// SDL_RenderClear(renderer);
+	SDL_FillRect(screen, nullptr, 0);
 	sceneManager.drawScene();
-	SDL_RenderPresent(renderer);
+	// SDL_RenderPresent(renderer);
+	SDL_UpdateWindowSurface(window);
 }
 
 void Game::ghostSpawn() {
@@ -160,8 +164,9 @@ void Game::clean() {
 	// Mix_HaltChannel(-1);
 	// Mix_HaltMusic();
 
+	// SDL_DestroyRenderer(renderer);
+	SDL_FreeSurface(screen);
 	SDL_DestroyWindow(window);
-	SDL_DestroyRenderer(renderer);
 
 	// Mix_Quit();
 	// TTF_Quit();

@@ -1,4 +1,4 @@
-#include "Build.h"
+#include "../include/Build.h"
 
 Builder::Builder() {
 	x = y = currCount = 0;
