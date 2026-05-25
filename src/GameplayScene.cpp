@@ -11,13 +11,8 @@ extern std::vector<Entity*> ghosts;
 extern std::vector<Entity*> pellets;
 extern std::vector<Entity*> ghostSpawns;
 
-// TODO: Buttons causing crash
 GameplayScene::GameplayScene()
 	: Scene("Gameplay", 0, false, true, 0), pacman(manager.addEntity(PACMAN_TAG)) {}
-
-// fps(manager.addEntity("fps")), points(manager.addEntity("points")),
-// pauseButton(manager.addEntity("pauseButton")),
-// reloadButton(manager.addEntity("reloadButton"))
 
 GameplayScene::~GameplayScene() {
 	clearScene();
@@ -38,22 +33,7 @@ void GameplayScene::init() {
 	mapInit();
 
 	pelletCount = map->getPelletCount();
-
-	// fps.addComponent<FPS>("FPS");
-	// pointVal = &points.addComponent<Points>("POINTS").value;
 	pointVal = new int(0);
-	// pauseButton.addComponent<Button>("PAUSE", 400, 222, 64, 32, []() {
-	// 	Game::setPause(!Game::getPaused());
-	// 	// sceneManager.loadNextScene();
-	// });
-	// reloadButton.addComponent<Button>("RELOAD", 8, 222, 64, 32, []() {
-	// 	sceneManager.reloadScene();
-	// });
-
-	// addEntityToScene(fps);
-	// addEntityToScene(points);
-	// addEntityToScene(pauseButton);
-	// addEntityToScene(reloadButton);
 
 	colliders = manager.getGroupMembers(COLLIDERS);
 	players = manager.getGroupMembers(PACMAN);
@@ -65,14 +45,6 @@ void GameplayScene::init() {
 }
 
 void GameplayScene::update() {
-	// collisionResponse(controller->getLastVel());
-	// checkCollisions();
-
-	// points.update();
-	// fps.update();
-	// pauseButton.update();
-	// reloadButton.update();
-
 	if (pelletCount <= *pointVal / VALUE_PER_PELLET) {
 		reload();
 		pelletCount += map->getPelletCount();
@@ -101,21 +73,9 @@ void GameplayScene::reload() {
 	manager.refresh();
 }
 
-void GameplayScene::reloadWithState() {
-	// pauseButton.reload();
-}
+void GameplayScene::reloadWithState() {}
 
 void GameplayScene::handleEvents(SDL_Event& event) {
-	// switch (event.type) {
-	// case SDL_KEYDOWN:
-	// 	controller->updateKeyDown(event.key.keysym.sym);
-	// 	break;
-	// case SDL_KEYUP:
-	// 	controller->updateKeyUp(event.key.keysym.sym);
-	// 	break;
-	// default:
-	// 	break;
-	// }
 	if (Game::getBtnState(0) == '1') {
 		Game::setPause(!Game::getPaused());
 	}
@@ -142,11 +102,6 @@ void GameplayScene::draw() {
 	for (auto it = players.begin(); it != players.end(); it++) {
 		(*it)->draw();
 	}
-
-	// points.draw();
-	// fps.draw();
-	// pauseButton.draw();
-	// reloadButton.draw();
 }
 
 void GameplayScene::pacmanInit() {
@@ -170,7 +125,6 @@ void GameplayScene::pacmanInit() {
 		false,
 		false
 	);
-	// pacman.addComponent<Sprites>("./sprites/pacman_move.png");
 	Animator& pacmanAnim = pacman.addComponent<Animator>();
 	pacmanAnim.init();
 	pacmanAnim.addAnimation("idle", "./sprites/pacman_move.png");

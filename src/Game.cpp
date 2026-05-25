@@ -17,8 +17,6 @@
 Manager manager;
 SceneManager sceneManager = SceneManager();
 
-// TTF_Font* TextureManager::font;
-
 float Game::deltaTime;
 float Game::timeScale = 1.0f;
 
@@ -75,45 +73,16 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	}
 
 	SDL_EventState(SDL_MOUSEMOTION, SDL_IGNORE);
-	// renderer = SDL_CreateRenderer(window, -1, 0);
-	// if (renderer) {
-	// 	std::cout << "Renderer created\n";
-	// }
 	screen = SDL_GetWindowSurface(window);
 
-	// if (TTF_Init()) {
-	// 	std::cout << "TTF system failed to load, error: " << TTF_GetError() << '\n';
-	// 	return;
-	// }
-	// std::cout << "TTF system loaded succesfully\n";
-	//
-	// if (!Mix_Init(MIX_INIT_WAVPACK)) { // set to filetype
-	// 	std::cout << "Mixer failed to initialise, error: " << Mix_GetError() << '\n';
-	// 	return;
-	// }
-	// std::cout << "Mixer initialised\n";
-
-	// Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, MIX_DEFAULT_CHANNELS, 2048);
-	// Mix_Music* audio = Mix_LoadMUS("./audio/audio.wav");
-	// Mix_PlayMusic(audio, 0);
-	// Mix_PauseMusic();
-
-	// mouse.enable();
-	// mouse.addComponent<MouseTracker>();
-	// TextureManager::font = TTF_OpenFont("./fonts/VCR_OSD_MONO.ttf", 32);
 	isRunning = true;
 
 	GameplayScene* gameScene = new GameplayScene();
 	sceneManager.addScene(gameScene);
 	sceneManager.loadScene(gameScene->buildIndex);
 	gameScene = nullptr;
-
-	// #include <TestScene.h>
-	// 	TestScene* testScene = new TestScene();
-	// 	sceneManager.addScene(testScene);
 }
 
-// function to handle game events
 void Game::handleEvents() {
 	read(fd, btn_state, sizeof(btn_state));
 	SDL_PollEvent(&event);
@@ -121,33 +90,20 @@ void Game::handleEvents() {
 	case SDL_QUIT:
 		isRunning = false;
 		break;
-	// case SDL_MOUSEMOTION:
-	// 	SDL_GetMouseState(&mouseCoords.x, &mouseCoords.y);
-	// 	break;
-	// case SDL_MOUSEBUTTONDOWN:
-	// 	mouseButtonPressed = true;
-	// 	break;
-	// case SDL_MOUSEBUTTONUP:
-	// 	mouseButtonPressed = false;
-	// 	break;
 	default:
 		break;
 	}
 	sceneManager.callSceneEvents(event);
 }
 
-// update is called every frame. includes game logic
 void Game::update() {
 	manager.update();
 	sceneManager.updateScene();
 }
 
-// render sprites to screen
 void Game::render() {
-	// SDL_RenderClear(renderer);
 	SDL_FillRect(screen, NULL, 0);
 	sceneManager.drawScene();
-	// SDL_RenderPresent(renderer);
 	SDL_UpdateWindowSurface(window);
 }
 
@@ -155,23 +111,13 @@ void Game::ghostSpawn() {
 	return;
 }
 
-// clean resources on game quitting
 void Game::clean() {
-	// TTF_CloseFont(TextureManager::font);
-
 	manager.destroyAll();
 
-	// Mix_HaltChannel(-1);
-	// Mix_HaltMusic();
-
-	// SDL_DestroyRenderer(renderer);
 	SDL_FreeSurface(screen);
 	SDL_DestroyWindow(window);
 
-	// Mix_Quit();
-	// TTF_Quit();
 	SDL_Quit();
-
 	std::cout << "\nGame cleaned\n";
 }
 

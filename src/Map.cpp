@@ -217,13 +217,11 @@ void Map::addTile(int id, int x, int y) {
 	switch (id) {
 	case 0:
 		std::cout << "oop\n";
-		// tile.addComponent<Collider>("null");
 		return;
 	case 1:
 		tile.addComponent<Collider>(WALL_TAG, [](Collider& other) {}, false, true, true, false);
 		break;
 	case 2:
-		// tile.addComponent<Collider>("ghostBar");
 		tile.addGroup(GHOST_BAR);
 		break;
 	case 3:
@@ -232,7 +230,6 @@ void Map::addTile(int id, int x, int y) {
 		pelletCount++;
 		break;
 	case 4:
-		// tile.addComponent<Collider>("path");
 		break;
 	default:
 		std::cout << "Invalid Tile ID: " << id << '\n';

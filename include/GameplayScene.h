@@ -60,10 +60,6 @@ public:
 
 private:
 	Entity& pacman;
-	// Entity& fps;
-	// Entity& points;
-	// Entity& pauseButton;
-	// Entity& reloadButton;
 
 	int* pointVal;
 	int pelletCount;
