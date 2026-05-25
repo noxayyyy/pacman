@@ -4,10 +4,8 @@
  */
 
 #include "Animator.h"
-#include "Button.h"
 #include "Constants.h"
 #include "Controller.h"
-#include "Counters.h"
 #include "Game.h"
 #include "Map.h"
 #include "Scene.h"
