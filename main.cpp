@@ -4,10 +4,13 @@
 Game* game = nullptr;
 
 int main(int argc, char** argv) {
-	bool frameLock = false;
+	bool frameLock = true;
 
 	Uint32 frameStart;
 	Uint32 frameTime;
+	float frameCount = 0;
+	float frameLimit = 300;
+	float deltaSum = 0;
 
 	game = new Game();
 	game->init(
@@ -37,6 +40,14 @@ int main(int argc, char** argv) {
 			Game::deltaTime = FRAME_DELAY;
 		}
 		Game::deltaTime *= Game::timeScale;
+
+		frameCount++;
+		deltaSum += Game::deltaTime;
+		if (frameCount >= frameLimit) {
+			std::cout << "FPS: " << frameCount / deltaSum << '\n';
+			frameCount = 0;
+			deltaSum = 0;
+		}
 	}
 	delete game;
 
