@@ -116,10 +116,10 @@ void GameplayScene::handleEvents(SDL_Event& event) {
 	// default:
 	// 	break;
 	// }
-	if (Game::getBtnState(1) == '1') {
+	if (Game::getBtnState(0) == '1') {
 		Game::setPause(!Game::getPaused());
 	}
-	if (Game::getBtnState(2) == '1') {
+	if (Game::getBtnState(1) == '1') {
 		sceneManager.reloadScene();
 	}
 }
