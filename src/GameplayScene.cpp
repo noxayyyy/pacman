@@ -170,8 +170,9 @@ void GameplayScene::pacmanInit() {
 		false,
 		false
 	);
-	pacman.addComponent<Sprites>("./sprites/pacman_move.png");
+	// pacman.addComponent<Sprites>("./sprites/pacman_move.png");
 	Animator& pacmanAnim = pacman.addComponent<Animator>();
+	pacmanAnim.init();
 	pacmanAnim.addAnimation("idle", "./sprites/pacman_move.png");
 	pacmanAnim.addEdge(ANIM_ENTRY, "idle", { std::shared_ptr<bool>(new bool(true)) });
 	controller = &pacman.addComponent<Controller>();

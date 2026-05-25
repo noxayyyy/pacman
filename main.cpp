@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
 		Game::deltaTime = (float)frameTime / 1000.0f;
 
 		// if fps is greater than 60, increase delay to limit frames
-		if (frameLock && Game::deltaTime < FRAME_DELAY) {
+		if (frameLock && Game::deltaTime <= FRAME_DELAY) {
 			SDL_Delay((FRAME_DELAY - Game::deltaTime) * 1000);
 			Game::deltaTime = FRAME_DELAY;
 		}
